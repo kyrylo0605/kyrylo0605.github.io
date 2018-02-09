@@ -70,7 +70,7 @@ a,
 
 h1, h2, h3, h4, h5, h6 {
 	font: 700 40px/1.2 Raleway, sans-serif;
-	text-transform: uppercase;
+	
 	letter-spacing: 5px;
 	margin: 5px 0 5px;
 	color: #222;
@@ -969,4 +969,26 @@ figure.effect-bubba:hover p {
 	}
 
 }
+
+span.linkedin a {
+
+text-decoration: none;
+color: #0e76a8;
+padding-right: 20px;
+}
+
+span.github a {
+
+text-decoration: none;
+color: rgb(0, 0, 0);
+padding-right: 20px;
+}
+
+span.linkedin a:hover {
+	color: rgba(0,0,0,0.6);
+}
+span.github a:hover {
+	color: rgba(0,0,0,0.6);
+}
+
 
