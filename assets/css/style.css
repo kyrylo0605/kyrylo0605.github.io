@@ -785,10 +785,12 @@ textarea.form-control {
 .grid figure h2 {
 	word-spacing: -0.15em;
 	font-weight: 300;
+	font-size: 35px;
 }
 
 .grid figure h2 span {
 	font-weight: 800;
+	font-size: 35px;
 }
 
 .grid figure h2,
