@@ -231,6 +231,7 @@ textarea.form-control {
 
 .pfblock {
 	padding: 180px 0 100px;
+	background: #F5DEB3;
 }
 
 .pfblock-gray {
@@ -999,4 +1000,9 @@ span.github a:hover {
 
 	background-color: #F5DEB3;
 
+}
+
+ .btn.btn-link.btn-lg {
+
+	background-color: #4CAF50;
 }
