@@ -42,10 +42,18 @@
 
 		$('body').scrollspy({
 			target: '.navbar-custom',
-			offset: 70
+			offset: 50
 		})
 
         
+		$(function(){
+
+    		$('.selectpicker').selectpicker();
+
+		});
+
+
+
         /* ---------------------------------------------- /*
 		 * Skills
         /* ---------------------------------------------- */    

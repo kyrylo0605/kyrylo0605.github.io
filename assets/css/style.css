@@ -461,7 +461,7 @@ textarea.form-control {
 /* ---------------------------------------------- */
 
 #footer {
-	background: #222;
+	background: #F0E68C;
 	text-align: center;
 	padding: 20px 0;
 	color: #FFF;
@@ -478,7 +478,7 @@ textarea.form-control {
 #footer span{
     animation-iteration-count: infinite;
     -webkit-animation-iteration-count: infinite;
-    color: #ff5252;
+    color: #ff5252;  /*#ff5252*/
 }
 
 .social-links {
@@ -599,7 +599,7 @@ textarea.form-control {
 	width: 35px;
 	height: 35px;
 	text-align: center;
-	color: #fff;
+	color: #000000;
 	font-size: 15px;
 	line-height: 30px;
 }
@@ -1004,5 +1004,5 @@ span.github a:hover {
 
  .btn.btn-link.btn-lg {
 
-	background-color: #4CAF50;
+	background-color: #F5DEB3;
 }
