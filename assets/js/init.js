@@ -79,7 +79,7 @@ $( window ).load(function(){
    
     $("body").removeClass("preload");
 	/* Preloader */
-    $('#preload').delay(1500).fadeOut(1000, function() {
+    $('#preload').delay(500).fadeOut(500, function() {
         animStart();
     });
 
