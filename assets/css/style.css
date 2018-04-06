@@ -22,6 +22,7 @@ body {
 	margin-left: 10%;
 	margin-top: 10%;
 	font-size: 10px;
+	color: black;
 
 }
 
@@ -433,6 +434,22 @@ textarea.form-control {
  * Skills
 /* ---------------------------------------------- */
 
+
+#skills {
+
+background: url(../images/preloader1.png);
+	background-color: #222;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	-webkit-background-size: cover;
+	   -moz-background-size: cover;
+		 -o-background-size: cover;
+			background-size: cover;
+	padding: 0;
+
+}
+
 .chart {
     display: inline-block;
     height: 140px;
@@ -569,7 +586,7 @@ textarea.form-control {
 .navbar-custom .navbar-brand {
 	font-weight: 700;
 	font-size: 22px;
-    font-family: Lobster, cursive;
+    font-family: "Indi Flower", Jua, "Poor Story", cursive;
 }
 
 .navbar-custom .dropdown-menu {
@@ -798,12 +815,12 @@ textarea.form-control {
 .grid figure h2 {
 	word-spacing: -0.15em;
 	font-weight: 400;
-	font-size: 3vw;
+	font-size: 2vw;
 }
 
 .grid figure h2 span {
 	font-weight: 800;
-	font-size: 3vw;
+	font-size: 2vw;
 }
 
 .grid figure h2,
