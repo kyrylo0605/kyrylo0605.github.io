@@ -586,7 +586,7 @@ background: url(../images/preloader1.png);
 .navbar-custom .navbar-brand {
 	font-weight: 700;
 	font-size: 22px;
-    font-family: "Indi Flower", Jua, "Poor Story", cursive;
+    font-family: Pasifico, "Indi Flower", Jua, "Poor Story", cursive, sans-serif;
 }
 
 .navbar-custom .dropdown-menu {
@@ -618,7 +618,7 @@ background: url(../images/preloader1.png);
 	display: none;
 	z-index: 999;
 	bottom: 2em;
-	right: 2em;
+	/*right: 2em;*/
 }
 
 .scroll-up a {
