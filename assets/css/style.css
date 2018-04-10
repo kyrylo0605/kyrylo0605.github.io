@@ -1,7 +1,12 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,500,700,800);
-@import url(https://fonts.googleapis.com/css?family=Lobster);
-@import url(https://fonts.googleapis.com/css?family=Great+Vibes|Oswald);
-@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Great+Vibes|Oswald');
+/* @import url(https://fonts.googleapis.com/css?family=Raleway:400,300,500,700,800);
+@import url(https://fonts.googleapis.com/css?family=Lobster); */
+
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes');
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Great+Vibes');
+@import url('https://fonts.googleapis.com/css?family=Hi+Melody');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 
 /*!
  * Clean v2.0.0
@@ -11,7 +16,7 @@
 */
 
 body {
-	font: 300 14px/1.8 Verdana, sans-serif;
+	font: 300 14px/1.8 "Shadows Into Light", sans-serif;
 	color: #666;
 	overflow-x: hidden;
 }
@@ -83,7 +88,7 @@ a,
 /* ---------------------------------------------- */
 
 h1, h2, h3, h4, h5, h6 {
-	font: 700 50px/1.2 Raleway, sans-serif;
+	font: 700 50px/1.2 "Shadows Into Light", sans-serif;
 	font-style: italic;
 	letter-spacing: 5px;
 	margin: 5px 0 5px;
@@ -96,6 +101,7 @@ h2 {
 }
 
 h3 {
+
 	font-size: 20px;
 	letter-spacing: 1px;
 	margin: 0 0 5px;
@@ -189,7 +195,7 @@ textarea.form-control {
 /* ---------------------------------------------- */
 
 .btn {
-	font-family: Raleway, sans-serif;
+	font-family: Pacifico, sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-size: 13px;
@@ -292,7 +298,7 @@ textarea.form-control {
 }
 
 .pfblock-subtitle {
-	font-family: Raleway, sans-serif;
+	font-family: "Indi Flower", Oswald, sans-serif;
 	font-style: normal;
 	font-size: 18px;
 	padding: 0;
@@ -467,7 +473,8 @@ background: url(../images/preloader1.png);
 }
 .percent {
     display: inline-block;
-    font-size: 25px;
+    color: red;
+    font-size: 35px;
     font-weight: 300;
     line-height: 140px;
     z-index: 2;
@@ -557,7 +564,7 @@ background: url(../images/preloader1.png);
 	border-radius: 0;
 	margin: 0;
 	text-transform: uppercase;
-	font-family: Roboto, sans-serif;
+	font-family: Oswald, sans-serif;
 	font-weight: bold;
 }
 
@@ -588,7 +595,7 @@ background: url(../images/preloader1.png);
 .navbar-custom .navbar-brand {
 	font-weight: 700;
 	font-size: 22px;
-    font-family: Pasifico, "Indi Flower", Jua, "Poor Story", cursive, sans-serif;
+    font-family: Pasifico, sans-serif;
 }
 
 .navbar-custom .dropdown-menu {
