@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,300,500,700,800);
 @import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=Great+Vibes|Oswald);
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Great+Vibes|Oswald');
 
 /*!
  * Clean v2.0.0
@@ -290,7 +292,7 @@ textarea.form-control {
 }
 
 .pfblock-subtitle {
-	/*font-family: Raleway, "Times New Roman", Times, sans-serif;*/
+	font-family: Raleway, sans-serif;
 	font-style: normal;
 	font-size: 18px;
 	padding: 0;
@@ -715,7 +717,7 @@ background: url(../images/preloader1.png);
  * Media
 /* ---------------------------------------------- */
 
-@media (max-width: 767px) {
+@media (max-width: 900px) {
 
 	.calltoaction {
 		text-align: center;
