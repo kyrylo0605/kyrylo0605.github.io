@@ -627,7 +627,7 @@ background: url(../images/preloader1.png);
 	display: none;
 	z-index: 999;
 	bottom: 2em;
-	/*right: 2em;*/
+	right: 2em;
 }
 
 .scroll-up a {
