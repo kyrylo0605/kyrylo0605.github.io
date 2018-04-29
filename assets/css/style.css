@@ -16,7 +16,7 @@
 */
 
 body {
-	font: 300 14px/1.8 "Shadows Into Light", sans-serif;
+	font: 300 14px/1.8 Adventure, Roboto, sans-serif;
 	color: #666;
 	overflow-x: hidden;
 }
@@ -88,7 +88,7 @@ a,
 /* ---------------------------------------------- */
 
 h1, h2, h3, h4, h5, h6 {
-	font: 700 50px/1.2 "Shadows Into Light", sans-serif;
+	font: 700 50px/1.2 Adventure, Roboto, sans-serif;
 	font-style: italic;
 	letter-spacing: 5px;
 	margin: 5px 0 5px;
@@ -195,7 +195,7 @@ textarea.form-control {
 /* ---------------------------------------------- */
 
 .btn {
-	font-family: Pacifico, sans-serif;
+	font-family: Adveture, Roboto, sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-size: 13px;
