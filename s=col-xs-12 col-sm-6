@@ -1,178 +1,0 @@
-[33mcommit 5d8502641d3416d58305998ae1ddb94918782d4e[m
-Author: Kyrylo Grebennyk <kyrylo06051986@gmail.com>
-Date:   Tue Feb 27 01:29:08 2018 +0200
-
-    change grid, add new projects
-
-[1mdiff --git a/assets/css/style.css b/assets/css/style.css[m
-[1mindex a7aa437..c65c095 100644[m
-[1m--- a/assets/css/style.css[m
-[1m+++ b/assets/css/style.css[m
-[36m@@ -785,10 +785,12 @@[m [mtextarea.form-control {[m
- .grid figure h2 {[m
- 	word-spacing: -0.15em;[m
- 	font-weight: 300;[m
-[32m+[m	[32mfont-size: 35px;[m
- }[m
- [m
- .grid figure h2 span {[m
- 	font-weight: 800;[m
-[32m+[m	[32mfont-size: 35px;[m
- }[m
- [m
- .grid figure h2,[m
-[1mdiff --git a/index.html b/index.html[m
-[1mindex 3800d37..c3b9a7b 100644[m
-[1m--- a/index.html[m
-[1m+++ b/index.html[m
-[36m@@ -178,7 +178,7 @@[m
- 						<span data-percent="45" class="chart easyPieChart" style="width: 140px; height: 140px; line-height: 140px;">[m
-                             <span class="percent">45</span>[m
-                         </span>[m
-[31m-						<h3 class="text-center">English intermediate</h3>[m
-[32m+[m						[32m<h3 class="text-center">English Intermediate</h3>[m[41m[m
- 					</div>[m
- [m
- 				</div><!--End row -->[m
-[36m@@ -225,7 +225,7 @@[m
- 				<div class="col-sm-6 col-sm-offset-3">[m
- [m
- 					<div class="pfblock-header wow fadeInUp">[m
-[31m-						<h2 class="pfblock-title">Мои работы</h2>[m
-[32m+[m						[32m<h2 class="pfblock-title">Мои проекты</h2>[m[41m[m
- 						<!--<div class="pfblock-line"></div>[m
- 						<div class="pfblock-subtitle">[m
- 							Здесь собрано самое лучшее[m
-[36m@@ -239,42 +239,118 @@[m
- [m
- 			<div class="row">[m
- [m
-[31m-				<div class="col-xs-12 col-sm-4 col-md-4">[m
-[32m+[m				[32m<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">[m[41m[m
-[32m+[m[41m[m
-[32m+[m					[32m<div class="grid wow zoomIn">[m[41m[m
-[32m+[m						[32m<figure class="effect-bubba">[m[41m[m
-[32m+[m							[32m<a href="chili-web.html">[m[41m	[m
-[32m+[m[41m[m
-[32m+[m								[32m<img src="assets/images/chili-web1.png" alt="chili-web1.png"/>[m[41m[m
-[32m+[m								[32m<figcaption>[m[41m[m
-[32m+[m									[32m<h2>Chili <span>Web</span></h2>[m[41m[m
-[32m+[m									[32m<p>simple html web page</p>[m[41m[m
-[32m+[m								[32m</figcaption>[m[41m[m
-[32m+[m[41m[m
-[32m+[m							[32m</a>[m[41m[m
-[32m+[m							[32m</figure>[m[41m[m
-[32m+[m						[32m</div>[m[41m[m
-[32m+[m[41m[m
-[32m+[m				[32m</div>[m[41m[m
-[32m+[m[41m[m
-[32m+[m				[32m<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">[m[41m[m
-[32m+[m[41m[m
-[32m+[m					[32m<div class="grid wow zoomIn">[m[41m[m
-[32m+[m						[32m<figure class="effect-bubba">[m[41m[m
-[32m+[m							[32m<a href="kons.html">[m[41m[m
-[32m+[m								[32m<img src="assets/images/kons.jpg" alt="kons.jpg"/>[m[41m[m
-[32m+[m								[32m<figcaption>[m[41m[m
-[32m+[m									[32m<h2>Kons <span>Construction</span></h2>[m[41m[m
-[32m+[m									[32m<p>web solution for construction</p>[m[41m[m
-[32m+[m								[32m</figcaption>[m[41m[m
-[32m+[m							[32m</a>[m[41m[m
-[32m+[m						[32m</figure>[m[41m[m
-[32m+[m					[32m</div>[m[41m[m
-[32m+[m[41m[m
-[32m+[m				[32m</div>[m[41m[m
-[32m+[m[41m[m
-[32m+[m				[32m<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">[m[41m[m
-[32m+[m[41m[m
-[32m+[m					[32m<div class="grid wow zoomIn">[m[41m[m
-[32m+[m						[32m<figure class="effect-bubba">[m[41m[m
-[32m+[m							[32m<img src="assets/images/item-3.jpg" alt="img01"/>[m[41m[m
-[32m+[m							[32m<figcaption>[m[41m[m
-[32m+[m								[32m<h2>The <span>Hat</span></h2>[m[41m[m
-[32m+[m								[32m<p>to be continued...</p>[m[41m[m
-[32m+[m							[32m</figcaption>[m[41m[m
-[32m+[m						[32m</figure>[m[41m[m
-[32m+[m					[32m</div>[m[41m[m
-[32m+[m[41m[m
-[32m+[m				[32m</div>[m[41m[m
-[32m+[m[41m[m
-[32m+[m				[32m<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">[m[41m[m
- [m
- 					<div class="grid wow zoomIn">[m
- 						<figure class="effect-bubba">[m
- 							<img src="assets/images/item-1.jpg" alt="img01"/>[m
- 							<figcaption>[m
- 								<h2>Crazy <span>Shark</span></h2>[m
-[31m-								<p>Space for the best projects</p>[m
-[32m+[m								[32m<p>to be continued...</p>[m[41m[m
- 							</figcaption>[m
- 						</figure>[m
- 					</div>[m
- [m
- 				</div>[m
- [m
-[31m-				<div class="col-xs-12 col-sm-4 col-md-4">[m
-[32m+[m				[32m<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">[m[41m[m
- [m
- 					<div class="grid wow zoomIn">[m
- 						<figure class="effect-bubba">[m
- 							<img src="assets/images/item-2.jpg" alt="img01"/>[m
- 							<figcaption>[m
- 								<h2>Funny <span>Tortoise</span></h2>[m
-[31m-								<p>Space for the best projects</p>[m
-[32m+[m								[32m<p>to be continued...</p>[m[41m[m
- 							</figcaption>[m
- 						</figure>[m
- 					</div>[m
- [m
- 				</div>[m
- [m
-[31m-				<div class="col-xs-12 col-sm-4 col-md-4">[m
-[32m+[m				[32m<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">[m[41m[m
- [m
- 					<div class="grid wow zoomIn">[m
- 						<figure class="effect-bubba">[m
- 							<img src="assets/images/item-3.jpg" alt="img01"/>[m
- 							<figcaption>[m
- 								<h2>The <span>Hat</span></h2>[m
-[31m-								<p>Space for the best projects</p>[m
-[32m+[m								[32m<p>to be continued...</p>[m[41m[m
-[32m+[m							[32m</figcaption>[m[41m[m
-[32m+[m						[32m</figure>[m[41m[m
-[32m+[m					[32m</div>[m[41m[m
-[32m+[m[41m[m
-[32m+[m				[32m</div>[m[41m[m
-[32m+[m[41m[m
-[32m+[m				[32m<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">[m[41m[m
-[32m+[m[41m[m
-[32m+[m					[32m<div class="grid wow zoomIn">[m[41m[m
-[32m+[m						[32m<figure class="effect-bubba">[m[41m[m
-[32m+[m							[32m<img src="assets/images/item-1.jpg" alt="img01"/>[m[41m[m
-[32m+[m							[32m<figcaption>[m[41m[m
-[32m+[m								[32m<h2>Crazy <span>Shark</span></h2>[m[41m[m
-[32m+[m								[32m<p>to be continued...</p>[m[41m[m
-[32m+[m							[32m</figcaption>[m[41m[m
-[32m+[m						[32m</figure>[m[41m[m
-[32m+[m					[32m</div>[m[41m[m
-[32m+[m[41m[m
-[32m+[m				[32m</div>[m[41m[m
-[32m+[m[41m[m
-[32m+[m				[32m<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">[m[41m[m
-[32m+[m[41m[m
-[32m+[m					[32m<div class="grid wow zoomIn">[m[41m[m
-[32m+[m						[32m<figure class="effect-bubba">[m[41m[m
-[32m+[m							[32m<img src="assets/images/item-2.jpg" alt="img01"/>[m[41m[m
-[32m+[m							[32m<figcaption>[m[41m[m
-[32m+[m								[32m<h2>Funny <span>Tortoise</span></h2>[m[41m[m
-[32m+[m								[32m<p>to be continued...</p>[m[41m[m
- 							</figcaption>[m
- 						</figure>[m
- 					</div>[m
-[36m@@ -283,6 +359,7 @@[m
- [m
- 			</div>[m
- [m
-[32m+[m[41m[m
- 		</div><!-- .contaier -->[m
- [m
- 	</section>[m
