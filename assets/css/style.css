@@ -18,7 +18,7 @@
 */
 
 body {
-	font: 300 14px/1.8 Adventure, "Montserrat Light", Roboto, sans-serif;
+	font: 300 14px/1.8 Adventure, Montserrat, Roboto, sans-serif;
 	color: #666;
 	overflow-x: hidden;
 }
@@ -90,7 +90,7 @@ a,
 /* ---------------------------------------------- */
 
 h1, h2, h3, h4, h5, h6 {
-	font: 700 50px/1.2 Adventure, "Montserrat Light", Roboto, sans-serif;
+	font: 700 50px/1.2 Adventure, Montserrat, Roboto, sans-serif;
 	font-style: italic;
 	letter-spacing: 5px;
 	margin: 5px 0 5px;
