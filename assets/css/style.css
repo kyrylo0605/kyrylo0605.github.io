@@ -1124,3 +1124,10 @@ span.github a:hover {
 
 	margin-bottom: 10px;
 }
+
+.banner {
+
+	position: absolute;
+	margin-top: 0;
+	margin-right: 200px;
+}
