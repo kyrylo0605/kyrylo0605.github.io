@@ -1044,22 +1044,22 @@ figure.effect-bubba:hover p {
 span.linkedin a {
 
 text-decoration: none;
-color: #0e76a8;
+color: rgba(0,0,0,.6);
 padding-right: 20px;
 }
 
 span.github a {
 
 text-decoration: none;
-color: rgb(0, 0, 0);
+color: rgba(0, 0, 0,.6);
 padding-right: 20px;
 }
 
 span.linkedin a:hover {
-	color: rgba(0,0,0,0.6);
+	color: #0e76a8;
 }
 span.github a:hover {
-	color: rgba(0,0,0,0.6);
+	color: rgb(0,0,0);
 }
 
 #portfolio {
