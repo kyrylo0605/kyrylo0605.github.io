@@ -1138,3 +1138,8 @@ span.github a:hover {
 	margin-left: 20px;
 	
 }
+
+
+svg:hover path {
+    fill: #000;
+}
