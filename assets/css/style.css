@@ -580,7 +580,7 @@ background: url(../images/preloader1.png);
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-nav > li > a,
 .navbar-custom .navbar-nav .dropdown-menu > li > a {
-	font-size: 15px;
+	font-size: 14px;
 	font-weight: bold;
 	letter-spacing: 2px;
 	color: #222;
@@ -757,7 +757,7 @@ background: url(../images/preloader1.png);
 }
 
 
-@media (max-width: 991px) {
+@media (max-width: 1200px) {
   .navbar-header {
       float: none;
   }
