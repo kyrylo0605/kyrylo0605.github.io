@@ -4534,3 +4534,10 @@ main.lght .ep-icon:after {
 .pd-right-none {
 	padding-right: 0;
 }
+
+#back {
+
+	position: fixed;
+	right: 200px;
+	top: 100px;
+}
