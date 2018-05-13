@@ -4539,5 +4539,6 @@ main.lght .ep-icon:after {
 
 	position: fixed;
 	right: 200px;
-	top: 100px;
+	top: 200px;
+	z-index: 100;
 }
