@@ -8,6 +8,8 @@
 </head>
 <body>
 
+	 <button id="back" type="button" class="btn btn-primary btn-lg" onclick="goBack()">Go Back</button>
+
 	<div class="logo">
 		<a href="#"></a>
 		
@@ -159,6 +161,12 @@
 
 	<a class="btn-floating btn-lg purple-gradient" href="javascript:history.back()"><i class="fa fa-bolt"></i></a>
 	</div>
+
+	<script>
+		function goBack() {
+    	window.history.back();
+		}
+	</script>
 
 </body>
 </html>
