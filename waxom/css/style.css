@@ -62,4 +62,16 @@ i {
   right: 200px;
   top: 200px;
   z-index: 100;
+
+}
+
+#back a:active {
+
+  color: white;
+}
+
+
+#back a:hover {
+
+  color: red;
 }
