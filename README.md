@@ -1,5 +1,3 @@
 # kyrylo0605.github.io
-myfirsthosting CV site
+myfirsthosting portfolio CV site
 connecting to server
-
-
