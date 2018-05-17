@@ -599,6 +599,7 @@ background: url(../images/preloader1.png);
 	font-weight: 700;
 	font-size: 22px;
     font-family: Pacifico, sans-serif;
+    text-shadow: 5px 5px 4px #556b2f;
 }
 
 .navbar-custom .dropdown-menu {
