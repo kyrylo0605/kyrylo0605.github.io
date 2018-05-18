@@ -500,7 +500,7 @@ background: url(../images/preloader1.png);
 /* ---------------------------------------------- */
 
 #footer {
-	background: linear-gradient(olive, #000);
+	background: radial-gradient(olive, #000);
 	text-align: center;
 	padding: 20px 0;
 	color: #FFF;
