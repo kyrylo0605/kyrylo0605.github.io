@@ -258,6 +258,7 @@ textarea.form-control {
 
 .pfblock-gray {
 	background: #f18a41b3;
+
 }
 
 .pfblock-image {
@@ -408,6 +409,7 @@ textarea.form-control {
 
 .intro h1{
     font-weight: 600;
+    text-shadow: 5px 5px rgba(255,255,255,0.4);
 }
 
 .start {
@@ -415,6 +417,7 @@ textarea.form-control {
 	font-style: italic;
 	text-transform: none;
 	margin: 15px 0;
+	text-shadow: 3px 3px rgba(255,255,255,0.4);
 }
 
 /* ---------------------------------------------- /*
