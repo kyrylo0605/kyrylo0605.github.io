@@ -450,11 +450,13 @@ textarea.form-control {
 
 #skills {
 
-background: url(../images/preloader1.png);
+background-image: url(../images/preloader1.png);
 	background-color: #222;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
+	background-origin: content-box;
+	background-size: cover;
 	-webkit-background-size: cover;
 	   -moz-background-size: cover;
 		 -o-background-size: cover;
@@ -583,7 +585,7 @@ background: url(../images/preloader1.png);
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-nav > li > a,
 .navbar-custom .navbar-nav .dropdown-menu > li > a {
-	font-size: 14px;
+	font-size: 12px;
 	font-weight: bold;
 	letter-spacing: 2px;
 	color: #222;
