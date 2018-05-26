@@ -505,7 +505,7 @@ background-image: url(../images/preloader1.png);
 /* ---------------------------------------------- */
 
 #footer {
-	background: radial-gradient(closest-side, olive, #fff);
+	background: radial-gradient(closest-side, olive, #BE7174);
 	text-align: center;
 	padding: 20px 0;
 	color: #FFF;
@@ -604,7 +604,7 @@ background-image: url(../images/preloader1.png);
 	font-weight: 700;
 	font-size: 22px;
     font-family: Pacifico, sans-serif;
-    text-shadow: 5px 5px 4px #556b2f;
+    text-shadow: 5px 5px 4px #BE7174;
 }
 
 .navbar-custom .dropdown-menu {
