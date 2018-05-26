@@ -254,10 +254,17 @@ textarea.form-control {
 .pfblock {
 	padding: 180px 0 100px;
 	background: linear-gradient(to right, #ff5f6d, #ffc371);
+
 }
 
 .pfblock-gray {
-	background: #f18a41b3;
+	
+	
+	background: linear-gradient(to left, #ff5f6d, #ffc371);
+	background-image: url(../images/House_grayscale.svg);
+	background-repeat: no-repeat;
+	background-position: left;
+	
 
 }
 
