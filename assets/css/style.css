@@ -253,7 +253,7 @@ textarea.form-control {
 
 .pfblock {
 	padding: 180px 0 100px;
-	background: #F5DEB3;
+	background: linear-gradient(to right, #ff5f6d, #ffc371);
 }
 
 .pfblock-gray {
