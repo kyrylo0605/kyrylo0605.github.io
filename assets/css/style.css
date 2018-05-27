@@ -1,15 +1,19 @@
 /* @import url(https://fonts.googleapis.com/css?family=Raleway:400,300,500,700,800);
 @import url(https://fonts.googleapis.com/css?family=Lobster); */
-
+/*
 @import url('https://fonts.googleapis.com/css?family=Great+Vibes');
 @import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Great+Vibes');
 @import url('https://fonts.googleapis.com/css?family=Hi+Melody');
+*/
+
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+/*
 @import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-
+*/
 /*!
  * Clean v2.0.0
  * Homepage: http://scripteden.com
@@ -1158,5 +1162,48 @@ span.github a:hover {
 
 
 svg:hover path {
-    fill: #000;
+    fill: red;
 }
+
+
+
+
+.logo {
+  width: 200px;
+  height: 164px;
+}
+
+.kiwi {
+  fill: #94d31b; 
+  
+  /* stroke: #909;
+    // stroke-width: 10;
+  
+  // not sure which of these is correct
+  // stroke-linejoin: butt | round | square;
+  // stroke-linecap: butt | round | square;
+  
+  // stroke-dasharray: 5, 5, 10;
+  
+  // filter: url(#pictureFilter);
+  // mask: url(#f1);
+  // clip-path: url();
+}*/
+
+
+.kiwi:hover {
+  fill: #ace63c; 
+}
+
+.ground {
+  fill: #787f6a;
+}
+.ground:hover {
+  filter: url(#pictureFilter);
+  fill: #896d3d;
+}
+
+body {
+  padding: 20px;
+}
+
