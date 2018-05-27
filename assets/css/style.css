@@ -133,7 +133,7 @@ h6 {
 p {
 
 	font-size: 20px;
-	font-weight: 800;
+	font-weight: 500;
 	color: #000000;
 }
 
@@ -774,6 +774,11 @@ background-image: url(../images/preloader1.png);
 		font-size: 24px;
 		margin: 0 0 30px;
 		letter-spacing: 3px;
+	}
+
+	p {
+
+		font-size: 15px;
 	}
 
 }
