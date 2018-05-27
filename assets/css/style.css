@@ -261,12 +261,16 @@ textarea.form-control {
 	
 	
 	background: linear-gradient(to left, #ff5f6d, #ffc371);
-	background-image: url(../images/House_grayscale.svg);
-	background-repeat: no-repeat;
-	background-position: left;
 	
+}
+
+
+.house {
+
+	background-image: url(../images/House_grayscale.svg);
 
 }
+
 
 .pfblock-image {
 	padding: 0;
