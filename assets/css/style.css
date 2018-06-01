@@ -1158,8 +1158,19 @@ span.github a:hover {
 	margin-bottom: 10px;
 }
 
+
 .banner {
 
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.banner-vata {
+
+	position: relative;
+	margin-top: 50px;
 	display: block;
     margin-left: auto;
     margin-right: auto;
