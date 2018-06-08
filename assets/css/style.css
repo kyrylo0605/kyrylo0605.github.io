@@ -240,8 +240,8 @@ textarea.form-control {
 
 .btn-sm,
 .btn-group-sm > .btn {
-	padding: 6px 25px;
-	font-size: 11px;
+	padding: 4px 25px;
+	font-size: 15px;
 }
 
 .btn-xs,
