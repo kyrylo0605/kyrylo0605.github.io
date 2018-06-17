@@ -916,12 +916,13 @@ background-image: url(../images/preloader1.png);
 .grid figure p {
 	margin: 0;
 	color: white;
-	font-weight: 800;
 }
+
 
 .grid figure p {
 	letter-spacing: 1px;
-	font-size: 68.5%;
+	font-size: 88.5%;
+	font-weight: 800;
 }
 
 
