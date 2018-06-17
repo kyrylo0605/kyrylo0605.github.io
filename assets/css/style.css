@@ -915,6 +915,8 @@ background-image: url(../images/preloader1.png);
 .grid figure h2,
 .grid figure p {
 	margin: 0;
+	color: white;
+	font-weight: 800;
 }
 
 .grid figure p {
