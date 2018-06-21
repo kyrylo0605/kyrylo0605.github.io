@@ -1,0 +1,1811 @@
+/* START main */
+@font-face {
+  font-family: 'Spectral SC';
+  src: url('../fonts/SpectralSC-Regular.eot');
+  src: url('../fonts/SpectralSC-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/SpectralSC-Regular.woff2') format('woff2'), url('../fonts/SpectralSC-Regular.woff') format('woff'), url('../fonts/SpectralSC-Regular.ttf') format('truetype'), url('../fonts/SpectralSC-Regular.svg#SpectralSC-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham Pro';
+  src: url('../fonts/GothamPro.eot');
+  src: url('../fonts/GothamPro.eot?#iefix') format('embedded-opentype'), url('../fonts/GothamPro.woff2') format('woff2'), url('../fonts/GothamPro.woff') format('woff'), url('../fonts/GothamPro.ttf') format('truetype'), url('../fonts/GothamPro.svg#GothamPro') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Open Sans Regular';
+  src: url('../fonts/OpenSans-Regular.eot');
+  src: url('../fonts/OpenSans-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/OpenSans-Regular.woff2') format('woff2'), url('../fonts/OpenSans-Regular.woff') format('woff'), url('../fonts/OpenSans-Regular.ttf') format('truetype'), url('../fonts/OpenSans-Regular.svg#OpenSans-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Open Sans Bold';
+  src: url('../fonts/OpenSans-Bold.eot');
+  src: url('../fonts/OpenSans-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/OpenSans-Bold.woff2') format('woff2'), url('../fonts/OpenSans-Bold.woff') format('woff'), url('../fonts/OpenSans-Bold.ttf') format('truetype'), url('../fonts/OpenSans-Bold.svg#OpenSans-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Open Sans Italic';
+  src: url('../fonts/OpenSans-Italic.eot');
+  src: url('../fonts/OpenSans-Italic.eot?#iefix') format('embedded-opentype'), url('../fonts/OpenSans-Italic.woff2') format('woff2'), url('../fonts/OpenSans-Italic.woff') format('woff'), url('../fonts/OpenSans-Italic.ttf') format('truetype'), url('../fonts/OpenSans-Italic.svg#OpenSans-Italic') format('svg');
+  font-weight: normal;
+  font-style: italic;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+p,
+a,
+li,
+h1,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Open Sans Regular';
+  color: #000;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+ul {
+  list-style: none;
+}
+a:hover,
+li:hover {
+  color: #6a8419;
+  text-decoration: none;
+}
+h1 {
+  font-family: 'Spectral SC';
+  font-size: 40px;
+  text-align: center;
+}
+h2 {
+  font-family: 'Spectral SC';
+  font-size: 40px;
+  margin-bottom: 0;
+}
+hr {
+  background-color: #000;
+  height: 1px;
+}
+hr.sec {
+  margin-top: 0;
+}
+.breadcrumbs {
+  background-color: #fdf4ef;
+  height: 43px;
+}
+.breadcrumbs .fa-home,
+.breadcrumbs .fa-angle-right {
+  margin: 5px 10px;
+  margin-right: 5px;
+  font-size: 22px;
+  line-height: 32px;
+}
+.breadcrumbs a {
+  font-size: 12px;
+}
+.breadcrumbs a span {
+  position: relative;
+  top: -3px;
+}
+.pagination {
+  display: block;
+}
+.pagination li a {
+  color: #6a8419;
+}
+.pagination li a:hover {
+  text-decoration: none;
+}
+.row-no-padding [class*="col-"] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.butt {
+  width: 165px;
+  margin: 0 auto;
+  background-color: #6a8419;
+  border: 1px solid #fff;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.butt:hover {
+  border: 1px solid #6a8419;
+  background-color: #fff;
+  color: #6a8419;
+}
+.slick-prev,
+.slick-next {
+  width: 19px;
+  height: 19px;
+  border-radius: 10px;
+  background-color: #6a8419;
+}
+header ul {
+  margin: 0;
+  padding: 0;
+}
+header ul li {
+  display: inline-block;
+  cursor: pointer;
+}
+header .navTop {
+  background-color: #fdf4ef;
+  padding-top: 5px;
+  height: 50px;
+  margin-bottom: 20px;
+}
+header .navTop__left ul li {
+  padding: 10px;
+}
+header .navTop__left ul li a {
+  font-size: 14px;
+}
+header .navTop__right p {
+  float: left;
+  margin: 10px;
+}
+header .navTop__right p span {
+  text-transform: uppercase;
+  color: #6a8419;
+}
+header .navTop__right ul li {
+  margin: 7px;
+}
+header .navTop__right ul li a {
+  font-size: 17px;
+}
+header .navMiddle__phones {
+  margin-bottom: 5px;
+}
+header .navMiddle__phones a {
+  font-size: 16px;
+}
+header .navMiddle__mail {
+  margin-top: 5px;
+}
+header .navMiddle__mail a {
+  margin-left: 5px;
+}
+header .navMiddle__trash {
+  position: absolute;
+  top: 75px;
+  width: 225px;
+}
+header .navMiddle img {
+  float: left;
+  margin: 5px 15px;
+}
+header .navMiddle p {
+  line-height: 30px;
+  margin-bottom: 0;
+}
+header .navMiddle p span {
+  color: #a7a7a7;
+}
+header .navBottom {
+  margin-bottom: 20px;
+}
+header .navBottom__menu ul li {
+  line-height: 32px;
+  padding: 0 15px;
+}
+header .navBottom__search {
+  float: right;
+}
+header .navBottom__search input {
+  border: 1px solid #000;
+  padding: 5px 10px;
+  width: 270px;
+  font-style: italic;
+}
+.mainslider {
+  margin-bottom: -50px;
+}
+.mainslider .slick-prev,
+.mainslider .slick-next {
+  display: none !important;
+}
+.mainslider .sliderTop__img img {
+  width: 100%;
+}
+.mainslider .sliderTop__desc {
+  padding: 10px 35px 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #c19b9b;
+  position: absolute;
+  bottom: 150px;
+  margin-left: 1px;
+}
+.mainslider .sliderTop__desc h3 {
+  font-family: 'Spectral SC';
+  padding-bottom: 10px;
+  margin: 0;
+  font-size: 35px;
+}
+.mainslider .sliderTop__desc p {
+  font-size: 20px;
+}
+.mainslider .sliderTop__desc p span {
+  text-transform: uppercase;
+}
+.mainslider .sliderTop__btn .butt {
+  margin: 10px;
+  position: relative;
+  top: -90px;
+  left: 25px;
+  border: 1px solid #6a8419;
+}
+.mainslider .bannerBlock img {
+  width: 100%;
+}
+.mainslider .bannerBlock__camera {
+  position: relative;
+  top: -48px;
+  z-index: 1;
+}
+.mainslider .bannerBlock__camera p {
+  font-size: 20px;
+  text-align: center;
+  position: relative;
+  top: -70px;
+  line-height: 20px;
+}
+.order {
+  background-image: url(../img/baner2.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 140px;
+}
+.order .contBlock h3 {
+  font-family: 'Open Sans Bold';
+  text-align: center;
+  font-size: 24px;
+  padding-top: 10px;
+}
+.order .contBlock img {
+  float: left;
+  margin-right: 5px;
+}
+.order .contBlock p {
+  font-size: 24px;
+}
+.order .contBlock a {
+  font-size: 24px;
+  display: block;
+  text-align: center;
+}
+.order .contBlock__imgp {
+  width: 140px;
+  float: left;
+  margin: 5px 0;
+}
+.order .contBlock .contBlockAll {
+  width: 420px;
+  margin: 0 auto;
+}
+.categories {
+  margin-top: 80px;
+}
+.categories .row {
+  background-color: #fdf4ef;
+}
+.categories h2 {
+  margin-top: -20px;
+  text-align: center;
+}
+.categories h4 {
+  font-size: 30px;
+  color: #6a8419;
+  line-height: 200px;
+}
+.categoriesImg a span {
+  display: block;
+  font-size: 14px;
+  color: #6a8419;
+  text-align: center;
+  margin-top: 10px;
+}
+.categoriesImg__item {
+  width: 120px;
+  margin: 40px 5px;
+  float: left;
+}
+.filter {
+  margin-bottom: 50px;
+}
+.filter h3 {
+  font-family: 'Gotham Pro';
+  font-size: 30px;
+  color: #fff;
+}
+.filter h4 {
+  color: #fff;
+  font-size: 18px;
+  margin: 15px 0;
+}
+.filter a {
+  color: #fff;
+  font-size: 12px;
+}
+.filter a:hover {
+  text-decoration: underline;
+}
+.filter a span {
+  color: #d5a6a1;
+  text-decoration: underline;
+  font-size: 14px;
+  font-style: italic;
+}
+.filter .squareMainTop .square,
+.filter .squareMainBottom .square {
+  width: 30px;
+  height: 30px;
+  margin: 10px 7px;
+  float: left;
+  position: relative;
+  bottom: -400px;
+  z-index: 1;
+  left: 70px;
+}
+.filter .squareMainTop .squareOne,
+.filter .squareMainBottom .squareOne {
+  background-color: #de1203;
+}
+.filter .squareMainTop .squareTwo,
+.filter .squareMainBottom .squareTwo {
+  background-color: #a40303;
+}
+.filter .squareMainTop .squareThree,
+.filter .squareMainBottom .squareThree {
+  background-color: #fff;
+}
+.filter .squareMainTop .squareFour,
+.filter .squareMainBottom .squareFour {
+  background-color: #fff0d7;
+}
+.filter .squareMainTop .squareFive,
+.filter .squareMainBottom .squareFive {
+  background-color: #f7aea1;
+}
+.filter .squareMainTop .squareSix,
+.filter .squareMainBottom .squareSix {
+  background-color: #ec69a4;
+}
+.filter .squareMainBottom {
+  margin-left: -10px;
+}
+.filter .squareMainBottom .square {
+  bottom: 0;
+}
+.filter .filterLeft {
+  background-color: #ed8095;
+  padding: 5% 20%;
+}
+.filter .filterContent__top {
+  background-image: url(../img/bg_rosi.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 490px;
+}
+.filter .filterContent__top h3 {
+  float: left;
+}
+.filter .filterContent__top img {
+  position: relative;
+  top: 23px;
+  left: 10px;
+}
+.filter .filterContent__middleLeft {
+  background-color: #6a8419;
+  height: 475px;
+}
+.filter .filterContent__middleLeft-img,
+.filter .filterContent__middleLeft-desc {
+  width: 122px;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+.filter .filterContent__middleLeft-desc {
+  width: 140px;
+  padding-top: 0;
+}
+.filter .filterContent__middleRight {
+  background-image: url(../img/bg_pioni.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 475px;
+}
+.filter .filterContent__middleRight h3 {
+  float: left;
+  color: #000;
+}
+.filter .filterContent__middleRight h4,
+.filter .filterContent__middleRight a {
+  color: #000;
+}
+.filter .filterContent__middleRight img {
+  position: relative;
+  top: 23px;
+  left: 10px;
+}
+.filter .filterContent__middleRight-desc {
+  width: 150px;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+.filter .filterContent__middleRight-desc .ll {
+  margin-left: 35px;
+}
+.filter .filterContent__bottomLeft {
+  background-image: url(../img/bg_tulp.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 508px;
+}
+.filter .filterContent__bottomLeft h3 {
+  float: left;
+}
+.filter .filterContent__bottomLeft img {
+  position: relative;
+  top: 23px;
+  left: 10px;
+}
+.filter .filterContent__bottomLeft-desc {
+  width: 190px;
+  margin: 0 auto;
+}
+.filter .filterContent__mbottomRight {
+  background-color: #fdf4ef;
+  height: 508px;
+}
+.filter .filterContent__mbottomRight h4,
+.filter .filterContent__mbottomRight a {
+  color: #6a8419;
+}
+.filter .filterContent__mbottomRight img {
+  display: block;
+  width: 120px;
+  margin: 40px auto;
+}
+.filter .filterContent__mbottomRight-contTop,
+.filter .filterContent__mbottomRight-contBott {
+  width: 160px;
+  margin: 0 auto;
+}
+.filter .filterContent__mbottomRight-contBott {
+  width: 200px;
+}
+.three__block {
+  position: relative;
+  width: 360px;
+  margin: 0 auto;
+}
+.three__block-desc {
+  background-color: #ed8095;
+  padding: 10px 0;
+  position: absolute;
+  z-index: -1;
+  left: 50px;
+  top: 42px;
+  width: 310px;
+}
+.three__block-desc h4 {
+  color: #fff;
+  font-family: 'Open Sans';
+  font-size: 24px;
+  font-style: italic;
+  padding-left: 100px;
+}
+.three__block-desc p {
+  color: #fff;
+  font-family: 'Open Sans';
+  font-size: 18px;
+  padding-left: 100px;
+}
+.popular {
+  background-color: #fdf4ef;
+  padding-bottom: 60px;
+  margin-top: 80px;
+}
+.popular h2 {
+  text-align: center;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+.popular .popBlock {
+  width: 270px;
+  background-color: #fff;
+  margin: 13px auto;
+}
+.popular .popBlock__img {
+  padding: 10px;
+}
+.popular .popBlock__img img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+.popular .popBlock__name {
+  padding: 10px;
+}
+.popular .popBlock__name p {
+  font-family: 'Open Sans BOld';
+  float: left;
+  font-size: 16px;
+}
+.popular .popBlock__name img {
+  float: right;
+}
+.popular .popBlock__rev {
+  background-color: #ed8095;
+}
+.popular .popBlock__rev p {
+  font-size: 12px;
+  color: #fff;
+  float: right;
+  margin: 10px;
+}
+.popular .popBlock__price p {
+  font-size: 24px;
+  text-align: center;
+  margin: 5px;
+}
+.popular .popBlock__btn-oneClick {
+  display: block;
+  text-align: center;
+  font-style: italic;
+  color: #918f8e;
+  text-decoration: underline;
+  margin-top: -10px;
+  padding-bottom: 10px;
+}
+.popular .popBlock__btn-oneClick span {
+  text-transform: uppercase;
+}
+.reviews h2 {
+  text-align: center;
+  margin: 100px 0 40px;
+}
+.reviews img {
+  margin: 20px 0 -30px;
+  position: relative;
+  z-index: -1;
+}
+.reviews .revBlock {
+  background-color: #fff;
+  border: 1px solid #6a8419;
+  padding: 15px;
+  margin: 20px 0;
+}
+.reviews .revBlock p {
+  font-size: 12px;
+  margin: 0;
+}
+.reviews .revBlock__head-left {
+  float: left;
+  font-family: 'Open Sans Bold';
+  font-size: 18px !important;
+}
+.reviews .revBlock__head-right {
+  float: right;
+  position: relative;
+  top: 5px;
+}
+.reviews .revBlock__desc hr {
+  background-color: #6a8419;
+  margin: 0 0 15px;
+}
+.news {
+  background-color: #fdf4ef;
+  margin: 100px 0 0;
+}
+.news h2 {
+  margin-top: -20px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+.news img {
+  width: 100%;
+  float: left;
+}
+.news .newsBott {
+  position: relative;
+  top: -21px;
+}
+.news .newsContent {
+  background-color: #fff;
+  padding: 10px;
+  height: 194px;
+}
+.news .newsContent h4 {
+  font-family: 'Open Sans Bold';
+  font-size: 18px;
+  text-align: center;
+}
+.news .newsContent p {
+  font-size: 14px;
+  text-align: center;
+  padding: 5px 0;
+}
+.news .encikl {
+  background-image: url(../img/bg_enc.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 161px;
+  margin-bottom: 90px;
+}
+.news .encikl h3 {
+  font-family: 'Open Sans Bold';
+  font-size: 18px;
+  text-align: center;
+}
+.news .encikl p {
+  font-size: 14px;
+  text-align: center;
+}
+.news .encikl img {
+  width: auto;
+  display: block;
+  float: none;
+  margin: 0px auto;
+}
+.news .encikl__text {
+  position: relative;
+  top: 20px;
+  width: 55%;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #edafaf;
+}
+.about {
+  margin: 70px 0;
+}
+.about h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.about .aboutBlock {
+  position: relative;
+  background-color: #fdf4ef;
+  height: 70px;
+  margin: 10px auto;
+}
+.about .aboutBlock__img img {
+  width: 100%;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding: 5px 15px;
+}
+.text {
+  position: relative;
+  width: 100%;
+}
+.text h2 {
+  margin-top: 30px;
+}
+.text p {
+  font-family: 'Gotham Pro';
+  font-size: 16px;
+}
+.text img {
+  position: relative;
+  top: 80px;
+}
+.text .textDescDiff h2 {
+  text-align: center;
+}
+.text .textImgDiff img {
+  top: 20px;
+}
+footer {
+  background-color: #fdf4ef;
+  margin-top: 70px;
+}
+footer h2 {
+  font-size: 28px;
+}
+footer p,
+footer a,
+footer li {
+  color: #000;
+}
+footer .leftContent,
+footer .rightContent {
+  position: relative;
+  top: 100px;
+  width: 260px;
+  margin: 0 auto;
+}
+footer .leftContent ul,
+footer .rightContent ul {
+  padding: 0;
+}
+footer .leftContent ul li,
+footer .rightContent ul li {
+  font-size: 16px;
+  list-style: none;
+  padding: 5px 0;
+}
+footer .centerContent {
+  font-size: 18px;
+}
+footer .centerContent a {
+  text-align: center;
+  display: block;
+  padding: 5px 0;
+}
+footer .centerContent .fa {
+  color: #6a8419;
+  font-size: 25px;
+  text-align: center;
+  display: block;
+  padding: 5px;
+}
+footer .centerContent__logo {
+  width: 162px;
+  margin: 50px auto 10px;
+}
+footer .centerContent__social {
+  width: 140px;
+  margin: 15px auto;
+}
+footer .centerContent__social a {
+  display: inline-block;
+}
+footer .centerContent__social a:hover {
+  text-decoration: none;
+}
+footer .centerContent__social .fa {
+  display: inline;
+}
+footer .pay p {
+  text-align: center;
+  font-size: 18px;
+}
+footer .pay img {
+  margin: 10px 25px -10px;
+}
+footer .copy p {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 30px;
+  padding: 5px 10px;
+}
+/* END main */
+/* START bouquet__occasion__who */
+.bouquetBlock,
+.occasionBlock,
+.whoBlock {
+  width: 260px;
+  height: 260px;
+  margin: 15px auto;
+}
+.bouquetBlock__img,
+.occasionBlock__img,
+.whoBlock__img {
+  width: 120px;
+  margin: 0 auto 10px;
+  padding-top: 35px;
+}
+.bouquetBlock__desc p,
+.occasionBlock__desc p,
+.whoBlock__desc p {
+  font-size: 24px;
+  text-align: center;
+  color: #fff;
+  text-shadow: #000 0.1em 0.1em 0.2em;
+}
+.bouquet .bb1,
+.occasion .bb1,
+.who .bb1,
+.bouquet .bb8,
+.occasion .bb8,
+.who .bb8 {
+  background-color: #ed8095;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+.bouquet .bb1:hover,
+.occasion .bb1:hover,
+.who .bb1:hover,
+.bouquet .bb8:hover,
+.occasion .bb8:hover,
+.who .bb8:hover {
+  background-color: #ffb2c7;
+}
+.bouquet .bb2,
+.occasion .bb2,
+.who .bb2,
+.bouquet .bb7,
+.occasion .bb7,
+.who .bb7 {
+  background-color: #fdf4ef;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+.bouquet .bb2:hover,
+.occasion .bb2:hover,
+.who .bb2:hover,
+.bouquet .bb7:hover,
+.occasion .bb7:hover,
+.who .bb7:hover {
+  background-color: #e4dbd6;
+}
+.bouquet .bb3,
+.occasion .bb3,
+.who .bb3,
+.bouquet .bb5,
+.occasion .bb5,
+.who .bb5 {
+  background-color: #6a8419;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+.bouquet .bb3:hover,
+.occasion .bb3:hover,
+.who .bb3:hover,
+.bouquet .bb5:hover,
+.occasion .bb5:hover,
+.who .bb5:hover {
+  background-color: #9cb64b;
+}
+.bouquet .bb4,
+.occasion .bb4,
+.who .bb4,
+.bouquet .bb6,
+.occasion .bb6,
+.who .bb6 {
+  background-color: #f5bbb0;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+.bouquet .bb4:hover,
+.occasion .bb4:hover,
+.who .bb4:hover,
+.bouquet .bb6:hover,
+.occasion .bb6:hover,
+.who .bb6:hover {
+  background-color: #ffede2;
+}
+/* END bouquet__occasion__who */
+/* START compositions__wedding__typesofflowers */
+.compositionsBlock,
+.weddingBlock,
+.typesofflowersBlock {
+  width: 260px;
+  height: 260px;
+  margin: 15px auto;
+}
+.compositionsBlock__img img,
+.weddingBlock__img img,
+.typesofflowersBlock__img img {
+  position: absolute;
+  max-width: 260px;
+}
+.compositionsBlock__desc p,
+.weddingBlock__desc p,
+.typesofflowersBlock__desc p {
+  font-size: 24px;
+  color: #fff;
+  text-shadow: #000 0.1em 0.1em 0.2em;
+  float: right;
+  margin-right: 15px;
+  margin-bottom: 0;
+  margin-top: 10px;
+  position: relative;
+  top: 180px;
+  z-index: 1;
+}
+.compositions .cb1,
+.wedding .cb1,
+.typesofflowers .cb1,
+.compositions .cb5,
+.wedding .cb5,
+.typesofflowers .cb5 {
+  background-color: #f5bbb0;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+.compositions .cb1:hover,
+.wedding .cb1:hover,
+.typesofflowers .cb1:hover,
+.compositions .cb5:hover,
+.wedding .cb5:hover,
+.typesofflowers .cb5:hover {
+  background-color: #ffede2;
+}
+.compositions .cb2,
+.wedding .cb2,
+.typesofflowers .cb2,
+.compositions .cb7,
+.wedding .cb7,
+.typesofflowers .cb7 {
+  background-color: #fdf4ef;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+.compositions .cb2:hover,
+.wedding .cb2:hover,
+.typesofflowers .cb2:hover,
+.compositions .cb7:hover,
+.wedding .cb7:hover,
+.typesofflowers .cb7:hover {
+  background-color: #e4dbd6;
+}
+.compositions .cb3,
+.wedding .cb3,
+.typesofflowers .cb3,
+.compositions .cb8,
+.wedding .cb8,
+.typesofflowers .cb8 {
+  background-color: #ed8095;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+.compositions .cb3:hover,
+.wedding .cb3:hover,
+.typesofflowers .cb3:hover,
+.compositions .cb8:hover,
+.wedding .cb8:hover,
+.typesofflowers .cb8:hover {
+  background-color: #ffb2c7;
+}
+.compositions .cb4,
+.wedding .cb4,
+.typesofflowers .cb4,
+.compositions .cb9,
+.wedding .cb9,
+.typesofflowers .cb9 {
+  background-color: #163249;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+.compositions .cb4:hover,
+.wedding .cb4:hover,
+.typesofflowers .cb4:hover,
+.compositions .cb9:hover,
+.wedding .cb9:hover,
+.typesofflowers .cb9:hover {
+  background-color: #48647b;
+}
+.compositions .cb6,
+.wedding .cb6,
+.typesofflowers .cb6 {
+  background-color: #6a8419;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+.compositions .cb6:hover,
+.wedding .cb6:hover,
+.typesofflowers .cb6:hover {
+  background-color: #9cb64b;
+}
+.compositions .cb2,
+.wedding .cb2,
+.typesofflowers .cb2,
+.compositions .cb6,
+.wedding .cb6,
+.typesofflowers .cb6,
+.compositions .cb7,
+.wedding .cb7,
+.typesofflowers .cb7 {
+  width: 555px;
+}
+.compositions .cb2 img,
+.wedding .cb2 img,
+.typesofflowers .cb2 img,
+.compositions .cb6 img,
+.wedding .cb6 img,
+.typesofflowers .cb6 img,
+.compositions .cb7 img,
+.wedding .cb7 img,
+.typesofflowers .cb7 img {
+  position: absolute;
+  max-width: 75%;
+}
+/* END compositions__wedding__typesofflowers */
+/* START wedding */
+.wedding .wb1,
+.wedding .wb9 {
+  background-color: #163249;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+.wedding .wb1:hover,
+.wedding .wb9:hover {
+  background-color: #48647b;
+}
+.wedding .wb2,
+.wedding .wb8 {
+  background-color: #fdf4ef;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+.wedding .wb2:hover,
+.wedding .wb8:hover {
+  background-color: #e4dbd6;
+}
+.wedding .wb3,
+.wedding .wb5 {
+  background-color: #f5bbb0;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+.wedding .wb3:hover,
+.wedding .wb5:hover {
+  background-color: #ffede2;
+}
+.wedding .wb4,
+.wedding .wb10 {
+  background-color: #ed8095;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+.wedding .wb4:hover,
+.wedding .wb10:hover {
+  background-color: #ffb2c7;
+}
+.wedding .wb6,
+.wedding .wb7 {
+  background-color: #6a8419;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+.wedding .wb6:hover,
+.wedding .wb7:hover {
+  background-color: #9cb64b;
+}
+.wedding .wb2,
+.wedding .wb6 {
+  width: 555px;
+}
+.wedding .wb2 img,
+.wedding .wb6 img {
+  position: absolute;
+  max-width: 75%;
+}
+/* END wedding */
+/* START category */
+.category .filterSort {
+  background-color: #fdf4ef;
+}
+.category .filter {
+  background-color: #fdf4ef;
+}
+.category .filter .filterLeft {
+  background-color: #fdf4ef;
+}
+.category .filter h4,
+.category .filter a {
+  color: #6a8419;
+}
+.category .popular {
+  margin-top: 0;
+  padding-bottom: 0;
+}
+.category .pagination {
+  float: right;
+}
+/* END category */
+/* START occasion__who__typesofflowers */
+.occasion .ob1,
+.who .ob1,
+.typesofflowers .ob1,
+.occasion .ob8,
+.who .ob8,
+.typesofflowers .ob8,
+.occasion .ob9,
+.who .ob9,
+.typesofflowers .ob9,
+.occasion .ob16,
+.who .ob16,
+.typesofflowers .ob16,
+.occasion .wb1,
+.who .wb1,
+.typesofflowers .wb1,
+.occasion .wb8,
+.who .wb8,
+.typesofflowers .wb8,
+.occasion .wb9,
+.who .wb9,
+.typesofflowers .wb9,
+.occasion .tb1,
+.who .tb1,
+.typesofflowers .tb1,
+.occasion .tb9,
+.who .tb9,
+.typesofflowers .tb9,
+.occasion .tb12,
+.who .tb12,
+.typesofflowers .tb12 {
+  background-color: #ed8095;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+.occasion .ob1:hover,
+.who .ob1:hover,
+.typesofflowers .ob1:hover,
+.occasion .ob8:hover,
+.who .ob8:hover,
+.typesofflowers .ob8:hover,
+.occasion .ob9:hover,
+.who .ob9:hover,
+.typesofflowers .ob9:hover,
+.occasion .ob16:hover,
+.who .ob16:hover,
+.typesofflowers .ob16:hover,
+.occasion .wb1:hover,
+.who .wb1:hover,
+.typesofflowers .wb1:hover,
+.occasion .wb8:hover,
+.who .wb8:hover,
+.typesofflowers .wb8:hover,
+.occasion .wb9:hover,
+.who .wb9:hover,
+.typesofflowers .wb9:hover,
+.occasion .tb1:hover,
+.who .tb1:hover,
+.typesofflowers .tb1:hover,
+.occasion .tb9:hover,
+.who .tb9:hover,
+.typesofflowers .tb9:hover,
+.occasion .tb12:hover,
+.who .tb12:hover,
+.typesofflowers .tb12:hover {
+  background-color: #ffb2c7;
+}
+.occasion .ob2,
+.who .ob2,
+.typesofflowers .ob2,
+.occasion .ob7,
+.who .ob7,
+.typesofflowers .ob7,
+.occasion .ob10,
+.who .ob10,
+.typesofflowers .ob10,
+.occasion .ob15,
+.who .ob15,
+.typesofflowers .ob15,
+.occasion .wb2,
+.who .wb2,
+.typesofflowers .wb2,
+.occasion .wb7,
+.who .wb7,
+.typesofflowers .wb7,
+.occasion .wb10,
+.who .wb10,
+.typesofflowers .wb10,
+.occasion .tb2,
+.who .tb2,
+.typesofflowers .tb2,
+.occasion .tb6,
+.who .tb6,
+.typesofflowers .tb6,
+.occasion .tb8,
+.who .tb8,
+.typesofflowers .tb8,
+.occasion .tb10,
+.who .tb10,
+.typesofflowers .tb10 {
+  background-color: #fdf4ef;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+.occasion .ob2:hover,
+.who .ob2:hover,
+.typesofflowers .ob2:hover,
+.occasion .ob7:hover,
+.who .ob7:hover,
+.typesofflowers .ob7:hover,
+.occasion .ob10:hover,
+.who .ob10:hover,
+.typesofflowers .ob10:hover,
+.occasion .ob15:hover,
+.who .ob15:hover,
+.typesofflowers .ob15:hover,
+.occasion .wb2:hover,
+.who .wb2:hover,
+.typesofflowers .wb2:hover,
+.occasion .wb7:hover,
+.who .wb7:hover,
+.typesofflowers .wb7:hover,
+.occasion .wb10:hover,
+.who .wb10:hover,
+.typesofflowers .wb10:hover,
+.occasion .tb2:hover,
+.who .tb2:hover,
+.typesofflowers .tb2:hover,
+.occasion .tb6:hover,
+.who .tb6:hover,
+.typesofflowers .tb6:hover,
+.occasion .tb8:hover,
+.who .tb8:hover,
+.typesofflowers .tb8:hover,
+.occasion .tb10:hover,
+.who .tb10:hover,
+.typesofflowers .tb10:hover {
+  background-color: #e4dbd6;
+}
+.occasion .ob3,
+.who .ob3,
+.typesofflowers .ob3,
+.occasion .ob5,
+.who .ob5,
+.typesofflowers .ob5,
+.occasion .ob11,
+.who .ob11,
+.typesofflowers .ob11,
+.occasion .ob13,
+.who .ob13,
+.typesofflowers .ob13,
+.occasion .wb4,
+.who .wb4,
+.typesofflowers .wb4,
+.occasion .wb5,
+.who .wb5,
+.typesofflowers .wb5,
+.occasion .wb11,
+.who .wb11,
+.typesofflowers .wb11,
+.occasion .tb4,
+.who .tb4,
+.typesofflowers .tb4,
+.occasion .tb13,
+.who .tb13,
+.typesofflowers .tb13 {
+  background-color: #6a8419;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+.occasion .ob3:hover,
+.who .ob3:hover,
+.typesofflowers .ob3:hover,
+.occasion .ob5:hover,
+.who .ob5:hover,
+.typesofflowers .ob5:hover,
+.occasion .ob11:hover,
+.who .ob11:hover,
+.typesofflowers .ob11:hover,
+.occasion .ob13:hover,
+.who .ob13:hover,
+.typesofflowers .ob13:hover,
+.occasion .wb4:hover,
+.who .wb4:hover,
+.typesofflowers .wb4:hover,
+.occasion .wb5:hover,
+.who .wb5:hover,
+.typesofflowers .wb5:hover,
+.occasion .wb11:hover,
+.who .wb11:hover,
+.typesofflowers .wb11:hover,
+.occasion .tb4:hover,
+.who .tb4:hover,
+.typesofflowers .tb4:hover,
+.occasion .tb13:hover,
+.who .tb13:hover,
+.typesofflowers .tb13:hover {
+  background-color: #9cb64b;
+}
+.occasion .ob4,
+.who .ob4,
+.typesofflowers .ob4,
+.occasion .ob6,
+.who .ob6,
+.typesofflowers .ob6,
+.occasion .ob12,
+.who .ob12,
+.typesofflowers .ob12,
+.occasion .ob14,
+.who .ob14,
+.typesofflowers .ob14,
+.occasion .wb3,
+.who .wb3,
+.typesofflowers .wb3,
+.occasion .wb6,
+.who .wb6,
+.typesofflowers .wb6,
+.occasion .wb12,
+.who .wb12,
+.typesofflowers .wb12,
+.occasion .tb3,
+.who .tb3,
+.typesofflowers .tb3,
+.occasion .tb5,
+.who .tb5,
+.typesofflowers .tb5,
+.occasion .tb10_1,
+.who .tb10_1,
+.typesofflowers .tb10_1 {
+  background-color: #f5bbb0;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+.occasion .ob4:hover,
+.who .ob4:hover,
+.typesofflowers .ob4:hover,
+.occasion .ob6:hover,
+.who .ob6:hover,
+.typesofflowers .ob6:hover,
+.occasion .ob12:hover,
+.who .ob12:hover,
+.typesofflowers .ob12:hover,
+.occasion .ob14:hover,
+.who .ob14:hover,
+.typesofflowers .ob14:hover,
+.occasion .wb3:hover,
+.who .wb3:hover,
+.typesofflowers .wb3:hover,
+.occasion .wb6:hover,
+.who .wb6:hover,
+.typesofflowers .wb6:hover,
+.occasion .wb12:hover,
+.who .wb12:hover,
+.typesofflowers .wb12:hover,
+.occasion .tb3:hover,
+.who .tb3:hover,
+.typesofflowers .tb3:hover,
+.occasion .tb5:hover,
+.who .tb5:hover,
+.typesofflowers .tb5:hover,
+.occasion .tb10_1:hover,
+.who .tb10_1:hover,
+.typesofflowers .tb10_1:hover {
+  background-color: #ffede2;
+}
+.occasion .tb1_1,
+.who .tb1_1,
+.typesofflowers .tb1_1,
+.occasion .tb7,
+.who .tb7,
+.typesofflowers .tb7,
+.occasion .tb11,
+.who .tb11,
+.typesofflowers .tb11 {
+  background-color: #163249;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+.occasion .tb1_1:hover,
+.who .tb1_1:hover,
+.typesofflowers .tb1_1:hover,
+.occasion .tb7:hover,
+.who .tb7:hover,
+.typesofflowers .tb7:hover,
+.occasion .tb11:hover,
+.who .tb11:hover,
+.typesofflowers .tb11:hover {
+  background-color: #48647b;
+}
+.occasion .tb1,
+.who .tb1,
+.typesofflowers .tb1,
+.occasion .tb1_1,
+.who .tb1_1,
+.typesofflowers .tb1_1,
+.occasion .tb10,
+.who .tb10,
+.typesofflowers .tb10,
+.occasion .tb10_1,
+.who .tb10_1,
+.typesofflowers .tb10_1 {
+  height: 123px;
+}
+.occasion .tb1 p,
+.who .tb1 p,
+.typesofflowers .tb1 p,
+.occasion .tb1_1 p,
+.who .tb1_1 p,
+.typesofflowers .tb1_1 p,
+.occasion .tb10 p,
+.who .tb10 p,
+.typesofflowers .tb10 p,
+.occasion .tb10_1 p,
+.who .tb10_1 p,
+.typesofflowers .tb10_1 p {
+  top: 40px;
+}
+.occasion .tb2 p,
+.who .tb2 p,
+.typesofflowers .tb2 p {
+  text-align: center;
+  float: none;
+  margin: 0;
+  top: 40px;
+}
+.occasion .tb8 p,
+.who .tb8 p,
+.typesofflowers .tb8 p,
+.occasion .tb13 p,
+.who .tb13 p,
+.typesofflowers .tb13 p {
+  top: 40px;
+}
+/* END occasion__who__typesofflowers */
+/* START typesofflowers */
+.typesofflowers .tb2,
+.typesofflowers .tb8,
+.typesofflowers .tb13 {
+  width: 555px;
+}
+.typesofflowers .tb2 img,
+.typesofflowers .tb8 img,
+.typesofflowers .tb13 img {
+  position: absolute;
+  max-width: 100%;
+}
+/* END typesofflowers */
+/* START blog__article */
+.blog a:hover,
+.article a:hover {
+  text-decoration: none;
+}
+.blog h1,
+.article h1 {
+  font-family: 'Open Sans Bold';
+  font-size: 24px;
+}
+.blog h2,
+.article h2 {
+  font-size: 30px;
+  color: #000;
+  text-align: center;
+  position: relative;
+  top: -15px;
+}
+.blog hr,
+.article hr {
+  background-color: #f5bbb0;
+}
+.blog .sidebarSearch,
+.article .sidebarSearch {
+  background-color: #fdf4ef;
+  height: 100px;
+}
+.blog .sidebarSearch__input,
+.article .sidebarSearch__input {
+  width: 250px;
+  margin: 0 auto;
+}
+.blog .sidebarSearch__input input,
+.article .sidebarSearch__input input {
+  border: 1px solid #000;
+  padding: 5px 10px;
+  width: 250px;
+  font-style: italic;
+}
+.blog .sidebarCategory,
+.article .sidebarCategory {
+  background-color: #fdf4ef;
+  padding-bottom: 20px;
+}
+.blog .sidebarCategory__item,
+.article .sidebarCategory__item {
+  background-color: #f5bbb0;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+  padding: 10px;
+  margin: 10px;
+}
+.blog .sidebarCategory__item:hover,
+.article .sidebarCategory__item:hover {
+  background-color: #ffede2;
+}
+.blog .sidebarCategory__item p,
+.article .sidebarCategory__item p {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 0;
+  padding: 5px 0;
+}
+.blog .sidebarProduct .popular,
+.article .sidebarProduct .popular {
+  background-color: none;
+  margin-top: 0;
+  padding-bottom: 0;
+}
+.blog .sidebarProduct .popular .popBlock,
+.article .sidebarProduct .popular .popBlock {
+  border: 1px solid #f5bbb0;
+  width: 260px;
+}
+.blog .blogContent__block,
+.article .blogContent__block {
+  width: 250px;
+  margin: 0 auto;
+}
+.blog .blogContent__img,
+.article .blogContent__img {
+  margin: 25px 0;
+}
+.blog .blogContent__text,
+.article .blogContent__text {
+  margin-bottom: 25px;
+}
+.blog .blogContent__data,
+.article .blogContent__data {
+  float: left;
+}
+.blog .blogContent__data p,
+.article .blogContent__data p {
+  font-family: 'Gotham';
+  color: #a6a6a6;
+}
+.blog .blogContent__comments,
+.article .blogContent__comments {
+  float: right;
+}
+.blog .blogContent__comments a,
+.article .blogContent__comments a {
+  font-family: 'Gotham';
+  color: #a6a6a6;
+}
+.blog .blogContentPrev__img,
+.article .blogContentPrev__img {
+  float: left;
+  margin-right: 25px;
+}
+.blog .blogContentPrev__marker .sidebarCategory__item,
+.article .blogContentPrev__marker .sidebarCategory__item {
+  width: 175px;
+  margin-left: 0;
+  float: left;
+}
+.blog .blogContentPrev__header h3,
+.article .blogContentPrev__header h3 {
+  font-family: 'Open Sans Bold';
+  font-size: 24px;
+}
+.blog .blogContentPrev__data,
+.article .blogContentPrev__data,
+.blog .blogContentPrev__comments,
+.article .blogContentPrev__comments {
+  font-family: 'Gotham';
+  color: #949494;
+  float: left;
+  margin: 10px;
+}
+.blog .blogContentPrev__data,
+.article .blogContentPrev__data {
+  margin-left: 0;
+}
+.blog .blogContentPrev__butt,
+.article .blogContentPrev__butt {
+  float: right;
+}
+.blog .pagination,
+.article .pagination {
+  width: 250px;
+  margin: 0 auto;
+}
+/* END blog__article */
+/* START article */
+.article .blogContent__social {
+  width: 450px;
+  margin: 0 auto;
+}
+.article .similarArticle {
+  background-color: #fdf4ef;
+  padding-bottom: 50px;
+}
+.article .similarArticle .row-no-padding {
+  background-color: #fff;
+}
+.article .similarArticle img {
+  width: 290px;
+  margin: 0 auto;
+  display: block;
+}
+.article .similarArticle .newsContent {
+  background-color: #fff;
+}
+.article .similarArticle .newsContent h4 {
+  text-align: center;
+  font-size: 18px;
+  font-family: 'Open Sans Bold';
+  padding-top: 10px;
+  margin-top: 0;
+}
+.article .similarArticle .newsContent p {
+  text-align: center;
+  padding: 0 10px;
+}
+/* END article */
+/* START product */
+.product hr {
+  background-color: #ed8095;
+}
+.product .custumersLike {
+  margin-top: 50px;
+  background-color: #fdf4ef;
+}
+.product .custumersLike .popular {
+  margin-top: 0;
+}
+.product .custumersLike h2 {
+  text-align: center;
+  position: relative;
+  top: -15px;
+}
+.productTabs {
+  margin: 50px 0 30px;
+  position: relative;
+  background-color: #fdf4ef;
+}
+.productTabs > div,
+.productTabs > input {
+  display: none;
+}
+.productTabs label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px;
+  margin-bottom: 0;
+}
+.productTabs label:nth-of-type(2) {
+  top: 51px;
+}
+.productTabs label:nth-of-type(3) {
+  top: 102px;
+}
+.productTabs label:nth-of-type(4) {
+  top: 153px;
+}
+.productTabs input[type="radio"]:checked + label {
+  color: #6a8419;
+  border-top: 2px solid #6a8419;
+  border-bottom: 2px solid #6a8419;
+}
+.productTabs > input:nth-of-type(1):checked ~ div:nth-of-type(1),
+.productTabs > input:nth-of-type(2):checked ~ div:nth-of-type(2),
+.productTabs > input:nth-of-type(3):checked ~ div:nth-of-type(3),
+.productTabs > input:nth-of-type(4):checked ~ div:nth-of-type(4) {
+  display: block;
+  padding: 15px;
+  padding-left: 140px;
+}
+.productTabs__desc {
+  padding: 50px;
+}
+.product__img {
+  margin-top: 50px;
+}
+.product__img-vert img {
+  width: 100%;
+  padding: 5px 10px;
+}
+.product__img-goriz img {
+  width: 100%;
+}
+.product__info h1 {
+  font-size: 30px;
+  text-align: left;
+}
+.product__comm {
+  background-color: #ed8095;
+  height: 30px;
+}
+.product__comm span a {
+  color: #fff;
+  float: left;
+  line-height: 30px;
+  margin: 0;
+  margin-left: 10px;
+}
+.product__comm span a:hover {
+  text-decoration: underline;
+}
+.product__comm a {
+  color: #fff;
+  float: right;
+  line-height: 30px;
+  margin: 0;
+  margin-right: 10px;
+}
+.product__comm a:hover {
+  text-decoration: underline;
+}
+.product__price p {
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+.product__desc p {
+  min-width: 80px;
+  font-family: 'Open Sans Bold';
+  float: left;
+  margin-right: 20px;
+}
+.product__desc a {
+  color: #6a8419;
+}
+.product__desc a:hover {
+  font-weight: bold;
+}
+.product__vibor h4 {
+  font-size: 20px;
+}
+.product__vibor p {
+  min-width: 80px;
+  margin-right: 10px;
+  float: left;
+}
+.product__vibor select {
+  border: 1px solid #f5bbb0;
+}
+.product__vibor input {
+  width: 40px;
+  border: 1px solid #f5bbb0;
+  text-align: center;
+}
+.product__butt-top a .butt {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.product__butt-bottom .left {
+  float: left;
+  width: 50%;
+  padding-right: 5px;
+}
+.product__butt-bottom .left a {
+  font-style: italic;
+}
+.product__butt-bottom .left a .butt {
+  background-color: #ed8095;
+  width: 100%;
+}
+.product__butt-bottom .left a .butt:hover {
+  background-color: #ffb2c7;
+  color: #fff;
+  border-color: #fff;
+}
+.product__butt-bottom .right {
+  float: right;
+  width: 50%;
+  padding-left: 5px;
+}
+.product__butt-bottom .right a {
+  font-style: italic;
+}
+.product__butt-bottom .right a .butt {
+  background-color: #ed8095;
+  width: 100%;
+}
+.product__butt-bottom .right a .butt:hover {
+  background-color: #ffb2c7;
+  color: #fff;
+  border-color: #fff;
+}
+.product__butt-bottom .right a span {
+  text-transform: uppercase;
+}
+/* END product */
+/*# sourceMappingURL=style.css.map */

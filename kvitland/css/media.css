@@ -1,0 +1,167 @@
+@media screen and (max-width: 1200px) {
+  .filter .row-no-padding {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 992px) {
+  .navTop__logo {
+    width: 190px;
+    margin: 0 auto;
+  }
+  header .navMiddle__trash {
+    top: 25px;
+  }
+  header .navMiddle__mail {
+    text-align: center;
+  }
+  header .navMiddle__phones {
+    width: 140px;
+    margin: 0 auto 5px;
+  }
+  header .navBottom__menu ul li {
+    padding: 0 5px;
+  }
+  .mainslider .bannerBlock__camera {
+    top: -39px;
+  }
+  .squareMainTop {
+    position: absolute;
+    left: -60px;
+  }
+  .filter .filterContent__top {
+    height: 650px;
+  }
+  .filter .squareMainBottom {
+    margin-left: -55px;
+  }
+  .filter .filterContent__mbottomRight-contBott {
+    margin: 10px;
+  }
+  .filter .filterLeft {
+    padding: 5% 20% 59%;
+  }
+  .three__block-desc {
+    top: 40px;
+    width: 240px;
+    height: 100px;
+  }
+  .three__block-desc h4 {
+    font-size: 20px;
+  }
+  .three__block-desc p {
+    font-size: 15px;
+  }
+  .popular .popBlock {
+    border: 1px solid #ed8095;
+  }
+  .reviews img,
+  .text img {
+    width: 100%;
+  }
+  .copy {
+    margin-top: 20px;
+  }
+  .bouquetBlock,
+  .occasionBlock,
+  .whoBlock,
+  .compositionsBlock,
+  .weddingBlock,
+  .typesofflowersBlock,
+  .typesofflowers .tb2,
+  .typesofflowers .tb8,
+  .typesofflowers .tb13,
+  .wedding .wb2,
+  .wedding .wb6,
+  .compositions .cb2,
+  .compositions .cb6,
+  .compositions .cb7 {
+    width: 210px;
+  }
+  .compositionsBlock__img img,
+  .weddingBlock__img img,
+  .typesofflowersBlock__img img,
+  .wedding .wb2 img,
+  .wedding .wb6 img,
+  .typesofflowers .tb2 img,
+  .typesofflowers .tb8 img,
+  .typesofflowers .tb13 img,
+  .compositions .cb2 img,
+  .compositions .cb6 img,
+  .compositions .cb7 img {
+    max-width: 210px;
+  }
+  .typesofflowers .tb2 img,
+  .typesofflowers .tb8 img,
+  .typesofflowers .tb13 img {
+    bottom: 15px;
+  }
+  .compositionsBlock__desc p,
+  .weddingBlock__desc p,
+  .typesofflowersBlock__desc p {
+    font-size: 18px;
+  }
+  .bouquetBlock__desc p,
+  .occasionBlock__desc p,
+  .whoBlock__desc p {
+    font-size: 21px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .compositionsBlock__img img,
+  .weddingBlock__img img,
+  .typesofflowersBlock__img img,
+  .wedding .wb2 img,
+  .wedding .wb6 img,
+  .typesofflowers .tb2 img,
+  .typesofflowers .tb8 img,
+  .typesofflowers .tb13 img,
+  .compositions .cb2 img,
+  .compositions .cb6 img,
+  .compositions .cb7 img {
+    max-width: 260px;
+  }
+  .bouquetBlock,
+  .occasionBlock,
+  .whoBlock,
+  .compositionsBlock,
+  .weddingBlock,
+  .typesofflowersBlock,
+  .typesofflowers .tb2,
+  .typesofflowers .tb8,
+  .typesofflowers .tb13,
+  .wedding .wb2,
+  .wedding .wb6,
+  .compositions .cb2,
+  .compositions .cb6,
+  .compositions .cb7 {
+    width: 260px;
+  }
+  .compositionsBlock__img img,
+  .weddingBlock__img img,
+  .typesofflowersBlock__img img,
+  .typesofflowers .tb2 img,
+  .typesofflowers .tb8 img,
+  .typesofflowers .tb13 img {
+    bottom: 0;
+  }
+  .typesofflowers .tb1 img,
+  .typesofflowers .tb10 img,
+  .typesofflowers .tb3 img,
+  .wedding .wb2 img,
+  .wedding .wb6 img,
+  .compositions .cb2 img,
+  .compositions .cb6 img,
+  .compositions .cb7 img {
+    top: 0;
+  }
+  .compositionsBlock__desc p,
+  .weddingBlock__desc p,
+  .typesofflowersBlock__desc p,
+  .bouquetBlock__desc p,
+  .occasionBlock__desc p,
+  .whoBlock__desc p {
+    font-size: 22px;
+  }
+}
+/*# sourceMappingURL=media.css.map */
