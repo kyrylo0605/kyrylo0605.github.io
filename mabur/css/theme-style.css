@@ -999,6 +999,17 @@ h2.resp-accordion {
 	-moz-opacity: 0;
 	filter: alpha(opacity=0);
 }
+
+#back {
+
+	position: fixed;
+	float: right;
+	right: 200px;
+	top: 200px;
+	z-index: 120;
+	filter: alpha(opacity=0);
+}
+
 /*--responsive design--*/
 @media (max-width:1366px){
 	.blog-post-time-line-connector span {
@@ -1535,12 +1546,5 @@ h2.resp-accordion {
 }
 
 
-#back {
 
-	position: fixed;
-	right: 200px;
-	top: 200px;
-	z-index: 100;
-	outline: none;
-}
 
