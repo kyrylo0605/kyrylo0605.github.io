@@ -1,0 +1,2220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="fonts/style.css"/>
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"/>
+        <link rel="stylesheet" type="text/css" href="js/fancybox/jquery.fancybox.css">
+        <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="css/mislider.css"/>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+        <title>Lamzak диван-шезлонг для отдыха.</title>
+        <meta name="description" content="Надувной, компактный, портативный диван-шезлонг">
+        <meta name="keywords" content="">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+       <!--  <script type="text/javascript" src="js/jquery-1.11.1.js"></script> -->
+        <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+
+
+        <script type="text/javascript" src="js/waypoints.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+        <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
+        <script type="text/javascript" src="js/nicescroll.js"></script>
+        <script type="text/javascript" src="js/slick.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript">
+            new_price_1 = 499;
+            new_price_2 = 499;
+
+            old_price_1 = 1062;
+            old_price_2 = 1062;
+
+            var persent = false;
+            var disc_val_1 = 0;
+            var disc_val_2 = 0;
+
+            $(document).ready(function(){
+                $('.color-value').on('click', function(){
+                    if ( $(this).hasClass('active') && $(this).attr('alt') == 'Черный' ) {
+                        $('.colors-type-old-price span').text(old_price_1);
+                        $('.colors-type-new-price span').text(new_price_1);
+                    }else{
+                        $('.colors-type-old-price span').text(old_price_2);
+                        $('.colors-type-new-price span').text(new_price_2);
+                    }
+                })
+                $('.color-btn').on('click', function(){
+                    var parent = $(this).closest('.colors-item');
+                    var input = parent.find('input');
+                    var slide = parent.data('slide') - 1;
+                    var val = input.val();
+                    var color = $(this).parents('.colors-item').data('color');
+                    if(val === ''){
+                        val = 0;
+                    }
+                    if($(this).hasClass('color-plus')){
+                        if(input.val() < 99){
+                            input.val(parseInt(val) + 1);
+                        }
+                    }else{
+                        if(input.val() > 0){
+                            input.val(parseInt(val) - 1);
+                        }
+                    }
+
+                    $('.color-value').removeClass('active');
+                    $('.color-value', parent).addClass('active');
+
+                    $('.products-slider').slick('slickGoTo', slide);
+                    if(color == "Черный"){
+                        $('.colors-type-old-price span').text(old_price_1);
+                        $('.colors-type-new-price span').text(new_price_1);
+                    }else{
+                        $('.colors-type-old-price span').text(old_price_2);
+                        $('.colors-type-new-price span').text(new_price_2);
+                    }
+
+                    calc();
+
+                });
+
+
+            });
+
+            function calc(){
+                var order_string = "";
+                var sum_old = 0;
+                var sum_new = 0;
+                var old_price = 0;
+                var new_price = 0;
+                var rez_count = 0;
+
+
+                $('.colors-item').each(function(){
+                    var val = $(this).find('input').val();
+                    if(val === ''){
+                        val = 0;
+                    }
+
+                    rez_count = rez_count + parseInt(val);
+                });
+
+                $('.colors-item').each(function(){
+                    var val = $(this).find('input').val();
+                    if(val === ''){
+                        val = 0;
+                    }
+                    var color = $(this).data('color');
+                    var count = val;
+                    var type = $(this).closest('.colors-block').data('type');
+
+                    /* switch(type){
+                         case 'Standart':
+                             new_price = new_price_1;
+                             old_price = old_price_1;
+                             break;
+                         case 'Premium':
+                             new_price = new_price_2;
+                             old_price = old_price_2;
+                             break;
+                     }*/
+                    if(color == "Черный"){
+                        new_price = new_price_1;
+                        old_price = old_price_1;
+                    }else{
+                        new_price = new_price_2;
+                        old_price = old_price_2;
+                    }
+
+
+                    order_string += color + ": " + count + " шт. Тип: " + type + " ";
+                    $('[name="order_string"]').val(order_string);
+                    $('[name="order_count"]').val(rez_count);
+
+                    var disc = 0;
+                    /*
+                            if(persent){
+                                if(rez_count > 1 && rez_count < 5){
+                                    disc = 0.1;
+                                }else{
+                                    if(rez_count > 4){
+                                        disc = 0.15;
+                                    }
+                                }
+
+                                sum_old = new_price * rez_count;
+                                sum_new = sum_old - (new_price * rez_count * disc);
+                            }else{
+                                if(rez_count > 1 && rez_count < 5){
+                                    disc = disc_val_1;
+                                    $('.colors-type-item:first .colors-type-new-price span').text(new_price_1 - disc_val_1);
+                                    $('.colors-type-item:last .colors-type-new-price span').text(new_price_2 - disc_val_1);
+                                }else{
+                                    if(rez_count > 4){
+                                        disc = disc_val_2;
+                                        $('.colors-type-item:first .colors-type-new-price span').text(new_price_1 - disc_val_2);
+                                        $('.colors-type-item:last .colors-type-new-price span').text(new_price_2 - disc_val_2);
+                                    }else{
+                                        $('.colors-type-item:first .colors-type-new-price span').text(new_price_1);
+                                        $('.colors-type-item:last .colors-type-new-price span').text(new_price_2);
+                                    }
+                                }
+
+                                sum_old = sum_old + old_price * count;
+                                sum_new = sum_new + (new_price - disc) * count;
+                            }
+
+                    */
+                    sum_old = sum_old + old_price * count;
+                    sum_new = sum_new + (new_price - disc) * count;
+                    if(sum_new === 0){
+
+                        $('[name="order_string"]').val('Не выбрано количество. Цвет: ' + $('.color-value.active').attr('title'));
+                        $('.price-block').removeClass('active');
+                    }else{
+                        $('.price-block').addClass('active');
+                    }
+
+                    if(rez_count > 1){
+                        $('.old-price').addClass('shown');
+                        $('.old-price span').text(sum_old);
+                    }else{
+                        $('.old-price').removeClass('shown');
+                        if(rez_count  === 0){
+                            $('.price-block').removeClass('active');
+                        }else{
+                            $('.price-block').addClass('active');
+                        }
+                    }
+
+                    $('.new-price span').text(sum_new);
+
+                    $('[name="order_price"]').val(sum_new);
+                });
+            }
+        </script>
+
+        <link href="favicon.ico" type="image/x-icon" rel="icon">
+
+        <script type="text/javascript" src="../../module/jquery.form.js"></script>
+        <script type="text/javascript" src="../../module/functions.js"></script>
+
+        	        </head>
+        <body>
+        	        		
+
+		<!-- <div class="over-block">
+            <div class="over-block-content">
+                <div class="over-block-wrap">
+                    <div class="over-block-title">
+                        Поверните устройство и вы окажетесь<br>
+                        <span>#НАБАНАНЕ</span>
+                    </div>
+                    <div class="image-rotate">
+                        <img src="images/elements/rotate.gif">
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="wrapper">
+            <div class="main">
+                <div class="m-d-1 decor"></div>
+                <div class="m-d-3 decor"></div>
+                <div class="m-d-4 decor"></div>
+                <div class="m-d-5 decor"></div>
+                <!-- <div class="m-d-6 decor"></div> -->
+                <div class="m-d-7 decor"></div>
+                <div class="m-d-8 decor"></div>
+                <div class="m-d-13 decor"></div>
+                <div class="m-d-14 decor"></div>
+                <div class="m-d-15 decor"></div>
+                <div class="m-d-16 decor"></div>
+                <div class="section">
+                    <div class="header">
+                        <div class="container">
+                            <div class="row">
+								<div class="col-md-4 col-sm-3 col-xs-6 col-sx-3">
+									<!--<a "http://www.nabanane.com.ua/href" class="logo">
+										<img src="images/elements/logo.png">
+									</a>-->
+								</div>
+								<div class="col-md-4 col-sm-4 col-xs-6 col-sx-4">
+									<div class="site-top">
+										LAMZAKI<br>
+										в Украине
+									</div>
+                                </div>
+								<div class="col-md-4 col-sm-5 col-xs-12 col-sx-5">
+									<div class="header-right">
+										<div class="call-back-wrap">
+											<a href="index.html#order-modal"
+											   data-from="Заказ звонка. Шапка сайта."
+											   data-title="Оставьте заявку"
+											   data-subtitle="и мы свяжемся<br>с вами в ближайшее время"
+											   data-btn="Отправить"
+											   data-thanks="call_back"
+											   class="modal-open order-link call-back-link">Заказать звонок</a>
+										</div>
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-block">
+                        <div class="container">
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="main-title">
+										Надувной
+									</div>
+									<div class="main-subtitle">
+										портативный
+									</div>
+									<div class="main-text">
+										диван-шезлонг
+									</div>
+									<div class="main-img"></div>
+									<div class="main-items">
+										<div class="main-item">
+											Компактный, прочный и легкий
+										</div>
+										<div class="main-item">
+											Не нужен насос
+										</div>
+										<div class="main-item">
+											Готов к использованию за 15 секунд
+										</div>
+									</div>
+									<div class="main-action-wrap visible-lg">
+										<a href="javascript:void(0)" data-scroll=".colors" class="scroll main-link">Заказать надувной диван</a>
+									</div>
+								</div>
+							</div>
+                        </div>
+                    </div>
+                    <div class="where">
+                        <div class="container">
+                            <div class="m-d-2 decor"></div>
+                            <div class="m-d-9 decor"></div>
+                            <div class="m-d-10 decor"></div>
+                            <div class="m-d-11 decor"></div>
+                            <div class="m-d-12 decor"></div>
+                            <div class="m-d-17 decor"></div>
+                            <div class="where-title">
+                                LAMZAK пригодится:
+                            </div>
+						</div>
+						<div class="container">
+							<div class="where-slider-wrap row">
+								<div class="col-xs-12">
+									<div class="where-slider-links">
+										<a href="javascript:void(0)" class="active" data-slide="0">Путешествия</a>
+										<a href="javascript:void(0)" data-slide="1">Пляж</a>
+										<a href="javascript:void(0)" data-slide="2">Природа и парки</a>
+										<a href="javascript:void(0)" data-slide="3">Дом и дача</a>
+										<a href="javascript:void(0)" data-slide="4">Горы</a>
+									</div>
+								</div>
+								<div class="col-xs-12">
+									<div class="where-slider-navs">
+										<div class="nav-slide prev-slide">
+											<div class="norm"></div>
+											<div class="hov"></div>
+										</div>
+										<div class="nav-slide next-slide">
+											<div class="norm"></div>
+											<div class="hov"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="container wide_container">
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="where-slider">
+										<div class="where-slider-item">
+											<img src="images/content/main-slider/1.jpg">
+										</div>
+										<div class="where-slider-item">
+											<img src="images/content/main-slider/2.jpg">
+										</div>
+										<div class="where-slider-item">
+											<img src="images/content/main-slider/3.jpg">
+										</div>
+										<div class="where-slider-item">
+											<img src="images/content/main-slider/4.jpg">
+										</div>
+										<div class="where-slider-item">
+											<img src="images/content/main-slider/5.jpg">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+                    </div>
+                </div>
+            </div>
+			<div class="stick_form">
+				<div class="container-fluid">
+					<p class="stick_form_text">Оставьте заявку сейчас и не платите за доставку!</p>
+					<div class="stick_form_btn">
+						<a href="index.html#order-modal" data-from="Заказ диван. Плашка." data-title="Оставьте заявку" data-subtitle="и мы свяжемся<br>с вами в ближайшее время" data-btn="Отправить" data-thanks="call_back" class="modal-open order-link call-back-link">Заказать</a>
+					</div>
+				</div>
+			</div>
+			
+            <div class="why">
+				<div class="w-d-1 decor"></div>
+				<div class="w-d-2 decor"></div>
+				<div class="w-d-3 decor"></div>
+				<div class="w-d-4 decor"></div>
+				<div class="w-d-5 decor"></div>
+				<div class="w-d-6 decor"></div>
+                <div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="title">
+								Почему LAMZAK<br>
+								<span>так нравится покупателям?</span>
+							</div>
+						</div>
+						<div class="col-md-5">
+							<div class="why-list">
+								<div class="why-item">
+									Форма дивана подстраивается под вашу фигуру,
+									выдерживая вес до 350 кг
+								</div>
+								<div class="why-item">
+									В собранном состоянии весит чуть более килограмма и
+									имеет размер 20 на 35 сантиметров, и дополнен удобной
+									сумкой-переноской
+								</div>
+								<div class="why-item">
+									Диван создан из прочного нейлона RipStop с водоотталкивающей пропиткой,
+									крайне устойчив к износу и повреждениям
+								</div>
+								<div class="why-item">
+									LAMZAK надувается за 15 секунд без насоса
+									или другого специального оборудования
+								</div>
+								<div class="why-item">
+									В вашем распоряжении коллекция моделей различных
+									цветов. Выбирайте Lamzak любого цвета!
+								</div>
+							</div>
+						</div>
+						<div class="col-md-7">
+							<a href="javascript:void(0)" data-video="https://www.youtube.com/embed/4gyQDcwhUrA" class="video-link">
+								<img src="images/content/v-1.jpg">
+								<div class="shadow"></div>
+								<div class="play">
+									<img src="images/elements/pl-icon.png">
+								</div>
+								<div class="video-container"></div>
+							</a>
+						</div>
+						<div class="col-md-12">
+							<div class="why-bottom">
+								<div class="why-bottom-title">
+									Надувной диван<br>
+									<span>LAMZAK – 2017 года</span>
+								</div>
+							   <div class="why-bottom-list visible-lg">
+									<div class="why-bottom-item">
+										Удобно
+									</div>
+									<div class="why-bottom-item">
+										Быстро
+									</div>
+									<div class="why-bottom-item">
+										Модно
+									</div>
+									<div class="why-bottom-item">
+										Кайфово
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+                </div>
+            </div>
+            <div class="fake visible-lg">
+                <div class="fake-img"></div>
+                <div class="fk-d-1 decor"></div>
+                <div class="fk-d-2 decor"></div>
+                <div class="fk-d-3 decor"></div>
+                <div class="fk-d-4 decor"></div>
+                <div class="fk-d-5 decor"></div>
+                <div class="container">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="fake-title" data-appear-delay="300" data-appear="fade-in" data-appear-direction="top">
+								ОCТЕРЕГАЙТЕСЬ
+							</div>
+							<div class="fake-subtitle" data-appear-delay="300" data-appear="fade-in" data-appear-direction="top">
+								некачественных надувных диванов и китайских копий Lamzac
+							</div>
+							<div class="fake-text" data-appear-delay="300" data-appear="fade-in" data-appear-direction="top">
+								Не экономьте на качестве, ведь плохой диван может испортить весь ваш отдых. Только оригинальные шезлонги имеют:
+							</div>
+							<div class="fake-list">
+								<div class="fake-list-row justify-wrap">
+									<div class="fake-list-item fake-item-1" data-appear-delay="600" data-appear="fade-in" data-appear-direction="top">
+										<div class="fake-item-img"></div>
+										<div class="fake-item-title">
+											Надежность
+										</div>
+										<div class="fake-item-text">
+											Материал: ультрапрочный нейлон RipStop PU4000, в структуру которого вплетена армированная нить, с пропиткой, благодаря которой ткань не намокает и держится на воде.
+										</div>
+										<div class="fake-sep"></div>
+										<div class="fake-item-bottom">
+											<div class="fake-item-bottom-title">
+												Аналоги
+											</div>
+											<div class="fake-item-bottom-text">
+												Дешевый не усиленный нейлон или<br>
+												полиэстер
+											</div>
+										</div>
+									</div>
+									<div class="fake-list-item right-item fake-item-2" data-appear-delay="900" data-appear="fade-in" data-appear-direction="top">
+										<div class="fake-item-img"></div>
+										<div class="fake-item-title">
+											Комфорт
+										</div>
+										<div class="fake-item-text">
+											Клапан выравнивания давления в<br>
+											камерах. Дополнительная перегородка поддерживающая спину для<br>
+											максимального комфорта.
+										</div>
+										<div class="clearfix">
+											<div class="fake-sep"></div>
+										</div>
+
+										<div class="fake-item-bottom">
+											<div class="fake-item-bottom-title">
+												Аналоги
+											</div>
+											<div class="fake-item-bottom-text">
+												Отсутствие перегородки и системы варавнивания давления (проваливаешся между балонов).
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="fake-list-row justify-wrap">
+									<div class="fake-list-item fake-item-3" data-appear-delay="1200" data-appear="fade-in" data-appear-direction="top">
+										<div class="fake-item-img"></div>
+										<div class="fake-item-title">
+											Прочность
+										</div>
+										<div class="fake-item-text">
+											Фастек YKK. Материал верха OXFORD 600D. Немецкий высокоэластичный пластик.
+										</div>
+										<div class="fake-sep"></div>
+										<div class="fake-item-bottom">
+											<div class="fake-item-bottom-title">
+												Аналоги
+											</div>
+											<div class="fake-item-bottom-text">
+												Фастек noname. Некачественные пластиковые пластины которые способствуют быстрому спусканию дивана.
+											</div>
+										</div>
+									</div>
+									<div class="fake-list-item right-item fake-item-4" data-appear-delay="1500" data-appear="fade-in" data-appear-direction="top">
+										<div class="fake-item-img"></div>
+										<div class="fake-item-title">
+											Универсальность
+										</div>
+										<div class="fake-item-text">
+											Утолщенная внутренняя камера LAMZAK выполненная по спец заказу.
+										</div>
+										<div class="clearfix">
+											<div class="fake-sep"></div>
+										</div>
+
+										<div class="fake-item-bottom">
+											<div class="fake-item-bottom-title">
+												Аналоги
+											</div>
+											<div class="fake-item-bottom-text">
+												Недорогая тонкая ПВХ пленка.
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="fake-bottom-block">
+								<div class="fake-item-title">
+									Гарантия
+								</div>
+								<div class="fake-bottom-text">
+									Официальный представитель<br>
+									LAMZAK  в Украине
+								</div>
+								<div class="clearfix">
+									<div class="fake-sep"></div>
+								</div>
+								<div class="fake-item-bottom">
+									<div class="fake-item-bottom-title">
+										Аналоги
+									</div>
+									<div class="fake-item-bottom-text">
+										Фирмы-однодневки, по вопросам гарантии вам уже не будет к кому обратиться.
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+           
+            <div class="colors">
+                <div class="c-d-1 decor"></div>
+                <div class="c-d-2 decor"></div>
+                <div class="c-d-3 decor"></div>
+                <div class="c-d-4 decor"></div>
+                <div class="c-d-5 decor"></div>
+                <!-- <div class="c-d-6 decor"></div> -->
+                <div class="c-d-7 decor"></div>
+                <div class="c-d-8 decor"></div>
+                <div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="title">
+								<span>Выбор цвета и заказ</span> LAMZAK
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 col-sm-7">
+							<div class="colors-left">
+								<div class="colors-type">
+									<!--<div class="colors-type-item">
+										<div class="colors-type-content">
+											<div class="colors-type-header">
+												Standart
+											</div>
+											<div class="colors-type-block">
+												<div class="colors-type-descr">
+													Прочная ткань Oxford<br>
+													Нагрузка до 250кг
+												</div>
+												<div class="colors-block" data-type="Standart">
+													<div class="colors-item" data-color="Синий" data-slide="7">
+														<div class="color-value" alt="Синий" title="Синий" style="background: #4ba0ff;"></div>
+														<div class="color-field">
+															<div class="color-btn color-minus"></div>
+															<input type="text" placeholder="0">
+															<div class="color-btn color-plus"></div>
+														</div>
+														<div class="color-label">шт.</div>
+													</div>
+													<div class="colors-item" data-color="Салатовый" data-slide="8">
+														<div class="color-value" alt="Салатовый" title="Салатовый" style="background: #a7e110;"></div>
+														<div class="color-field">
+															<div class="color-btn color-minus"></div>
+															<input type="text" placeholder="0">
+															<div class="color-btn color-plus"></div>
+														</div>
+														<div class="color-label">шт.</div>
+													</div>
+													<div class="colors-item" data-color="Оранжевый" data-slide="9">
+														<div class="color-value" alt="Оранжевый" title="Оранжевый" style="background: #fc6119;"></div>
+														<div class="color-field">
+															<div class="color-btn color-minus"></div>
+															<input type="text" placeholder="0">
+															<div class="color-btn color-plus"></div>
+														</div>
+														<div class="color-label">шт.</div>
+													</div>
+
+													<div class="hidden-colors">
+														<div class="colors-item" data-color="Серый" data-slide="10">
+															<div class="color-value" alt="Серый" title="Серый" style="background: #444947;"></div>
+															<div class="color-field">
+																<div class="color-btn color-minus"></div>
+																<input type="text" placeholder="0">
+																<div class="color-btn color-plus"></div>
+															</div>
+															<div class="color-label">шт.</div>
+														</div>
+
+														<div class="colors-item" data-color="Серый" data-slide="11">
+															<div class="color-value" alt="Серый" title="Серый" style="background: #444947;"></div>
+															<div class="color-field">
+																<div class="color-btn color-minus"></div>
+																<input type="text" placeholder="0">
+																<div class="color-btn color-plus"></div>
+															</div>
+															<div class="color-label">шт.</div>
+														</div>
+
+														<div class="colors-item" data-color="Серый" data-slide="12">
+															<div class="color-value" alt="Серый" title="Серый" style="background: #444947;"></div>
+															<div class="color-field">
+																<div class="color-btn color-minus"></div>
+																<input type="text" placeholder="0">
+																<div class="color-btn color-plus"></div>
+															</div>
+															<div class="color-label">шт.</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="colors-type-bottom">
+											<div class="colors-type-old-price">
+												<span>1299</span> грн
+											</div>
+											<div class="colors-type-new-price">
+												<span>1099</span> грн
+											</div>
+										</div>
+									</div> -->
+									<div class="colors-type-item">
+										<div class="colors-type-content">
+											<div class="colors-type-header">
+												Colour
+											</div>
+											<div class="colors-type-block">
+												<div class="colors-type-descr">
+													Ультрапрочный нейлон RipStop<br>
+													Нагрузка до 350кг
+												</div>
+												<div class="colors-block" data-type="Premium">
+												    <!-- <div class="colors-item" data-color="Красный" data-slide="1">
+														<div class="color-value" alt="Красный" title="Красный" style="background: red;"></div>
+														<div class="color-field">
+															<div class="color-btn color-minus"></div>
+															<input type="text" placeholder="0">
+															<div class="color-btn color-plus"></div>
+														</div>
+														<div class="color-label">шт.</div>
+													</div> -->
+													<div class="colors-item" data-color="Зеленый" data-slide="1">
+														<div class="color-value" alt="Зеленый" title="Зеленый" style="background: #31AC43;"></div>
+														<div class="color-field">
+															<div class="color-btn color-minus"></div>
+															<input type="text" placeholder="0">
+															<div class="color-btn color-plus"></div>
+														</div>
+														<div class="color-label">шт.</div>
+													</div>
+													<div class="colors-item" data-color="Синий" data-slide="2">
+														<div class="color-value" alt="Синий" title="Синий" style="background: #4ba0ff;"></div>
+														<div class="color-field">
+															<div class="color-btn color-minus"></div>
+															<input type="text" placeholder="0">
+															<div class="color-btn color-plus"></div>
+														</div>
+														<div class="color-label">шт.</div>
+													</div>
+													<!-- <div class="colors-item" data-color="Морской волны" data-slide="4">
+														<div class="color-value active" alt="Морской волны" title="Морской волны" style="background: #0081a2;"></div>
+														<div class="color-field">
+															<div class="color-btn color-minus"></div>
+															<input type="text" placeholder="0">
+															<div class="color-btn color-plus"></div>
+														</div>
+														<div class="color-label">шт.</div>
+													</div> -->
+													<div class="colors-item" data-color="Оранжевый" data-slide="3">
+														<div class="color-value" alt="Оранжевый" title="Оранжевый" style="background: #fc6119;"></div>
+														<div class="color-field">
+															<div class="color-btn color-minus"></div>
+															<input type="text" placeholder="0">
+															<div class="color-btn color-plus"></div>
+														</div>
+														<div class="color-label">шт.</div>
+													</div>
+													<!-- <div class="colors-item" data-color="Черный" data-slide="6">
+														<div class="color-value" alt="Черный" title="Черный" style="background: #000;"></div>
+														<div class="color-field">
+															<div class="color-btn color-minus"></div>
+															<input type="text" placeholder="0">
+															<div class="color-btn color-plus"></div>
+														</div>
+														<div class="color-label">шт.</div>
+													</div> -->
+													<div class="colors-item" data-color="Розовый" data-slide="4">
+														<div class="color-value" alt="Розовый" title="Розовый" style="background: #CB499F;"></div>
+														<div class="color-field">
+															<div class="color-btn color-minus"></div>
+															<input type="text" placeholder="0">
+															<div class="color-btn color-plus"></div>
+														</div>
+														<div class="color-label">шт.</div>
+													</div>
+													<!--
+													<div class="colors-item" data-color="Хаки" data-slide="2">
+														<div class="color-value" alt="Хаки" title="Хаки" style="background: #6e6b52;"></div>
+														<div class="color-field">
+															<div class="color-btn color-minus"></div>
+															<input type="text" placeholder="0">
+															<div class="color-btn color-plus"></div>
+														</div>
+														<div class="color-label">шт.</div>
+													</div>
+													<div class="colors-item" data-color="Серый" data-slide="3">
+														<div class="color-value" alt="Серый" title="Серый" style="background: #444947;"></div>
+														<div class="color-field">
+															<div class="color-btn color-minus"></div>
+															<input type="text" placeholder="0">
+															<div class="color-btn color-plus"></div>
+														</div>
+														<div class="color-label">шт.</div>
+													</div>
+													<div class="colors-item" data-color="Бирюзовый" data-slide="5">
+														<div class="color-value" alt="Бирюзовый" title="Бирюзовый" style="background: #00d9d2;"></div>
+														<div class="color-field">
+															<div class="color-btn color-minus"></div>
+															<input type="text" placeholder="0">
+															<div class="color-btn color-plus"></div>
+														</div>
+														<div class="color-label">шт.</div>
+													</div>
+													<div class="colors-item" data-color="Бордовый" data-slide="6">
+														<div class="color-value" alt="Бордовый" title="Бордовый" style="background: #630035;"></div>
+														<div class="color-field">
+															<div class="color-btn color-minus"></div>
+															<input type="text" placeholder="0">
+															<div class="color-btn color-plus"></div>
+														</div>
+														<div class="color-label">шт.</div>
+													</div>
+													<div class="colors-item" data-color="Салатовый" data-slide="7">
+														<div class="color-value" alt="Салатовый" title="Салатовый" style="background: #a7e110;"></div>
+														<div class="color-field">
+															<div class="color-btn color-minus"></div>
+															<input type="text" placeholder="0">
+															<div class="color-btn color-plus"></div>
+														</div>
+														<div class="color-label">шт.</div>
+													</div>
+													<div class="colors-item" data-color="Оранжевый" data-slide="8">
+														<div class="color-value" alt="Оранжевый" title="Оранжевый" style="background: #fc6119;"></div>
+														<div class="color-field">
+															<div class="color-btn color-minus"></div>
+															<input type="text" placeholder="0">
+															<div class="color-btn color-plus"></div>
+														</div>
+														<div class="color-label">шт.</div>
+													</div>
+													<div class="colors-item" data-color="Камуфляж" data-slide="9">
+														<div class="color-value" alt="Камуфляж" title="Камуфляж" style="background: #4D554B;"></div>
+														<div class="color-field">
+															<div class="color-btn color-minus"></div>
+															<input type="text" placeholder="0">
+															<div class="color-btn color-plus"></div>
+														</div>
+														<div class="color-label">шт.</div>
+													</div>
+													<div class="colors-item" data-color="Фиолетовый" data-slide="13">
+														<div class="color-value" alt="Фиолетовый" title="Фиолетовый" style="background: #835EA6;"></div>
+														<div class="color-field">
+															<div class="color-btn color-minus"></div>
+															<input type="text" placeholder="0">
+															<div class="color-btn color-plus"></div>
+														</div>
+														<div class="color-label">шт.</div>
+													</div> -->
+												</div>
+
+											</div>
+										</div>
+										<div class="colors-type-bottom">
+											<div class="colors-type-old-price">
+												<span>1062</span> грн
+											</div>
+											<div class="colors-type-new-price">
+												<span>499</span> грн
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-5 colors-right">
+							<div class="products-slider-wrap">
+								<div class="products-slider">
+								    <!-- <div class="products-item">
+										<img src="images/content/products/red.png">
+									</div> -->
+									<div class="products-item">
+										<img src="images/content/products/green.png">
+									</div>
+									<div class="products-item">
+										<img src="images/content/products/blue.png">
+									</div>
+									<!-- <div class="products-item">
+										<img src="images/content/products/seawave.png">
+									</div> -->
+									<div class="products-item">
+										<img src="images/content/products/oranzh.png">
+									</div>
+									<!-- <div class="products-item">
+										<img src="images/content/products/black.png">
+									</div> -->
+									<div class="products-item">
+										<img src="images/content/products/pink.png">
+									</div>
+
+								<!--<div class="products-item">
+										<img src="images/content/products/khaki.png">
+									</div>
+									<div class="products-item">
+										<img src="images/content/products/grey.png">
+									</div>
+									<div class="products-item">
+										<img src="images/content/products/turquoise.png">
+									</div>
+									<div class="products-item">
+										<img src="images/content/products/vinous.png">
+									</div>
+									<div class="products-item">
+										<img src="images/content/products/lightgreen.png">
+									</div>
+									<div class="products-item">
+										<img src="images/content/products/oranzh.png">
+									</div>
+									<div class="products-item">
+										<img src="images/content/products/camouflage.png">
+									</div>
+									<div class="products-item">
+										<img src="images/content/products/violet.png">
+									</div> -->
+								</div>
+							</div>
+							<div class="colors-right-bottom clearfix">
+								<div class="price-block">
+									<div class="price-label">
+										Стоимость:
+									</div>
+									<div class="price-values">
+										<div class="old-price">
+											<span></span> грн.
+										</div>
+										<div class="new-price">
+											<span></span> грн.
+										</div>
+									</div>
+								</div>
+								<div class="products-slider-navs">
+									<div class="nav-slide prev-slide">
+										<div class="norm"></div>
+										<div class="hov"></div>
+									</div>
+									<div class="nav-slide next-slide">
+										<div class="norm"></div>
+										<div class="hov"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+                    </div>
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="calc-form justify-wrap">
+								<div class="calc-form-left">
+									<div class="arrow slideInLeftArrow animated infinite visible-lg"></div>
+									<div class="calc-form-title">
+										Закажите Lamzak
+									</div>
+									<div class="calc-form-subtitle">
+										прямо сейчас
+									</div>
+								</div>
+								<div class="calc-form-area">
+									<form method="post" action="../../module/send_order.php" data-thanks="calc">
+										<div class="calc-form-row clearfix">
+											<div class="calc-form-col">
+												<input type="text" name="name" placeholder="Имя">
+											</div>
+											<div class="calc-form-col">
+												<input type="text" name="phone" placeholder="Телефон*">
+											</div>
+											<div class="calc-form-col calc-form-action">
+												<a type="submit" href="javascript:void(0)" class="send calc-btn">Заказать</a>
+											</div>
+										</div>
+                                        <input type="hidden" value=" " name="title">
+                                        <input type="hidden" value="499" name="price">
+                                        <input type="hidden" value="40" name="product_id">
+                                        <input type="hidden" value="" name="uid">
+                                        
+									</form>
+								</div>
+							</div>
+						  <!-- <div class="action-bottom">
+								Закажите 2 надувных дивана LAMZAK<br>
+								<span>и получите скидку - по 100 грн. При заказе от 5 штук - скидка по 150 грн.!</span>
+							</div> -->
+						</div>
+					</div>
+                </div>
+            </div>
+            <div class="how">
+                <div class="h-d-1 decor"></div>
+                <div class="h-d-2 decor"></div>
+                <div class="h-d-3 decor"></div>
+                <div class="h-d-4 decor"></div>
+                <div class="h-d-5 decor"></div>
+                <div class="h-d-6 decor"></div>
+                <div class="h-d-7 decor"></div>
+                <div class="h-d-8 decor"></div>
+                <div class="h-d-9 decor"></div>
+                <div class="section">
+                    <div class="container">
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="title" data-appear-delay="300" data-appear="fade-in" data-appear-direction="left">
+									<span>Как заказать</span><br>
+									надувной диван?
+								</div>
+							</div>
+						</div>
+						<div class="row how-list">
+							<div class="col-md-3">
+								<div class="how-item" id="how-item-1" data-appear-delay="600" data-appear="fade-in" data-appear-direction="left">
+									<div class="how-item-img">
+										<img src="images/elements/h-1.png">
+									</div>
+									<div class="how-item-title">
+										<span>Оформить заявку</span> на<br>
+										сайте и наш оператор свяжется с Вами
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="how-item" id="how-item-2" data-appear-delay="900" data-appear="fade-in" data-appear-direction="left">
+									<div class="how-item-img">
+										<img src="images/elements/h-2.png">
+									</div>
+									<div class="how-item-title">
+										<span>Доставка по Украине</span><br>
+										
+										в течение 3-5 дней
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="how-item" id="how-item-3" data-appear-delay="1200" data-appear="fade-in" data-appear-direction="left">
+									<div class="how-item-img">
+										<img src="images/elements/h-3.png">
+									</div>
+									<div class="how-item-title">
+										<span>Вы оплачиваете посылку</span><br>
+										при получении на почте
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="how-item last-how-item" data-appear-delay="1500" data-appear="fade-in" data-appear-direction="left">
+									<div class="how-item-img">
+										<img src="images/elements/h-4.png">
+									</div>
+									<div class="how-item-title">
+										<span>Наслаждаетесь отдыхом</span><br>
+										вместе с LAMZAK!
+									</div>
+								</div>
+							</div>
+						</div>
+                    </div>
+                </div>
+            </div> 
+            <div class="change">
+                <div class="ch-d-1 decor"></div>
+                <div class="ch-d-2 decor"></div>
+                <div class="ch-d-3 decor"></div>
+                <div class="ch-d-4 decor"></div>
+                <div class="ch-d-5 decor"></div>
+                <div class="ch-d-6 decor"></div>
+                <div class="ch-d-7 decor"></div>
+                <div class="ch-d-8 decor"></div>
+                <div class="ch-d-9 decor"></div>
+                <div class="ch-d-10 decor"></div>
+                <div class="section">
+                    <div class="container">
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="title" data-appear-delay="200" data-appear="fade-in" data-appear-direction="left">
+									LAMZAK<br>
+									<span>сможет заменить</span>
+								</div>
+								<div class="change-list">
+									<div class="change-item" data-appear-delay="300" data-appear="fade-in" data-appear-direction="right">
+										<div class="change-item-title">
+											Кресло-мешок
+										</div>
+										<div class="change-item-decor">
+											<img src="images/elements/c-1.png">
+										</div>
+										<div class="change-item-text">
+											Не позволяет отдыхать<br>
+											нескольким людям сразу
+										</div>
+									</div>
+									<div class="change-item" data-appear-delay="500" data-appear="fade-in" data-appear-direction="left">
+										<div class="change-item-title">
+											Надувной матрас
+										</div>
+										<div class="change-item-decor">
+											<img src="images/elements/c-2.png">
+										</div>
+										<div class="change-item-text">
+											Не обладает такой<br>
+											прочностью и легко<br>
+											пробивается
+										</div>
+									</div>
+									<div class="change-item" data-appear-delay="700" data-appear="fade-in" data-appear-direction="right">
+										<div class="change-item-title">
+											Гамак
+										</div>
+										<div class="change-item-decor">
+											<img src="images/elements/c-3.png">
+										</div>
+										<div class="change-item-text">
+											Нужны особые условия<br>
+											для установки
+										</div>
+									</div>
+									<div class="change-item" data-appear-delay="900" data-appear="fade-in" data-appear-direction="left">
+										<div class="change-item-title">
+											Шезлонг
+										</div>
+										<div class="change-item-decor">
+											<img src="images/elements/c-4.png">
+										</div>
+										<div class="change-item-text">
+											Крайне неудобен<br>
+											при транспортировке,<br>
+											занимает много места
+										</div>
+									</div>
+									<div class="change-item" data-appear-delay="1100" data-appear="fade-in" data-appear-direction="right">
+										<div class="change-item-title">
+											Раскладная мебель
+										</div>
+										<div class="change-item-decor">
+											<img src="images/elements/c-5.png">
+										</div>
+										<div class="change-item-text">
+											Слишком габаритна,<br>
+											требует ровной поверхности
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="advants">
+                <div class="a-d-1 decor"></div>
+                <div class="a-d-2 decor"></div>
+                <div class="a-d-3 decor"></div>
+                <div class="a-d-4 decor"></div>
+                <div class="a-d-5 decor"></div>
+                <div class="a-d-6 decor"></div>
+                <div class="a-d-7 decor"></div>
+                <div class="container">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="title" data-appear-delay="300" data-appear="fade-in" data-appear-direction="left">
+								<span>Всегда под рукой!</span>
+							</div>
+							<div class="subtitle" data-appear-delay="400" data-appear="fade-in" data-appear-direction="left">
+								Вы можете получить комфортный отдых в любом уголке мира
+							</div>
+							<div class="advants-list-title" data-appear-delay="500" data-appear="fade-in" data-appear-direction="right">
+								LAMZAK для:
+							</div>
+					
+							<div class="advants-carousel">
+								<div class="advants-item" data-appear-delay="600" data-appear="fade-in" data-appear-direction="top">								
+									<div class="advants-item-img">
+										<img src="images/elements/a-1.png">
+									</div>
+									<div class="advants-item-title">
+										Путешественников
+									</div>
+									<div class="sep"></div>
+									<div class="advants-item-text">
+										Комфорт в любом месте,<br>
+										будь то аэропорт<br>
+										или живописный пляж
+									</div>
+								</div>
+								<div class="advants-item" data-appear-delay="700" data-appear="fade-in" data-appear-direction="top">	
+									<div class="advants-item-img">
+										<img src="images/elements/a-2.png">
+									</div>
+									<div class="advants-item-title">
+										Автомобилистов
+									</div>
+									<div class="sep"></div>
+									<div class="advants-item-text">
+										Отдых с вами везде, где<br>
+										бы вы ни остановились
+									</div>
+								</div>
+								<div class="advants-item" data-appear-delay="800" data-appear="fade-in" data-appear-direction="top">		
+									<div class="advants-item-img">
+										<img src="images/elements/a-3.png">
+									</div>
+									<div class="advants-item-title">
+										Детей
+									</div>
+									<div class="sep"></div>
+									<div class="advants-item-text">
+										Развлечения и веселье<br>
+										на лужайке уже через<br>
+										несколько минут
+									</div>
+								</div>
+								<div class="advants-item" data-appear-delay="600" data-appear="fade-in" data-appear-direction="top">
+									<div class="advants-item-img">
+										<img src="images/elements/a-4.png">
+									</div>
+									<div class="advants-item-title">
+										Спортсменов
+									</div>
+									<div class="sep"></div>
+									<div class="advants-item-text">
+										Отличный способ<br>
+										релаксации в перерывах между<br>
+										соревнованиями
+									</div>
+								</div>
+								<div class="advants-item" data-appear-delay="700" data-appear="fade-in" data-appear-direction="top">
+									<div class="advants-item-img">
+										<img src="images/elements/a-5.png">
+									</div>
+									<div class="advants-item-title">
+										Туристов
+									</div>
+									<div class="sep"></div>
+									<div class="advants-item-text">
+										Незаменимый атрибут для всех,<br>
+										кто любит отдыхать на природе
+									</div>
+								</div>
+								<div class="advants-item" data-appear-delay="800" data-appear="fade-in" data-appear-direction="top">
+									<div class="advants-item-img">
+										<img src="images/elements/a-6.png">
+									</div>
+									<div class="advants-item-title">
+										Студентов
+									</div>
+									<div class="sep"></div>
+									<div class="advants-item-text">
+										Расслабиться с книгой или<br>
+										планшетом в парке<br>
+										или сквере университета
+									</div>
+								</div>
+								<div class="advants-item" data-appear-delay="600" data-appear="fade-in" data-appear-direction="top">
+									<div class="advants-item-img">
+										<img src="images/elements/a-7.png">
+									</div>
+									<div class="advants-item-title">
+										Отдыхающих на пляже
+									</div>
+									<div class="sep"></div>
+									<div class="advants-item-text">
+										Больше никаких проблем<br>
+										с шезлонгами, отдых на берегу<br>
+										в любом месте
+									</div>
+								</div>
+								<div class="advants-item" data-appear-delay="700" data-appear="fade-in" data-appear-direction="top">
+									<div class="advants-item-img">
+										<img src="images/elements/a-8.png">
+									</div>
+									<div class="advants-item-title">
+										Дачников
+									</div>
+									<div class="sep"></div>
+									<div class="advants-item-text">
+										Всегда найдется место для друзей<br>
+										и неожиданно нагрянувших гостей
+									</div>
+								</div>
+								<div class="advants-item" data-appear-delay="800" data-appear="fade-in" data-appear-direction="top">
+									<div class="advants-item-img">
+										<img src="images/elements/a-9.png">
+									</div>
+									<div class="advants-item-title">
+										Корпоративных клиентов
+									</div>
+									<div class="sep"></div>
+									<div class="advants-item-text">
+										Великолепное интерьерное<br>
+										дополнение для вашего офиса и<br>
+										оригинальная зона отдыха
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+                </div>
+            </div>
+            <div class="faq visible-lg">
+                <div class="f-d-1 decor"></div>
+                <div class="f-d-2 decor"></div>
+                <div class="f-d-3 decor"></div>
+                <div class="f-d-4 decor"></div>
+                <div class="f-d-5 decor"></div>
+                <div class="f-d-6 decor"></div>
+                <div class="f-d-7 decor"></div>
+                <div class="f-d-8 decor"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+							<div class="title">
+								<span>Ответы</span> на вопросы
+							</div>
+						</div>
+					</div>
+                    <div class="row faq-list">
+                        <div class="col-sm-6">
+                            <div class="faq-item">
+                                <div class="faq-item-header">
+                                    <a href="javascript:void(0)">
+                                        Как надуть Ламзак?
+                                    </a>
+                                </div>
+                                <div class="faq-item-answer">
+                                    Очень просто: наполнить воздухом через два<br>
+                                    отверстия, соединив концы застежками
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-item-header">
+                                    <a href="javascript:void(0)">
+                                        Как долго LAMZAK остается<br>
+                                        в надутом состоянии?
+                                    </a>
+                                </div>
+                                <div class="faq-item-answer">
+                                    Надувной диван полностью удерживает форму в
+                                    <br>
+                                    течение 6-ти часов, после чего вы сможете его надуть
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-item-header">
+                                    <a href="javascript:void(0)">
+                                        LAMZAK намокает?
+                                    </a>
+                                </div>
+                                <div class="faq-item-answer">
+                                    Надувной диван изготовлен из водонепроницаемого<br>
+                                    материала, поэтому он не намокает, быстро высыхает<br>
+                                    и даже держится на поверхности воды
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="faq-item">
+                                <div class="faq-item-header">
+                                    <a href="javascript:void(0)">
+                                        Как сдуть LAMZAK?
+                                    </a>
+                                </div>
+                                <div class="faq-item-answer">
+                                    Расстегнув застежку, после чего воздух начнет выходить<br>
+                                    из дивана и вы сможете без проблем его свернуть
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-item-header">
+                                    <a href="javascript:void(0)">
+                                        Может ли LAMZAK улететь во время
+                                        сильного ветра, если на нем никто не сидит?
+                                    </a>
+                                </div>
+                                <div class="faq-item-answer">
+                                    Просто положите на него что-нибудь тяжелое или<br>
+                                    привяжите к машине, дереву и т.д.
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-item-header">
+                                    <a href="javascript:void(0)">
+                                        Какой максимальный вес<br>
+                                        выдерживает LAMZAK?
+                                    </a>
+                                </div>
+                                <div class="faq-item-answer">
+                                    До 350 кг. Диван без проблем выдерживает<br>
+                                    даже 5 человек одновременно!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="photo">
+                <div class="p-d-1 decor"></div>
+                <div class="p-d-2 decor"></div>
+                <div class="p-d-3 decor"></div>
+                <div class="p-d-4 decor"></div>
+                <div class="p-d-5 decor"></div>
+                <div class="p-d-6 decor"></div>
+                <div class="p-d-7 decor"></div>
+                <div class="section">
+                    <div class="container">
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="title">
+									LAMZAK уже изменил<br>
+									<span>отдых наших покупателей</span>
+								</div>
+								<div class="photo-slider-wrap">
+									<div class="photo-slider">
+
+										<div class="photo-slider-item">
+											<div class="photo-row clearfix">
+												<div class="photo-col">
+													<a href="images/content/photo/1-1-l.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+														<img src="images/content/photo/1-1.jpg">
+														<div class="zoom">
+															<img src="images/elements/zoom.png">
+														</div>
+													</a>
+													<a href="images/content/photo/1-2-l.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+														<img src="images/content/photo/1-2.jpg">
+														<div class="zoom">
+															<img src="images/elements/zoom.png">
+														</div>
+													</a>
+												</div>
+												<div class="photo-col photo-col-wide">
+													<a href="images/content/photo/1-3-l.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+														<img src="images/content/photo/1-3.jpg">
+														<div class="zoom">
+															<img src="images/elements/zoom.png">
+														</div>
+													</a>
+													<div class="clearfix">
+														<a href="images/content/photo/1-4-l.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+															<img src="images/content/photo/1-4.jpg">
+															<div class="zoom">
+																<img src="images/elements/zoom.png">
+															</div>
+														</a>
+														<a href="images/content/photo/1-5-l.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+															<img src="images/content/photo/1-5.jpg">
+															<div class="zoom">
+																<img src="images/elements/zoom.png">
+															</div>
+														</a>
+													</div>
+												</div>
+												<div class="photo-col">
+													<a href="images/content/photo/1-6-l.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+														<img src="images/content/photo/1-6.jpg">
+														<div class="zoom">
+															<img src="images/elements/zoom.png">
+														</div>
+													</a>
+													<a href="images/content/photo/1-7-l.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+														<img src="images/content/photo/1-7.jpg">
+														<div class="zoom">
+															<img src="images/elements/zoom.png">
+														</div>
+													</a>
+												</div>
+											</div>
+										</div>
+
+										<div class="photo-slider-item">
+											<div class="photo-row clearfix">
+												<div class="photo-col">
+													<a href="images/content/photo/2-1-l.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+														<img src="images/content/photo/2-1.jpg">
+														<div class="zoom">
+															<img src="images/elements/zoom.png">
+														</div>
+													</a>
+													<a href="images/content/photo/2-2-l.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+														<img src="images/content/photo/2-2.jpg">
+														<div class="zoom">
+															<img src="images/elements/zoom.png">
+														</div>
+													</a>
+												</div>
+												<div class="photo-col photo-col-wide">
+													<a href="images/content/photo/2-3-l.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+														<img src="images/content/photo/2-3.jpg">
+														<div class="zoom">
+															<img src="images/elements/zoom.png">
+														</div>
+													</a>
+													<div class="clearfix">
+														<a href="images/content/photo/2-4-l.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+															<img src="images/content/photo/2-4.jpg">
+															<div class="zoom">
+																<img src="images/elements/zoom.png">
+															</div>
+														</a>
+														<a href="images/content/photo/2-5-l.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+															<img src="images/content/photo/2-5.jpg">
+															<div class="zoom">
+																<img src="images/elements/zoom.png">
+															</div>
+														</a>
+													</div>
+												</div>
+												<div class="photo-col">
+													<a href="images/content/photo/2-6-l.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+														<img src="images/content/photo/2-6.jpg">
+														<div class="zoom">
+															<img src="images/elements/zoom.png">
+														</div>
+													</a>
+													<a href="images/content/photo/2-7-l.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+														<img src="images/content/photo/2-7.jpg">
+														<div class="zoom">
+															<img src="images/elements/zoom.png">
+														</div>
+													</a>
+												</div>
+											</div>
+										</div>
+
+										<div class="photo-slider-item">
+											<div class="photo-row clearfix">
+												<div class="photo-col">
+													<a href="images/content/photo/1-big.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+														<img src="images/content/photo/1.jpg">
+														<div class="zoom">
+															<img src="images/elements/zoom.png">
+														</div>
+													</a>
+													<a href="images/content/photo/2-big.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+														<img src="images/content/photo/2.jpg">
+														<div class="zoom">
+															<img src="images/elements/zoom.png">
+														</div>
+													</a>
+												</div>
+												<div class="photo-col photo-col-wide">
+													<a href="images/content/photo/3-big.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+														<img src="images/content/photo/3.jpg">
+														<div class="zoom">
+															<img src="images/elements/zoom.png">
+														</div>
+													</a>
+													<div class="clearfix">
+														<a href="images/content/photo/44-big.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+															<img src="images/content/photo/44.jpg">
+															<div class="zoom">
+																<img src="images/elements/zoom.png">
+															</div>
+														</a>
+														<a href="images/content/photo/5-big.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+															<img src="images/content/photo/5.jpg">
+															<div class="zoom">
+																<img src="images/elements/zoom.png">
+															</div>
+														</a>
+													</div>
+												</div>
+												<div class="photo-col">
+													<a href="images/content/photo/6-big.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+														<img src="images/content/photo/6.jpg">
+														<div class="zoom">
+															<img src="images/elements/zoom.png">
+														</div>
+													</a>
+													<a href="images/content/photo/7-big.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+														<img src="images/content/photo/7.jpg">
+														<div class="zoom">
+															<img src="images/elements/zoom.png">
+														</div>
+													</a>
+												</div>
+											</div>
+										</div>
+										<div class="photo-slider-item">
+											<div class="photo-row clearfix">
+												<div class="photo-col">
+													<a href="images/content/photo/8-big.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+														<img src="images/content/photo/8.jpg">
+														<div class="zoom">
+															<img src="images/elements/zoom.png">
+														</div>
+													</a>
+													<a href="images/content/photo/9-big.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+														<img src="images/content/photo/9.jpg">
+														<div class="zoom">
+															<img src="images/elements/zoom.png">
+														</div>
+													</a>
+												</div>
+												<div class="photo-col photo-col-wide">
+													<a href="images/content/photo/10-big.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+														<img src="images/content/photo/10.jpg">
+														<div class="zoom">
+															<img src="images/elements/zoom.png">
+														</div>
+													</a>
+													<div class="clearfix">
+														<a href="images/content/photo/11-big.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+															<img src="images/content/photo/11.jpg">
+															<div class="zoom">
+																<img src="images/elements/zoom.png">
+															</div>
+														</a>
+														<a href="images/content/photo/12-big.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+															<img src="images/content/photo/12.jpg">
+															<div class="zoom">
+																<img src="images/elements/zoom.png">
+															</div>
+														</a>
+													</div>
+												</div>
+												<div class="photo-col">
+													<a href="images/content/photo/13-big.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+														<img src="images/content/photo/13.jpg">
+														<div class="zoom">
+															<img src="images/elements/zoom.png">
+														</div>
+													</a>
+													<a href="images/content/photo/14-big.jpg" class="photo-link fancybox" data-fancybox-group="photo">
+														<img src="images/content/photo/14.jpg">
+														<div class="zoom">
+															<img src="images/elements/zoom.png">
+														</div>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="photo-slider-navs">
+										<div class="nav-slide prev-slide">
+											<div class="norm"></div>
+											<div class="hov"></div>
+										</div>
+										<div class="nav-slide next-slide">
+											<div class="norm"></div>
+											<div class="hov"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fake hidden-lg">
+                <div class="fake-img"></div>
+                <div class="fk-d-1 decor"></div>
+                <div class="fk-d-2 decor"></div>
+                <div class="fk-d-3 decor"></div>
+                <div class="fk-d-4 decor"></div>
+                <div class="fk-d-5 decor"></div>
+                <div class="container">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="fake-title" data-appear-delay="300" data-appear="fade-in" data-appear-direction="top">
+								ОCТЕРЕГАЙТЕСЬ
+							</div>
+							<div class="fake-subtitle" data-appear-delay="300" data-appear="fade-in" data-appear-direction="top">
+								некачественных надувных диванов и китайских копий Lamzac
+							</div>
+							<div class="fake-text" data-appear-delay="300" data-appear="fade-in" data-appear-direction="top">
+								Не экономьте на качестве, ведь плохой диван может испортить весь ваш отдых. Только оригинальные шезлонги имеют:
+							</div>
+							<div class="fake-list">
+								<div class="fake-list-row justify-wrap">
+									<div class="fake-list-item fake-item-1" data-appear-delay="600" data-appear="fade-in" data-appear-direction="top">
+										<div class="fake-item-img"></div>
+										<div class="fake-item-title">
+											Надежность
+										</div>
+										<div class="fake-item-text">
+											Материал: ультрапрочный нейлон RipStop PU4000, в структуру которого вплетена армированная нить, с пропиткой, благодаря который ткань не намокает и держится на воде.
+										</div>
+										<div class="fake-sep"></div>
+										<div class="fake-item-bottom">
+											<div class="fake-item-bottom-title">
+												Аналоги
+											</div>
+											<div class="fake-item-bottom-text">
+												Дешевый не усиленный нейлон или<br>
+												полиэстер
+											</div>
+										</div>
+									</div>
+									<div class="fake-list-item right-item fake-item-2" data-appear-delay="900" data-appear="fade-in" data-appear-direction="top">
+										<div class="fake-item-img"></div>
+										<div class="fake-item-title">
+											Комфорт
+										</div>
+										<div class="fake-item-text">
+											Клапан выравнивания давления в<br>
+											камерах. Дополнительная перегородка поддерживающая спину для<br>
+											максимального комфорта.
+										</div>
+										<div class="clearfix">
+											<div class="fake-sep"></div>
+										</div>
+
+										<div class="fake-item-bottom">
+											<div class="fake-item-bottom-title">
+												Аналоги
+											</div>
+											<div class="fake-item-bottom-text">
+												Отсутствие перегородки и системы варавнивания давления (проваливаешся между балонов).
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="fake-list-row justify-wrap">
+									<div class="fake-list-item fake-item-3" data-appear-delay="1200" data-appear="fade-in" data-appear-direction="top">
+										<div class="fake-item-img"></div>
+										<div class="fake-item-title">
+											Прочность
+										</div>
+										<div class="fake-item-text">
+											Фастек YKK. Материал верха OXFORD 600D. Немецкий высокоэластичный пластик.
+										</div>
+										<div class="fake-sep"></div>
+										<div class="fake-item-bottom">
+											<div class="fake-item-bottom-title">
+												Аналоги
+											</div>
+											<div class="fake-item-bottom-text">
+												Фастек noname. Некачественные пластиковые пластины которые способствуют быстрому спусканию дивана.
+											</div>
+										</div>
+									</div>
+									<div class="fake-list-item right-item fake-item-4" data-appear-delay="1500" data-appear="fade-in" data-appear-direction="top">
+										<div class="fake-item-img"></div>
+										<div class="fake-item-title">
+											Универсальность
+										</div>
+										<div class="fake-item-text">
+											Утолщенная внутренняя камера Air Sofa выполненная по спец заказу.
+										</div>
+										<div class="clearfix">
+											<div class="fake-sep"></div>
+										</div>
+
+										<div class="fake-item-bottom">
+											<div class="fake-item-bottom-title">
+												Аналоги
+											</div>
+											<div class="fake-item-bottom-text">
+												Недорогая тонкая ПВХ пленка.
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="fake-bottom-block">
+								<div class="fake-item-title">
+									Гарантия
+								</div>
+								<div class="fake-bottom-text">
+									Официальный представитель<br>
+									LAMZAK  в Украине
+								</div>
+								<div class="clearfix">
+									<div class="fake-sep"></div>
+								</div>
+								<div class="fake-item-bottom">
+									<div class="fake-item-bottom-title">
+										Аналоги
+									</div>
+									<div class="fake-item-bottom-text">
+										Фирмы-однодневки, по вопросам гарантии вам уже не будет к кому обратиться.
+									</div>
+								</div>
+								<img src="images/content/made-img.png">
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+            <div class="order">
+                <div class="o-d-1 decor"></div>
+                <div class="o-d-2 decor"></div>
+                <div class="o-d-3 decor"></div>
+                <div class="o-d-4 decor"></div>
+                <div class="o-d-5 decor"></div>
+                <div class="o-d-6 decor"></div>
+                <div class="container">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="order-title">
+								LAMZAK
+							</div>
+							<div class="order-subtitle">
+								подарок, который обязательно понравится
+							</div>
+							<div class="order-text">
+								Заказывайте себе и друзьям – так дешевле!
+							</div>
+							<div class="order-form">
+								<div class="order-form-title">
+									Оставьте заявку сейчас
+								</div>
+								<div class="order-form-subtitle">
+									Всего за 499 грн.
+								</div>
+								<form method="post" action="../../module/send_order.php" data-thanks="order">
+									<div class="clearfix form-row">
+										<div class="form-col">
+											<input type="text" name="name" placeholder="Имя">
+										</div>
+										<div class="form-col">
+											<input type="text" name="phone" placeholder="Телефон*">
+										</div>
+									</div>
+									<div class="order-btn-wrap">
+										<a type="submit" href="javascript:void(0)" class="send order-btn">Заказать</a>
+									</div>
+                                    <input type="hidden" value=" " name="title">
+                                    <input type="hidden" value="499" name="price">
+                                    <input type="hidden" value="40" name="product_id">
+                                    <input type="hidden" value="" name="uid">
+                                    
+								</form>
+							</div>
+						</div>
+					</div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="ft-d-1 decor"></div>
+                <div class="ft-d-2 decor"></div>
+                <div class="ft-d-3 decor"></div>
+                <div class="ft-d-4 decor"></div>
+                <div class="ft-d-5 decor"></div>
+                <div class="container">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="footer-left">
+								<div class="footer-item">
+									<a href="privacy" target="_blank"><span>Политика конфиденциальности</span> </a>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="address-icon"></div>
+							<div class="footer-address">
+							ООО "Торгснаб" - ОГРН 1147746227408, 127282,<br /> г.Киев, ул.Широкая 12а, офис 118
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<!-- <div class="footer-made">
+								<a href="index.html#order-modal"
+								   data-from="Получить оптовое предложение. Подвал сайта."
+								   data-title="Оставьте заявку"
+								   data-subtitle="и мы свяжемся<br>с вами в ближайшее время"
+								   data-btn="Отправить"
+								   data-thanks="opt"
+								   class="order-link modal-open opt-link">Получить оптовое предложение</a>
+							</div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modals">
+            <div id="video-modal"></div>
+            <div id="order-modal">
+                <div class="order-form">
+                    <a href="javascript:void(0)" class="close-modal"></a>
+                    <div class="order-form-title">
+                        Оставьте заявку
+                    </div>
+                    <div class="order-form-subtitle">
+                        и мы свяжемся<br>
+                        с вами в ближайшее время
+                    </div>
+                    <form method="post" action="../../module/send_order.php" data-thanks="">
+                        <div class="clearfix form-row">
+                            <div class="form-col">
+                                <input type="text" name="name" placeholder="Имя">
+                            </div>
+                            <div class="form-col">
+                                <input type="text" name="phone" placeholder="Телефон*">
+                            </div>
+                        </div>
+                        <div class="order-btn-wrap">
+                            <a type="submit" href="javascript:void(0)" class="send order-btn">Отправить</a>
+                        </div>
+                        <input type="hidden" value=" " name="title">
+                        <input type="hidden" value="499" name="price">
+                        <input type="hidden" value="40" name="product_id">
+                        <input type="hidden" value="" name="uid">
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="../../module/maskedinput.js"></script>
+
+
+        
+<div id="overlay-exit-popup"></div>
+<div id="exit-form" class="m1modal">
+	<a class="close-exit"></a>
+	<div>
+		<div class="popup-exit-title">Вам понравилось это предложение?</div>
+		<div class="popup-exit-cont">
+			<div class="popup-exit-text1">Мы расскажем Вам все об этом товаре, предложим наилучшие условия и ознакомим с подходящими акционными предложениями!</div>
+			<form method="POST" action="../../module/send_order.php" class="exit-popup--form">
+				<input type="text" name="name" placeholder="Введите ваше имя" required="">
+				<input type="text" name="phone" placeholder="Введите телефон" required="">
+				<button>Перезвоните мне</button>
+				<input type="hidden" value=" " name="title">
+				<input type="hidden" value="499" name="price">
+				<input type="hidden" value="40" name="product_id">
+				<input type="hidden" value="" name="uid">
+							</form>
+			<div class="popup-exit-text2">Оператор перезвонит Вам через 5-10 минут</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	(function () {
+		
+		$(document).on("click", ".m1modal", function(event) {
+			if (event.target != this) {
+				return false;
+			} else {
+				$(".m1modal").hide();
+				$("#overlay-exit-popup").hide();
+			}
+		}).on("click", ".close-exit, #overlay-exit-popup", function(event) {
+			if (event.target != this) {
+				return false;
+			} else {
+				$(".m1modal").hide();
+				$("#overlay-exit-popup").hide();
+			}
+		}).on("keydown", function(key) {
+			if (key.keyCode == 27) {
+				$(".m1modal").hide();
+				$("#overlay-exit-popup").hide();
+			}
+		}).on("click", ".m1modal > *", function(event) {
+			event.stopPropagation();
+			return true;
+		});
+
+
+		
+		var comebacker = true;
+		
+		
+		setTimeout(function() {
+			
+			
+			$(document).mouseleave(function(e){	
+				if ((e.clientY < 0) && comebacker){
+					comebacker = false;
+					var modalWindow = $("#exit-form");
+					modalWindow.show();
+					$("#overlay-exit-popup").show();
+					return false;
+				}
+			});
+
+
+		}, 3000);
+	}());
+</script>
+
+
+
+<style>
+#exit-form, #exit-form>div, 
+.close-exit, 
+.popup-exit-title, 
+.popup-exit-cont, 
+.exit-popup--form, 
+.popup-exit-text2, 
+.popup-exit-text1, #exit-form 
+.exit-popup--form input[type="text"],
+#exit-form .exit-popup--form button{
+	width: auto; 
+	max-width: none; 
+	height: auto; 
+	max-height: none; 
+	margin: 0; 
+	padding: 0; 
+	border: 0; 
+	outline: 0; 
+	float: none; 
+	position: relative; 
+	background: none; 
+	line-height: normal; 
+	font-family: "Tahoma", "Geneva", "Kalimati", sans-serif; 
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+#exit-form {
+	position: fixed;
+	display: none;
+	width: 450px;
+	margin-left: -225px;
+	margin-top: -280px;
+	top: 50%;
+	left: 50%;
+	background: #fff;
+	z-index: 9999999;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	-webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+	-moz-box-shadow:    0px 0px 0px 0px rgba(0, 0, 0, 0);
+	box-shadow:         0px 0px 0px 0px rgba(0, 0, 0, 0);
+}
+#exit-form a.close-exit {
+	position: absolute;
+	display: block;
+	width: 28px;
+	height: 28px;
+	line-height: 26px;
+	top: 3px;
+	right: 3px;
+	background: transparent;
+	font-size: 24px;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+	z-index: 999;
+}
+#exit-form a.close-exit:before{
+	content: '\00D7';
+}
+#exit-form>div{
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+#exit-form .popup-exit-title{
+	position: relative;
+	padding: 20px 0px 16px;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 25px;
+	letter-spacing: 0.7px;
+	line-height: 1.3em;
+	color: #fff;
+	background: #64ca50;
+}
+#exit-form .popup-exit-title:before, #exit-form .popup-exit-title:after {
+	content: "";
+	position: absolute;
+	width: 50%;
+	height: 20px; 
+	bottom: -10px;
+	background: #64ca50;
+}
+#exit-form .popup-exit-title:before {
+	left: 0;
+	transform: skew(0deg, 4deg);
+}
+#exit-form .popup-exit-title:after {
+	right: 0;
+	transform: skew(0deg, -4deg);
+}
+#exit-form .popup-exit-cont{
+	position: relative;
+	padding: 45px 20px 30px;
+	color: #333;
+	font-size: 17px;
+	line-height: 1.5em;
+}
+#exit-form .popup-exit-cont div.popup-exit-text1{
+	text-align: center;
+}
+#exit-form .exit-popup--form{
+	position: relative;
+	display: block;
+	height: auto;
+	width: auto;
+	background: none;
+	padding: 30px 0;
+	border-radius: 0;
+	-webkit-box-shadow: 0 0 0 0;
+	-moz-box-shadow:    0 0 0 0;
+	box-shadow:         0 0 0 0;
+}
+#exit-form .exit-popup--form:after{
+	content: '';
+	display: block;
+	clear: both;
+	height: 0px;
+}
+#exit-form .exit-popup--form input[type="tel"],
+#exit-form .exit-popup--form input[type="text"],
+#exit-form .exit-popup--form button{
+	border: 0;
+	outline: 0;
+	margin: 0;
+	padding: 0;
+	font-style: normal;
+	font-weight: 400;
+	text-transform: none;
+	background: #fff;
+	-webkit-box-shadow: 0 0 0 0;
+	-moz-box-shadow:    0 0 0 0;
+	box-shadow:         0 0 0 0;
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	text-align: left;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	outline: none;
+}
+#exit-form .exit-popup--form button{
+	font-weight: 700;
+	text-transform: uppercase;
+}
+#exit-form .exit-popup--form input[type="text"]::-webkit-input-placeholder {color: #a9a9a9; opacity: 1;}
+#exit-form .exit-popup--form input[type="text"]:-moz-placeholder {color: #a9a9a9; opacity: 1;}
+#exit-form .exit-popup--form input[type="text"]::-moz-placeholder {color: #a9a9a9; opacity: 1;}
+#exit-form .exit-popup--form input[type="text"]:-ms-input-placeholder {color: #a9a9a9; opacity: 1;}
+
+#exit-form .exit-popup--form input[type="text"]{
+	width: 90%;
+	height: 64px;
+	margin-bottom: 16px;
+	line-height: 64px;
+	font-size: 17px;
+	color: #222;
+	background: #fff;
+	text-indent: 20px;
+	border: 1px solid #ccc;
+	text-shadow: none;
+}
+#exit-form .exit-popup--form input[type="text"]:focus{
+	border-color: #aaa;
+}
+#exit-form .exit-popup--form button{
+	width: 90%;
+	height: 68px;
+	line-height: 68px;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 22px;
+	font-weight: 700;
+	letter-spacing: 0.7px;
+	border-bottom: 3px solid #cd6c00;
+	background: #ff8300;
+	cursor: pointer;
+	-webkit-box-shadow: 0 0 0 0;
+	-moz-box-shadow:    0 0 0 0;
+	box-shadow:         0 0 0 0;
+	text-shadow: 0px 0px 0px;
+}
+
+
+#exit-form .exit-popup--form input[type="tel"]::-webkit-input-placeholder {color: #a9a9a9; opacity: 1;}
+#exit-form .exit-popup--form input[type="tel"]:-moz-placeholder {color: #a9a9a9; opacity: 1;}
+#exit-form .exit-popup--form input[type="tel"]::-moz-placeholder {color: #a9a9a9; opacity: 1;}
+#exit-form .exit-popup--form input[type="tel"]:-ms-input-placeholder {color: #a9a9a9; opacity: 1;}
+
+#exit-form .exit-popup--form input[type="tel"]{
+	width: 90%;
+	height: 64px;
+	margin-bottom: 16px;
+	line-height: 64px;
+	font-size: 17px;
+	color: #222;
+	background: #fff;
+	text-indent: 20px;
+	border: 1px solid #ccc;
+	text-shadow: none;
+}
+#exit-form .exit-popup--form input[type="tel"]:focus{
+	border-color: #aaa;
+}
+#exit-form .exit-popup--form button{
+	width: 90%;
+	height: 68px;
+	line-height: 68px;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 22px;
+	font-weight: 700;
+	letter-spacing: 0.7px;
+	border-bottom: 3px solid #cd6c00;
+	background: #ff8300;
+	cursor: pointer;
+	-webkit-box-shadow: 0 0 0 0;
+	-moz-box-shadow:    0 0 0 0;
+	box-shadow:         0 0 0 0;
+	text-shadow: 0px 0px 0px;
+}
+
+
+
+#exit-form .exit-popup--form button:hover{
+	background: #ff8f00;
+}
+#exit-form .exit-popup--form button:active{
+	top: -1px;
+}
+#exit-form .popup-exit-cont div.popup-exit-text2{
+	text-align: center;
+}
+#exit-form .popup-exit-cont div.popup-exit-text2:before{
+	content: '';
+	position: relative;
+	display: inline-block;
+	width: 16px;
+	height: 15px;
+	margin: 0 10px 0 0;
+	top: 2px;
+}
+
+#overlay-exit-popup {
+	display: none;
+	position:fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: #000;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+	filter: alpha(opacity=60);
+	-moz-opacity: 0.6;
+	-khtml-opacity: 0.6;
+	opacity: 0.6;
+	z-index: 999999;
+}
+</style>    </body>
+</html>
