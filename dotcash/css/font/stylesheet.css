@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'CircleRegular';
+    src: url('CircleRegular.eot');
+    src: url('CircleRegular.eot') format('embedded-opentype'),
+         url('CircleRegular.woff2') format('woff2'),
+         url('CircleRegular.woff') format('woff'),
+         url('CircleRegular.ttf') format('truetype'),
+         url('CircleRegular.svg#CircleRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'CirceExtraBold';
+    src: url('CirceExtraBold.eot');
+    src: url('CirceExtraBold.eot') format('embedded-opentype'),
+         url('CirceExtraBold.woff2') format('woff2'),
+         url('CirceExtraBold.woff') format('woff'),
+         url('CirceExtraBold.ttf') format('truetype'),
+         url('CirceExtraBold.svg#CirceExtraBold') format('svg');
+}
+
+@font-face {
+    font-family: 'FSElliotProHeavy';
+    src: url('FSElliotProHeavy.eot');
+    src: url('FSElliotProHeavy.eot') format('embedded-opentype'),
+         url('FSElliotProHeavy.woff2') format('woff2'),
+         url('FSElliotProHeavy.woff') format('woff'),
+         url('FSElliotProHeavy.ttf') format('truetype'),
+         url('FSElliotProHeavy.svg#FSElliotProHeavy') format('svg');
+}
+
+@font-face {
+    font-family: 'FSElliotPro';
+    src: url('FSElliotPro.eot');
+    src: url('FSElliotPro.eot') format('embedded-opentype'),
+         url('FSElliotPro.woff2') format('woff2'),
+         url('FSElliotPro.woff') format('woff'),
+         url('FSElliotPro.ttf') format('truetype'),
+         url('FSElliotPro.svg#FSElliotPro') format('svg');
+}
+
+@font-face {
+    font-family: 'FuturaPTDemi';
+    src: url('FuturaPTDemi.eot');
+    src: url('FuturaPTDemi.eot') format('embedded-opentype'),
+         url('FuturaPTDemi.woff2') format('woff2'),
+         url('FuturaPTDemi.woff') format('woff'),
+         url('FuturaPTDemi.ttf') format('truetype'),
+         url('FuturaPTDemi.svg#FuturaPTDemi') format('svg');
+}
+
+@font-face {
+    font-family: 'FSElliotProBold';
+    src: url('FSElliotProBold.eot');
+    src: url('FSElliotProBold.eot') format('embedded-opentype'),
+         url('FSElliotProBold.woff2') format('woff2'),
+         url('FSElliotProBold.woff') format('woff'),
+         url('FSElliotProBold.ttf') format('truetype'),
+         url('FSElliotProBold.svg#FSElliotProBold') format('svg');
+}
+
+@font-face {
+    font-family: 'HelveticaNeueThin';
+    src: url('HelveticaNeueThin.eot');
+    src: url('HelveticaNeueThin.eot') format('embedded-opentype'),
+         url('HelveticaNeueThin.woff2') format('woff2'),
+         url('HelveticaNeueThin.woff') format('woff'),
+         url('HelveticaNeueThin.ttf') format('truetype'),
+         url('HelveticaNeueThin.svg#HelveticaNeueThin') format('svg');
+}
