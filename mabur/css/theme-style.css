@@ -1002,13 +1002,17 @@ h2.resp-accordion {
 
 #back {
 
-	clear: both;
 	position: fixed;
 	float: right;
 	right: 40px;
 	top: 40px;
 	z-index: 120;
 	filter: alpha(opacity=0);
+}
+
+#back a {
+
+	color: white;
 }
 
 /*--responsive design--*/
