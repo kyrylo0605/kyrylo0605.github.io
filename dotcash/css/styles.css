@@ -661,7 +661,8 @@ footer p {
 
 #back {
 
-	background: olive;
+	background: rgb(190,245,116);
+
 	position: fixed;
 	float: right;
 	right: 50px;
@@ -674,6 +675,6 @@ footer p {
 
 #back a {
 
-	color: white;
+	color: #000000;
 	
 }
