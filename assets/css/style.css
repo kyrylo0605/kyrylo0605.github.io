@@ -904,12 +904,10 @@ background-image: url(../images/preloader1.png);
 .grid figure h2 {
 	word-spacing: -0.15em;
 	font-weight: 400;
-	font-size: 2vw;
 }
 
 .grid figure h2 span {
 	font-weight: 800;
-	font-size: 2vw;
 }
 
 .grid figure h2,
