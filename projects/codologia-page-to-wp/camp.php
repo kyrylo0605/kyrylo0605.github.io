@@ -20,6 +20,8 @@
 </head>
 <body>
 
+    <button id="back" type="button" class="btn btn-primary btn-lg"><a href="https://kyrylo0605.github.io">Go Back</a></button>
+
 <header class="main-header -camp">
     <div id="fakeLoader"></div>
 
