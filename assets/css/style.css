@@ -39,6 +39,12 @@ body {
 
 }
 
+#lang img {
+
+	width: 50px;
+	height: 24px;
+}
+
 img {
 	max-width: 100%;
 	height: auto;
