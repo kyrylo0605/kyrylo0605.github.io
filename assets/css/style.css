@@ -116,7 +116,7 @@ h3 {
 
 	font-size: 20px;
 	letter-spacing: 1px;
-	margin: 0 0 5px;
+	margin: 0 0 45px;
 }
 
 h4 {
@@ -1240,5 +1240,6 @@ body {
 
 #efset img {
 
-	height: 20px;
+	width: 60px;
+
 }
