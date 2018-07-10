@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Евроразбор</title> 
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/media.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="libs/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" >
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+<!-- Header -->
+<div class="container header-wrap">
+    <nav class="navbar navbar-default header">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+          <a class="navbar-brand" href="index.html"><img src="img/logo.png"></a>
+        </div>
+        
+        <div class="collapse navbar-collapse" id="myNavbar">
+          
+           <div class="nav navbar-nav navbar-right login">
+            <div class="sign-in" data-toggle="modal" data-target="#signIn"><img src="img/user.png"><span>&nbsp;</span><a class="dropped" href="#">&nbsp;Вход</a></div>
+            <div class="sign-up" data-toggle="modal" data-target="#signUp"><span>&nbsp;/&nbsp;</span><a class="dropped" href="#"> Регистрация</a></div>
+          </div> 
+
+          <form class="hidden-lg hidden-md" action="#menu">
+            <button type="button" class="close-menu">&times;</button>
+          </form>     
+
+          <ul class="nav navbar-nav menu">          
+            <li><a href="stock.html">запчасти б/у</a></li>
+            <li><a href="new.html">новые запчасти</a></li>
+            <li><a href="request-details.html">запрос запчастей</a></li>
+            <li><a href="payment-delivery.html">оплата и доставка</a></li>
+            <li><a href="guaranty.html">гарантии/возврат</a></li>
+            <li><a href="feedback.html">отзывы</a></li>
+            <li><a href="contacts.html">контакты</a></li>          
+          </ul>            
+          
+
+          <div class="row nav-first-row">
+            <div class="delivery">
+                 <a class="underline-not city" data-toggle="modal" data-target="#selectCity" href="#"><img src="img/map.png">&nbsp;г. Петропаловск-Камчатский</a> 
+                 <a class="dropped street" href="#" data-toggle="popover" data-html="true" data-placement="bottom" data-content="Пункты выдачи товара:<br><br>г. Тюмень, ул. Ленина 34.,склад №227<br><br>г. Тюмень, ул. Ленина 34.,склад №31"> ул. Сакко и Ванцети  135, оф. 205 &nbsp; <img src="img/arrow-down.png"></a>
+            </div>
+
+            <div class="phone-one">
+                 <p><img src="img/phone.png">&nbsp;+7(3812) 921-001</p>
+            </div>
+
+            <div class="phone-two">
+                 <p><img src="img/phone.png">&nbsp;+7(965) 989-88-99</p>
+            </div>
+
+            <div class="recall-me">
+                 <img class="hidden-xs hidden-sm" src="img/viber.png"><a class="dropped" data-toggle="modal" href="#recall">&nbsp;перезвоните мне</a>
+            </div>  
+          </div>
+
+          <div class="row nav-second-row">
+              <div class="address hidden-sm hidden-xs">
+                 <img src="img/address-status-bar.png">
+                 <div class="address-txt">
+                     <p class="address-place">Омск, ул.Пранова, 7</p>
+                     <p class="address-time">Сегодня с 9 00 до 21 00</p>
+                 </div>
+              </div>
+
+              <div class="search hidden-xs">
+                  <form class="navbar-form" role="search">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Например: Бампер передний Mazda 3">
+                    </div>
+                    <a href="search-result.html"><img src="img/search-button.png"></a>
+                  </form> 
+              </div>
+
+              <div class="basket hidden-xs">
+                  <a href="form-order.html"><img src="img/cart.png"></a>
+                  <div class="basket-inner">
+                      <p>Корзина</p>
+                      <p><span class="basket-status">пусто</span></p>
+                  </div>                  
+              </div>
+          </div>                
+        </div>
+        <!-- Only laptop and mobile -->
+          <div class="container laptop-menu-right-wrap visible-xs visible-sm">
+            <div class="row laptop-menu-right">
+                <div class="col-sm-3 phone-laptop">
+                    <a href="#"><img src="img/phone-laptop.png"></a>
+                </div>
+                <div class="col-sm-3 search-laptop btn-group">
+                    <button type="button" data-toggle="dropdown" class="dropdown-toggle search-laptop-btn" ><img src="img/search-laptop.png"></button>
+                    <ul class="dropdown-menu search-mobile hidden-md hidden-lg">
+                      <form class="navbar-form search-mobile-form" role="search">
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Например: Бампер передний Mazda 3">
+                        </div>
+                        <a href="search-result.html"><img src="img/search-button.png"></a>
+                      </form> 
+                    </ul>
+                </div>
+                <div class="col-sm-3 basket-laptop">
+                    <a href="form-order.html"><img src="img/cart-laptop.png"></a>
+                    <p><span class="basket-status">0</span></p>
+                </div>
+                <div class="col-sm-3 log-in-laptop">
+                    <a href="#"><img src="img/log-in-laptop.png"></a>
+                </div>               
+            </div>  
+        </div>           
+    </div>
+</nav>
+</div>
+
+<!-- Wrap for menu -->
+<div class="menu-wrap">
+    <div class="menu-wrap-top"> </div>
+    <div class="menu-wrap-bottom"></div>
+</div>
+
+<!-- Breadcrumbs -->
+<div class="container-fluid breadcrumb-outer">
+<div class="container breadcrumb-inner">
+   <ol class="breadcrumb">
+    <li><a href="#">Главная</a></li>
+    <li class="active">Результаты поиска</li>        
+  </ol>
+</div> 
+</div>
+
+
+<div class="container select-category-wrap search-list-wrap">
+<!-- List of search -->
+  <div class="container category-list-wrap search-list">
+  <h1>Результаты поиска</h1>
+  <div class="search-results-number">
+    <img src="img/search-result.png">
+    <p> <span>Найдено: </span><span class="search-ammount">27 новых запчастей</span><span> и </span><span class="search-ammount">12 б/у запчастей</span></p>
+  </div>
+    <div class="navbar navbar-default category-list-caption search-list-caption">
+      <div class="col-sm-6 col-xs-12">
+        <p class="catalog-list-caption">Запчасти новые (дубликат/оригинал)</p>
+      </div>     
+    </div>
+    
+    <table class="table hidden-xs list-details">
+        <thead>
+          <tr>
+            <th colspan="2">Информация</th>
+            <th>Артикул</th>
+            <th>Фирма</th>
+            <th>Поставка</th>
+            <th>Цена</th>
+            <th>Заказ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a class="media" href="#">
+                <img class="media-object" src="img/good-list.png">
+                <span class="label label-default badger-bottom-right">3 фото</span>
+              </div>        
+            </td>
+            <td>
+              <a class="good-name" href="#">Chevrolet Aveo 2011 (ХЭТЧБЕК С ОТВ. ПОД ШТАТНЫЙ ПАРКТРОНИК)</a>
+              <span class="label label-default badger-bottom-left label-new">Новый</span>
+            </td>
+            <td>
+              <p>ST-CVA6-087-A0</p>
+            </td>
+            <td>
+               <p>SAT</p>
+            </td>
+            <td>
+              <form role="form">
+                <div class="radio radio-delivery">
+                  <input type="radio" id="delivery-auto" name="delivery-auto" />
+                  <label class="delivery-auto" for="delivery-auto"><span></span><img src="img/delivery-auto.png">&nbsp;<p>6-7 дней</p></label>
+                </div>
+                <div class="radio radio-delivery">
+                  <input type="radio" id="delivery-plane" name="delivery-plane" />
+                  <label class="delivery-avia" for="delivery-plane"><span></span><img src="img/delivery-plane.png">&nbsp;<p>2 дня</p></label>
+                </div>
+              </form>
+            </td>
+            <td>
+              <p>4 250 <span>руб.</span> </p>
+            </td>
+            <td>
+              <button class="btn button-grey basket" type="submit"><img src="img/basket-list.png"></button>
+              <button class="btn button-grey help" type="submit">?</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a class="media" href="#">
+                <img class="media-object" src="img/good-list.png">
+                <span class="label label-default badger-bottom-right">3 фото</span>
+              </div>        
+            </td>
+            <td>
+              <a class="good-name" href="#">Chevrolet Aveo 2011 (ХЭТЧБЕК С ОТВ. ПОД ШТАТНЫЙ ПАРКТРОНИК)</a>
+              <span class="label label-default badger-bottom-left label-new">Новый</span>
+            </td>
+            <td>
+              <p>ST-CVA6-087-A0</p>
+            </td>
+            <td>
+               <p>SAT</p>
+            </td>
+            <td>
+              <form role="form">
+                <div class="radio radio-delivery">
+                  <input type="radio" id="delivery-auto" name="delivery-auto" />
+                  <label class="delivery-auto" for="delivery-auto"><span></span><img src="img/delivery-auto.png">&nbsp;<p>6-7 дней</p></label>
+                </div>
+                <div class="radio radio-delivery">
+                  <input type="radio" id="delivery-plane" name="delivery-plane" />
+                  <label class="delivery-avia" for="delivery-plane"><span></span><img src="img/delivery-plane.png">&nbsp;<p>2 дня</p></label>
+                </div>
+              </form>
+            </td>
+            <td>
+              <p>4 250 <span>руб.</span> </p>
+            </td>
+            <td>
+              <button class="btn button-grey basket" type="submit"><img src="img/basket-list.png"></button>
+              <button class="btn button-grey help" type="submit">?</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a class="media" href="#">
+                <img class="media-object" src="img/no-photo.png">
+                <span class="label label-default badger-bottom label-no-photo">Запрос фото</span>
+              </div>        
+            </td>
+            <td>
+              <a class="good-name" href="#">Chevrolet Aveo 2011 (ХЭТЧБЕК С ОТВ. ПОД ШТАТНЫЙ ПАРКТРОНИК)</a>
+              <span class="label label-default badger-bottom-left label-new">Новый</span>
+            </td>
+            <td>
+              <p>ST-CVA6-087-A0</p>
+            </td>
+            <td>
+               <p>SAT</p>
+            </td>
+            <td>
+              <form role="form">
+                <div class="radio radio-delivery">
+                  <input type="radio" id="delivery-auto" name="delivery-auto" />
+                  <label class="delivery-auto" for="delivery-auto"><span></span><img src="img/delivery-auto.png">&nbsp;<p>6-7 дней</p></label>
+                </div>
+                <div class="radio radio-delivery">
+                  <input type="radio" id="delivery-plane" name="delivery-plane" />
+                  <label class="delivery-avia" for="delivery-plane"><span></span><img src="img/delivery-plane.png">&nbsp;<p>2 дня</p></label>
+                </div>
+              </form>
+            </td>
+            <td>
+              <p>4 250 <span>руб.</span> </p>
+            </td>
+            <td>
+              <button class="btn button-grey basket" type="submit"><img src="img/basket-list.png"></button>
+              <button class="btn button-grey help" type="submit">?</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a class="media" href="#">
+                <img class="media-object" src="img/no-photo.png">
+                <span class="label label-default badger-bottom label-no-photo">Запрос фото</span>
+              </div>        
+            </td>
+            <td>
+              <a class="good-name" href="#">Chevrolet Aveo 2011 (ХЭТЧБЕК С ОТВ. ПОД ШТАТНЫЙ ПАРКТРОНИК)</a>
+              <span class="label label-default badger-bottom-left label-new">Новый</span>
+            </td>
+            <td>
+              <p>ST-CVA6-087-A0</p>
+            </td>
+            <td>
+               <p>SAT</p>
+            </td>
+            <td>
+              <form role="form">
+                <div class="radio radio-delivery">
+                  <input type="radio" id="delivery-auto" name="delivery-auto" />
+                  <label class="delivery-auto" for="delivery-auto"><span></span><img src="img/delivery-auto.png">&nbsp;<p>6-7 дней</p></label>
+                </div>
+                <div class="radio radio-delivery">
+                  <input type="radio" id="delivery-plane" name="delivery-plane" />
+                  <label class="delivery-avia" for="delivery-plane"><span></span><img src="img/delivery-plane.png">&nbsp;<p>2 дня</p></label>
+                </div>
+              </form>
+            </td>
+            <td>
+              <p>4 250 <span>руб.</span> </p>
+            </td>
+            <td>
+              <button class="btn button-grey basket" type="submit"><img src="img/basket-list.png"></button>
+              <button class="btn button-grey help" type="submit">?</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a class="media" href="#">
+                <img class="media-object" src="img/no-photo.png">
+                <span class="label label-default badger-bottom label-no-photo">Запрос фото</span>
+              </div>        
+            </td>
+            <td>
+              <a class="good-name" href="#">Chevrolet Aveo 2011 (ХЭТЧБЕК С ОТВ. ПОД ШТАТНЫЙ ПАРКТРОНИК)</a>
+              <span class="label label-default badger-bottom-left label-new">Новый</span>
+            </td>
+            <td>
+              <p>ST-CVA6-087-A0</p>
+            </td>
+            <td>
+               <p>SAT</p>
+            </td>
+            <td>
+              <form role="form">
+                <div class="radio radio-delivery">
+                  <input type="radio" id="delivery-auto" name="delivery-auto" />
+                  <label class="delivery-auto" for="delivery-auto"><span></span><img src="img/delivery-auto.png">&nbsp;<p>6-7 дней</p></label>
+                </div>
+                <div class="radio radio-delivery">
+                  <input type="radio" id="delivery-plane" name="delivery-plane" />
+                  <label class="delivery-avia" for="delivery-plane"><span></span><img src="img/delivery-plane.png">&nbsp;<p>2 дня</p></label>
+                </div>
+              </form>
+            </td>
+            <td>
+              <p>4 250 <span>руб.</span> </p>
+            </td>
+            <td>
+              <button class="btn button-grey basket" type="submit"><img src="img/basket-list.png"></button>
+              <button class="btn button-grey help" type="submit">?</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a class="media" href="#">
+                <img class="media-object" src="img/no-photo.png">
+                <span class="label label-default badger-bottom label-no-photo">Запрос фото</span>
+              </div>        
+            </td>
+            <td>
+              <a class="good-name" href="#">Chevrolet Aveo 2011 (ХЭТЧБЕК С ОТВ. ПОД ШТАТНЫЙ ПАРКТРОНИК)</a>
+              <span class="label label-default badger-bottom-left label-new">Новый</span>
+            </td>
+            <td>
+              <p>ST-CVA6-087-A0</p>
+            </td>
+            <td>
+               <p>SAT</p>
+            </td>
+            <td>
+              <form role="form">
+                <div class="radio radio-delivery">
+                  <input type="radio" id="delivery-auto" name="delivery-auto" />
+                  <label class="delivery-auto" for="delivery-auto"><span></span><img src="img/delivery-auto.png">&nbsp;<p>6-7 дней</p></label>
+                </div>
+                <div class="radio radio-delivery">
+                  <input type="radio" id="delivery-plane" name="delivery-plane" />
+                  <label class="delivery-avia" for="delivery-plane"><span></span><img src="img/delivery-plane.png">&nbsp;<p>2 дня</p></label>
+                </div>
+              </form>
+            </td>
+            <td>
+              <p>4 250 <span>руб.</span> </p>
+            </td>
+            <td>
+              <button class="btn button-grey basket" type="submit"><img src="img/basket-list.png"></button>
+              <button class="btn button-grey help" type="submit">?</button>
+            </td>
+          </tr>
+        </tbody>
+    </table> 
+
+    <div class="list-details-mobile hidden-sm hidden-md hidden-lg ">
+      <div class="list-details-mobile-item">      
+        <table class="list-details-mobile-body">
+          <thead>
+            <tr>
+              <th>
+                <a class="media" href="#">
+                  <img class="media-object" src="img/bamper-big.png">
+                  <span class="label label-default badger-bottom-right">3 фото</span>
+                </a> 
+              </th>
+              <th>
+                <a class="underline good-name" href="#">Chevrolet Aveo 2011 (ХЭТЧБЕК С ОТВ. ПОД ШТАТНЫЙ ПАРКТРОНИК)</a>&nbsp;<span class="label label-default badger-bottom-left label-new">Новый</span> 
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>
+                <p>Артикул</p>              
+              </td>
+              <td>
+                <p>ST-CVA6-087-A0</p>    
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Фирма</p>              
+              </td>
+              <td>
+                <p>SAT</p>    
+              </td>
+            </tr>
+             <tr>
+              <td>
+                <p>Поставка</p>              
+              </td>
+              <td>
+                <form role="form">
+                  <div class="radio radio-delivery">
+                    <input type="radio" id="delivery-auto" name="delivery-auto" />
+                    <label class="delivery-auto" for="delivery-auto"><span></span><img src="img/delivery-auto.png">&nbsp;<p>6-7 дней</p></label>
+                  </div>
+                  <div class="radio radio-delivery">
+                    <input type="radio" id="delivery-plane" name="delivery-plane" />
+                    <label class="delivery-avia" for="delivery-plane"><span></span><img src="img/delivery-plane.png">&nbsp;<p>2 дня</p></label>
+                  </div>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p class="price">4 250 <span>руб.</span> </p>
+              </td>
+              <td>
+                <button class="btn button-grey basket" type="submit"><img src="img/basket-list.png"></button>
+                <button class="btn button-grey help" type="submit">?</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="list-details-mobile hidden-sm hidden-md hidden-lg ">
+      <div class="list-details-mobile-item">      
+        <table class="list-details-mobile-body">
+          <thead>
+            <tr>
+              <th>
+                <a class="media" href="#">
+                  <img class="media-object" src="img/bamper-big.png">
+                  <span class="label label-default badger-bottom-right">3 фото</span>
+                </a> 
+              </th>
+              <th>
+                <a class="underline good-name" href="#">Chevrolet Aveo 2011 (ХЭТЧБЕК С ОТВ. ПОД ШТАТНЫЙ ПАРКТРОНИК)</a>&nbsp;<span class="label label-default badger-bottom-left label-new">Новый</span> 
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>
+                <p>Артикул</p>              
+              </td>
+              <td>
+                <p>ST-CVA6-087-A0</p>    
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Фирма</p>              
+              </td>
+              <td>
+                <p>SAT</p>    
+              </td>
+            </tr>
+             <tr>
+              <td>
+                <p>Поставка</p>              
+              </td>
+              <td>
+                <form role="form">
+                  <div class="radio radio-delivery">
+                    <input type="radio" id="delivery-auto" name="delivery-auto" />
+                    <label class="delivery-auto" for="delivery-auto"><span></span><img src="img/delivery-auto.png">&nbsp;<p>6-7 дней</p></label>
+                  </div>
+                  <div class="radio radio-delivery">
+                    <input type="radio" id="delivery-plane" name="delivery-plane" />
+                    <label class="delivery-avia" for="delivery-plane"><span></span><img src="img/delivery-plane.png">&nbsp;<p>2 дня</p></label>
+                  </div>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p class="price">4 250 <span>руб.</span> </p>
+              </td>
+              <td>
+                <button class="btn button-grey basket" type="submit"><img src="img/basket-list.png"></button>
+                <button class="btn button-grey help" type="submit">?</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="list-details-mobile hidden-sm hidden-md hidden-lg ">
+      <div class="list-details-mobile-item">      
+        <table class="list-details-mobile-body">
+          <thead>
+            <tr>
+              <th>
+                <a class="media" href="#">
+                  <img class="media-object" src="img/bamper-big.png">
+                  <span class="label label-default badger-bottom-right">3 фото</span>
+                </a> 
+              </th>
+              <th>
+                <a class="underline good-name" href="#">Chevrolet Aveo 2011 (ХЭТЧБЕК С ОТВ. ПОД ШТАТНЫЙ ПАРКТРОНИК)</a>&nbsp;<span class="label label-default badger-bottom-left label-new">Новый</span> 
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>
+                <p>Артикул</p>              
+              </td>
+              <td>
+                <p>ST-CVA6-087-A0</p>    
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Фирма</p>              
+              </td>
+              <td>
+                <p>SAT</p>    
+              </td>
+            </tr>
+             <tr>
+              <td>
+                <p>Поставка</p>              
+              </td>
+              <td>
+                <form role="form">
+                  <div class="radio radio-delivery">
+                    <input type="radio" id="delivery-auto" name="delivery-auto" />
+                    <label class="delivery-auto" for="delivery-auto"><span></span><img src="img/delivery-auto.png">&nbsp;<p>6-7 дней</p></label>
+                  </div>
+                  <div class="radio radio-delivery">
+                    <input type="radio" id="delivery-plane" name="delivery-plane" />
+                    <label class="delivery-avia" for="delivery-plane"><span></span><img src="img/delivery-plane.png">&nbsp;<p>2 дня</p></label>
+                  </div>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p class="price">4 250 <span>руб.</span> </p>
+              </td>
+              <td>
+                <button class="btn button-grey basket" type="submit"><img src="img/basket-list.png"></button>
+                <button class="btn button-grey help" type="submit">?</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="show-else-wrap show-else-search-wrap">
+      <div class="show-else show-else-search">
+        <a href="#">Показать еще 10 товаров</a>
+      </div>
+    </div>
+
+    <div class="navbar navbar-default category-list-caption search-list-caption">
+      <div class="col-sm-6 col-xs-12">
+        <p class="catalog-list-caption">Запчасти (б/у оригинал)</p>
+      </div>      
+    </div>
+
+    <table class="table hidden-xs list-details">
+        <thead>
+          <tr>
+            <th colspan="2">Информация</th>
+            <th>Артикул</th>
+            <th>Фирма</th>
+            <th>Поставка</th>
+            <th>Цена</th>
+            <th>Заказ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a class="media" href="#">
+                <img class="media-object" src="img/good-list.png">
+                <span class="label label-default badger-bottom-right">3 фото</span>
+              </div>        
+            </td>
+            <td>
+              <a class="good-name" data-toggle="modal" data-target="#consist" href="#">Chevrolet Aveo 2011 (ХЭТЧБЕК С ОТВ. ПОД ШТАТНЫЙ ПАРКТРОНИК)</a>
+              <span class="label label-default badger-bottom-left label-stock-10">Б/У 10%</span>
+            </td>
+            <td>
+              <p>ST-CVA6-087-A0</p>
+            </td>
+            <td>
+               <p>SAT</p>
+            </td>
+            <td>
+              <form role="form">
+                <div class="radio radio-delivery">
+                  <input type="radio" id="delivery-auto" name="delivery-auto" />
+                  <label class="delivery-auto" for="delivery-auto"><span></span><img src="img/delivery-auto.png">&nbsp;<p>6-7 дней</p></label>
+                </div>
+                <div class="radio radio-delivery">
+                  <input type="radio" id="delivery-plane" name="delivery-plane" />
+                  <label class="delivery-avia" for="delivery-plane"><span></span><img src="img/delivery-plane.png">&nbsp;<p>2 дня</p></label>
+                </div>
+              </form>
+            </td>
+            <td>
+              <p>4 250 <span>руб.</span> </p>
+            </td>
+            <td>
+              <button class="btn button-grey basket" type="submit"><img src="img/basket-list.png"></button>
+              <button class="btn button-grey help" type="submit">?</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a class="media" href="#">
+                <img class="media-object" src="img/good-list.png">
+                <span class="label label-default badger-bottom-right">3 фото</span>
+              </div>        
+            </td>
+            <td>
+              <a class="good-name" href="#">Chevrolet Aveo 2011 (ХЭТЧБЕК С ОТВ. ПОД ШТАТНЫЙ ПАРКТРОНИК)</a>
+              <span class="label label-default badger-bottom-left label-stock-50">Б/У 50%</span> <img src="img/danger.png">
+            </td>
+            <td>
+              <p>ST-CVA6-087-A0</p>
+            </td>
+            <td>
+               <p>SAT</p>
+            </td>
+            <td>
+              <form role="form">
+                <div class="radio radio-delivery">
+                  <input type="radio" id="delivery-auto" name="delivery-auto" />
+                  <label class="delivery-auto" for="delivery-auto"><span></span><img src="img/delivery-auto.png">&nbsp;<p>6-7 дней</p></label>
+                </div>
+                <div class="radio radio-delivery">
+                  <input type="radio" id="delivery-plane" name="delivery-plane" />
+                  <label class="delivery-avia" for="delivery-plane"><span></span><img src="img/delivery-plane.png">&nbsp;<p>2 дня</p></label>
+                </div>
+              </form>
+            </td>
+            <td>
+              <p>4 250 <span>руб.</span> </p>
+            </td>
+            <td>
+              <button class="btn button-grey basket" type="submit"><img src="img/basket-list.png"></button>
+              <button class="btn button-grey help" type="submit">?</button>
+            </td>
+          </tr>
+          <tr class="one-day">
+            <td>
+              <a class="media" href="#">
+                <img class="media-object" src="img/no-photo.png">
+                <span class="label label-default badger-bottom label-no-photo">Запрос фото</span>
+              </div>        
+            </td>
+            <td>
+              <a class="good-name" href="#">Chevrolet Aveo 2011 (ХЭТЧБЕК С ОТВ. ПОД ШТАТНЫЙ ПАРКТРОНИК)</a>
+              <span class="label label-default badger-bottom-left label-new">Новый</span>
+            </td>
+            <td>
+              <p>ST-CVA6-087-A0</p>
+            </td>
+            <td>
+               <p>SAT</p>
+            </td>
+            <td>
+             <p class="term-delivery">1 день</p>
+            </td>
+            <td>
+              <p>4 250 <span>руб.</span> </p>
+            </td>
+            <td>
+              <button class="btn button-grey basket" type="submit"><img src="img/basket-list.png"></button>
+              <button class="btn button-grey help" type="submit">?</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a class="media" href="#">
+                <img class="media-object" src="img/no-photo.png">
+                <span class="label label-default badger-bottom label-no-photo">Запрос фото</span>
+              </div>        
+            </td>
+            <td>
+              <a class="good-name" href="#">Chevrolet Aveo 2011 (ХЭТЧБЕК С ОТВ. ПОД ШТАТНЫЙ ПАРКТРОНИК)</a>
+              <span class="label label-default badger-bottom-left label-new">Новый</span>
+            </td>
+            <td>
+              <p>ST-CVA6-087-A0</p>
+            </td>
+            <td>
+               <p>SAT</p>
+            </td>
+            <td>
+              <form role="form">
+                <div class="radio radio-delivery">
+                  <input type="radio" id="delivery-auto" name="delivery-auto" />
+                  <label class="delivery-auto" for="delivery-auto"><span></span><img src="img/delivery-auto.png">&nbsp;<p>6-7 дней</p></label>
+                </div>
+                <div class="radio radio-delivery">
+                  <input type="radio" id="delivery-plane" name="delivery-plane" />
+                  <label class="delivery-avia" for="delivery-plane"><span></span><img src="img/delivery-plane.png">&nbsp;<p>2 дня</p></label>
+                </div>
+              </form>
+            </td>
+            <td>
+              <p>4 250 <span>руб.</span> </p>
+            </td>
+            <td>
+              <button class="btn button-grey basket" type="submit"><img src="img/basket-list.png"></button>
+              <button class="btn button-grey help" type="submit">?</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a class="media" href="#">
+                <img class="media-object" src="img/no-photo.png">
+                <span class="label label-default badger-bottom label-no-photo">Запрос фото</span>
+              </div>        
+            </td>
+            <td>
+              <a class="good-name" href="#">Chevrolet Aveo 2011 (ХЭТЧБЕК С ОТВ. ПОД ШТАТНЫЙ ПАРКТРОНИК)</a>
+              <span class="label label-default badger-bottom-left label-new">Новый</span>
+            </td>
+            <td>
+              <p>ST-CVA6-087-A0</p>
+            </td>
+            <td>
+               <p>SAT</p>
+            </td>
+            <td>
+              <form role="form">
+                <div class="radio radio-delivery">
+                  <input type="radio" id="delivery-auto" name="delivery-auto" />
+                  <label class="delivery-auto" for="delivery-auto"><span></span><img src="img/delivery-auto.png">&nbsp;<p>6-7 дней</p></label>
+                </div>
+                <div class="radio radio-delivery">
+                  <input type="radio" id="delivery-plane" name="delivery-plane" />
+                  <label class="delivery-avia" for="delivery-plane"><span></span><img src="img/delivery-plane.png">&nbsp;<p>2 дня</p></label>
+                </div>
+              </form>
+            </td>
+            <td>
+              <p>4 250 <span>руб.</span> </p>
+            </td>
+            <td>
+              <button class="btn button-grey basket" type="submit"><img src="img/basket-list.png"></button>
+              <button class="btn button-grey help" type="submit">?</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a class="media" href="#">
+                <img class="media-object" src="img/no-photo.png">
+                <span class="label label-default badger-bottom label-no-photo">Запрос фото</span>
+              </div>        
+            </td>
+            <td>
+              <a class="good-name" href="#">Chevrolet Aveo 2011 (ХЭТЧБЕК С ОТВ. ПОД ШТАТНЫЙ ПАРКТРОНИК)</a>
+              <span class="label label-default badger-bottom-left label-new">Новый</span>
+            </td>
+            <td>
+              <p>ST-CVA6-087-A0</p>
+            </td>
+            <td>
+               <p>SAT</p>
+            </td>
+            <td>
+              <form role="form">
+                <div class="radio radio-delivery">
+                  <input type="radio" id="delivery-auto" name="delivery-auto" />
+                  <label class="delivery-auto" for="delivery-auto"><span></span><img src="img/delivery-auto.png">&nbsp;<p>6-7 дней</p></label>
+                </div>
+                <div class="radio radio-delivery">
+                  <input type="radio" id="delivery-plane" name="delivery-plane" />
+                  <label class="delivery-avia" for="delivery-plane"><span></span><img src="img/delivery-plane.png">&nbsp;<p>2 дня</p></label>
+                </div>
+              </form>
+            </td>
+            <td>
+              <p>4 250 <span>руб.</span> </p>
+            </td>
+            <td>
+              <button class="btn button-grey basket" type="submit"><img src="img/basket-list.png"></button>
+              <button class="btn button-grey help" type="submit">?</button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+
+   <div class="list-details-mobile hidden-sm hidden-md hidden-lg ">
+      <div class="list-details-mobile-item">      
+        <table class="list-details-mobile-body">
+          <thead>
+            <tr>
+              <th>
+                <a class="media" href="#">
+                  <img class="media-object" src="img/bamper-big.png">
+                  <span class="label label-default badger-bottom-right">3 фото</span>
+                </a> 
+              </th>
+              <th>
+                <a class="underline good-name" href="#">Chevrolet Aveo 2011 (ХЭТЧБЕК С ОТВ. ПОД ШТАТНЫЙ ПАРКТРОНИК)</a>&nbsp;<span class="label label-default badger-bottom-left label-new">Новый</span> 
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>
+                <p>Артикул</p>              
+              </td>
+              <td>
+                <p>ST-CVA6-087-A0</p>    
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>Фирма</p>              
+              </td>
+              <td>
+                <p>SAT</p>    
+              </td>
+            </tr>
+             <tr>
+              <td>
+                <p>Поставка</p>              
+              </td>
+              <td>
+                <form role="form">
+                  <div class="radio radio-delivery">
+                    <input type="radio" id="delivery-auto" name="delivery-auto" />
+                    <label class="delivery-auto" for="delivery-auto"><span></span><img src="img/delivery-auto.png">&nbsp;<p>6-7 дней</p></label>
+                  </div>
+                  <div class="radio radio-delivery">
+                    <input type="radio" id="delivery-plane" name="delivery-plane" />
+                    <label class="delivery-avia" for="delivery-plane"><span></span><img src="img/delivery-plane.png">&nbsp;<p>2 дня</p></label>
+                  </div>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p class="price">4 250 <span>руб.</span> </p>
+              </td>
+              <td>
+                <button class="btn button-grey basket" type="submit"><img src="img/basket-list.png"></button>
+                <button class="btn button-grey help" type="submit">?</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+     <div class="show-else-wrap show-else-search-wrap">
+      <div class="show-else show-else-search">
+        <a href="#">Показать еще 10 товаров</a>
+      </div>
+    </div>
+
+    <div class="price-attention hidden-sm hidden-md hidden-lg">
+        <h6>Внимание!</h6>
+        <p>Стоимость авиа-доставки расчитывается отдельно.
+        Тарифы авиакомпаний вы можете посмотреть <a class="underline-not" href="#">доставка и оплата</a></p>
+        <a class="avia-agree" href="#">Я согласен, продолжить</a> <a class="avia-agree-not" href="#">Отмена</a>
+    </div>
+
+    <!-- Modal Consist -->
+    <div id="consist" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+       <!-- Modal content-->
+        <div class="modal-content modal-consist">
+          <div class="modal-header modal-consist-header">
+            <button type="button" class="close" data-dismiss="modal"><img src="img/close-modal.png"></button>
+            <h4 class="modal-title">Состав комплекта</h4>
+          </div>
+          <div class="modal-body modal-consist-body">
+            <table class="consist">
+              <thead>
+                <tr>
+                  <th>Информация</th>
+                  <th>Цена</th>
+                  <th>Износ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Дверь задняя левая</td>
+                  <td>5000 руб.</td>
+                  <td>
+                     <span class="label label-default badger-bottom-left label-stock-10">Б/У 10%</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Ручка задняя левая</td>
+                  <td>1000 руб.</td>
+                  <td>
+                     <span class="label label-default badger-bottom-left label-stock-10">Б/У 10%</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Стекло задние левое</td>
+                  <td>1000 руб.</td>
+                  <td>
+                     <span class="label label-default badger-bottom-left label-stock-50">Б/У 50%</span>&nbsp;<img src="img/danger.png">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>      
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+    <div class="container-fluid main-footer-top-wrap">
+        <div class="container main-footer-top">
+            <a href="index.html"><img src="img/logo-invert.png" alt="#"></a>
+            <ul class="main-footer-menu">
+                <li class="spare-stock"><a href="stock.html">запчасти б/у</a></li>
+                <li class="spare-new"><a href="new.html">новые запчасти</a></li>
+                <li class="spare-request"><a href="request-details.html">запрос запчастей</a></li>
+                <li class="payment"><a href="payment-delivery.html">оплата и доставка</a></li>
+                <li class="contact"><a href="contacts.html">контакты</a></li>          
+            </ul>    
+        </div>
+    </div>
+    <div class="container-fluid main-footer-middle-wrap">
+        <div class="container main-footer-middle">
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-12 main-footer-middle-contact">
+                <p>г. Омск, ул. Пранова, 7. <a class="underline-not" href="contacts.html">Как проехать?</a></p>
+                <p>+7(3812)921-001,   +7 965 989 88 99</p><br>
+                <p><span>Официальный партнёр <a class="underline-not" href="#">Евро Авто</a></span></p>
+            </div>
+            <div class="col-md-4 hidden-xs hidden-sm mobile-version">
+                <a href="#"><img src="img/mobile-version.png" alt="#"></a> 
+            </div>    
+            <div class="col-md-2 col-sm-3 col-xs-6 we-accept">
+                <p>Мы принимаем</p>
+                <img src="img/visa-icon.png" alt="#">
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-6 our-partner">
+                <p>Наш партнер</p>
+                <img src="img/alfa.png" alt="#">
+            </div>
+        </div>    
+    </div>
+    </div>
+    <div class="container copyright">
+        <div class="row">
+            <div class="col-md-6 col-sm-4 col-xs-12">
+                <p>© 2016 Евроразбор – Авторазбор европейских автомобилей</p>    
+            </div>
+            <div class="col-md-3 col-sm-3 hidden-xs agree">
+                 <a href="user-agree.html">Пользовательское соглашение</a>
+            </div>
+            <div class="col-md-3 col-sm-3 hidden-xs confident">
+                <a href="guaranty.html">Положение о конфиденциальности</a>
+            </div>
+            <div class="col-sm-2 col-xs-12 hidden-md hidden-lg full-version">
+                <a href="#">Полная версия сайта</a>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!-- Modal Sign In-->
+<div id="signIn" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content modal-sign-in">
+      <div class="modal-header modal-sign-in-header">
+        <button type="button" class="close" data-dismiss="modal"><img src="img/close-modal.png" alt="#"></button>
+        <h4 class="modal-title">Вход в личный кабинет</h4>
+      </div>
+      <div class="modal-body modal-sign-in-body">
+      <form role="form">
+          <div class="form-group">
+             <label id="phone">&nbsp;Телефон  или Email</label>
+             <input for="phone" type="text" placeholder="3 серия E90 2005 г"> 
+          </div>
+          <div class="recall-password">
+             <a href="#">Напомнить пароль</a> 
+          </div> 
+          <div class="">
+             <input type="password" placeholder="Пароль">     
+          </div> 
+          <div class="remember-me">
+             <input id="check1" type="checkbox" name="check" value="check1">
+             <label for="check1"><span></span>Запомнить меня</label>            
+          </div>  
+          <div class="form-group">
+             <button type="submit" class="btn button-green">Войти</button>
+          </div>
+      </form> 
+        <div class="enter">
+            <div>
+                <p>Первый раз?</p>
+            </div>
+            <div>
+                <a href="#signUp">Зарегистрируйтесь</a>
+            </div>            
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Sign Up-->
+<div id="signUp" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content modal-sign-up">
+      <div class="modal-header modal-sign-up-header">
+        <button type="button" class="close" data-dismiss="modal"><img src="img/close-modal.png" alt="#"></button>
+        <h4 class="modal-title">Регистрация</h4>
+      </div>
+      <div class="modal-body modal-sign-up-body">
+      <form role="form">
+          <div class="form-group">
+              <label id="name">*Имя</label>
+              <input for="name" type="text" placeholder="Михаил Иванович">  
+          </div>
+          <div class="form-group">
+              <label id="phone">*Номер телефона</label>
+              <input for="phone" type="text" placeholder="+7 (***) ***-**-**">  
+          </div>
+          <div class="form-group">
+              <label id="email">*E-mail</label>
+              <input for="email" type="text" placeholder="***@email.ru">  
+          </div>
+          <div class="form-group">
+          <label for="country">*Страна</label>
+              <select id="country">
+              <option>
+                  <div class="main-request-demont-item-option">
+                      <p>Россия</p>
+                  </div>
+              </option>
+              <option>Казахстан</option>
+          </select>
+          </div>
+          <div class="form-group">
+               <label for="region">*Регион</label>
+               <select id="region">
+                  <option>
+                      <div class="main-request-demont-item-option">
+                          <p>Свердловская область</p>
+                      </div>
+                  </option>
+                  <option>Тюменьская область</option>
+               </select>
+          </div>
+          <div class="form-group">
+              <label for="city">*Город</label>
+              <select id="city">
+                  <option>
+                      <div class="main-request-demont-item-option">
+                          <p>Екатеринбург</p>
+                      </div>
+                  </option>
+                  <option>Тюмень</option>
+              </select>
+          </div>
+          <div class="address-store">
+            <p class="can-take">Товар вы можете забрать:</p>
+            <p class="storage"><img src="img/store.png" alt="#">&nbsp;Склад «Деловые линии»</p>
+            <a href="#">г. Алматы,  ул. Ленина, 7</a>
+            <p class="phone">+7(3812)900-022, +7(3812)800-030</p>
+          </div>
+           <p>* - поля обязательные к заполнению</p>
+           <div class="row modal-sign-up-buttons">
+             <div class="col-xs-12 col-sm-6 col-md-6 col-ld-6">
+               <img src="img/i-not-robot.png" alt="#">
+             </div>
+             <div class="col-xs-12 col-sm-6 col-md-6 col-ld-6">
+               <button class="btn button-green">Войти</button>
+             </div>
+           </div>
+        </form>
+        </div>
+        <div class="row enter">
+            <div >
+                <p>Вы уже зарегистрированы?</p>
+            </div>
+            <div >
+                <a class="underline-not" href="#signIn">Войдите</a>
+            </div>            
+        </div>      
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Modal Recall -->
+<div id="recall" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+   <!-- Modal content-->
+    <div class="modal-content modal-recall">
+      <div class="modal-header modal-recall-header">
+        <button type="button" class="close" data-dismiss="modal"><img src="img/close-modal.png" alt="#"></button>
+        <h4 class="modal-title">Оставьте номер телефона</h4>
+      </div>
+      <div class="modal-body modal-recall-body">
+        <form role="form">
+            <div class="form-group">
+                <label id="phone">*Номер телефона</label>
+                <input for="phone" type="text" placeholder="+7 (***) ***-**-**"> 
+            </div>
+            <button type="submit" class="btn button-green">Отправить</button>
+        </form>
+      </div>      
+    </div>
+  </div>
+</div>
+
+<!-- Modal City select -->
+<div id="selectCity" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content modal-select-city">
+      <div class="modal-header modal-select-city-header">
+        <button type="button" class="close" data-dismiss="modal"><img src="img/close-modal.png" alt="#"></button>
+        <h4 class="modal-title">Ваш город: <span>Тюмень</span> </h4>
+      </div>
+      <div class="modal-body row modal-select-city-body">
+          <form role="form">
+                <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 my-city">
+                    <button type="submit" class="btn button-green">Да это мой город</button>
+                </div>
+          </form>
+          <form role="form" action="#selectCityNext">
+                <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 other-city">
+                    <button src="#selectCityNext" type="submit" class="btn button-grey">Выбрать другой город</button>        
+                </div>      
+          </form>             
+      </div>      
+    </div>
+  </div>
+</div>
+
+<!-- Modal City next next -->
+<div id="selectCityNext" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content modal-select-city-next">
+      <div class="modal-header modal-select-city-next-header">
+        <button type="button" class="close" data-dismiss="modal"><img src="img/close-modal.png" alt="#"></button>
+        <h4 class="modal-title">Выберите свой город или ближайший:</h4>
+      </div>
+      <ul class="nav nav-tabs tabs-city">
+          <li class="active"><a data-toggle="tab" href="#home">Россия</a></li>
+          <li><a data-toggle="tab" href="#menu1">Казахстан</a></li>
+      </ul>
+      <div class="tab-content">
+      <div id="home" class="tab-pane fade in active">
+            <div class="modal-body modal-select-city-next-body">
+            <div class="row city-list">
+              <div class="col-xs-12">
+                  <form class="search-city" role="search">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Введите город">
+                    </div>
+                  </form>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="underline-not" href="#">Сургут</a>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="large-city underline-not" href="#">Екатеринбург</a>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="underline-not" href="#">Челябинск</a>
+              </div>
+               <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="large-city underline-not" href="#">Екатеринбург</a>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="underline-not" href="#">Сургут</a>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="large-city underline-not" href="#">Москва</a>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="underline-not" href="#">Екатеринбург</a>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="underline-not" href="#">Челябинск</a>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="underline-not" href="#">Сургут</a>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="underline-not" href="#">Екатеринбург</a>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="underline-not" href="#">Челябинск</a>
+              </div>
+            </div>      
+            </div>
+      </div>
+      <div id="menu1" class="tab-pane fade in">
+      <div class="modal-body modal-select-city-next-body">
+            <div class="row city-list">
+              <div class="col-xs-12">
+                  <form class="search-city" role="search">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Введите город">
+                    </div>
+                  </form>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="underline-not" href="#">Актобе</a>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="large-city underline-not" href="#">Астана</a>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="underline-not" href="#">Караганда</a>
+              </div>
+            </div>      
+            </div>
+      </div>
+      </div>   
+    </div>
+</div>
+
+</body>

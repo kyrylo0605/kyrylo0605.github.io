@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Евроразбор</title> 
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/media.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="libs/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" >
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+<!-- Header -->
+<div class="container header-wrap">
+    <nav class="navbar navbar-default header">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+          <a class="navbar-brand" href="index.html"><img src="img/logo.png"></a>
+        </div>
+        
+        <div class="collapse navbar-collapse" id="myNavbar">
+          
+           <div class="nav navbar-nav navbar-right login">
+            <div class="sign-in" data-toggle="modal" data-target="#signIn"><img src="img/user.png"><span>&nbsp;</span><a class="dropped" href="#">&nbsp;Вход</a></div>
+            <div class="sign-up" data-toggle="modal" data-target="#signUp"><span>&nbsp;/&nbsp;</span><a class="dropped" href="#"> Регистрация</a></div>
+          </div> 
+
+          <form class="hidden-lg hidden-md" action="#menu">
+            <button type="button" class="close-menu">&times;</button>
+          </form>     
+
+          <ul class="nav navbar-nav menu">          
+            <li><a href="stock.html">запчасти б/у</a></li>
+            <li><a href="new.html">новые запчасти</a></li>
+            <li><a href="request-details.html">запрос запчастей</a></li>
+            <li><a href="payment-delivery.html">оплата и доставка</a></li>
+            <li><a href="guaranty.html">гарантии/возврат</a></li>
+            <li><a href="feedback.html">отзывы</a></li>
+            <li><a href="contacts.html">контакты</a></li>          
+          </ul>            
+          
+
+          <div class="row nav-first-row">
+            <div class="delivery">
+                 <a class="underline-not city" data-toggle="modal" data-target="#selectCity" href="#"><img src="img/map.png">&nbsp;г. Петропаловск-Камчатский</a> 
+                 <a class="dropped street" href="#" data-toggle="popover" data-html="true" data-placement="bottom" data-content="Пункты выдачи товара:<br><br>г. Тюмень, ул. Ленина 34.,склад №227<br><br>г. Тюмень, ул. Ленина 34.,склад №31"> ул. Сакко и Ванцети  135, оф. 205 &nbsp; <img src="img/arrow-down.png"></a>
+            </div>
+
+            <div class="phone-one">
+                 <p><img src="img/phone.png">&nbsp;+7(3812) 921-001</p>
+            </div>
+
+            <div class="phone-two">
+                 <p><img src="img/phone.png">&nbsp;+7(965) 989-88-99</p>
+            </div>
+
+            <div class="recall-me">
+                 <img class="hidden-xs hidden-sm" src="img/viber.png"><a class="dropped" data-toggle="modal" href="#recall">&nbsp;перезвоните мне</a>
+            </div>  
+          </div>
+
+          <div class="row nav-second-row">
+              <div class="address hidden-sm hidden-xs">
+                 <img src="img/address-status-bar.png">
+                 <div class="address-txt">
+                     <p class="address-place">Омск, ул.Пранова, 7</p>
+                     <p class="address-time">Сегодня с 9 00 до 21 00</p>
+                 </div>
+              </div>
+
+              <div class="search hidden-xs">
+                  <form class="navbar-form" role="search">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Например: Бампер передний Mazda 3">
+                    </div>
+                    <a href="search-result.html"><img src="img/search-button.png"></a>
+                  </form> 
+              </div>
+
+              <div class="basket hidden-xs">
+                  <a href="form-order.html"><img src="img/cart.png"></a>
+                  <div class="basket-inner">
+                      <p>Корзина</p>
+                      <p><span class="basket-status">пусто</span></p>
+                  </div>                  
+              </div>
+          </div>                
+        </div>
+        <!-- Only laptop and mobile -->
+          <div class="container laptop-menu-right-wrap visible-xs visible-sm">
+            <div class="row laptop-menu-right">
+                <div class="col-sm-3 phone-laptop">
+                    <a href="#"><img src="img/phone-laptop.png"></a>
+                </div>
+                <div class="col-sm-3 search-laptop btn-group">
+                    <button type="button" data-toggle="dropdown" class="dropdown-toggle search-laptop-btn" ><img src="img/search-laptop.png"></button>
+                    <ul class="dropdown-menu search-mobile hidden-md hidden-lg">
+                      <form class="navbar-form search-mobile-form" role="search">
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Например: Бампер передний Mazda 3">
+                        </div>
+                        <a href="search-result.html"><img src="img/search-button.png"></a>
+                      </form> 
+                    </ul>
+                </div>
+                <div class="col-sm-3 basket-laptop">
+                    <a href="form-order.html"><img src="img/cart-laptop.png"></a>
+                    <p><span class="basket-status">0</span></p>
+                </div>
+                <div class="col-sm-3 log-in-laptop">
+                    <a href="#"><img src="img/log-in-laptop.png"></a>
+                </div>               
+            </div>  
+        </div>           
+    </div>
+</nav>
+</div>
+
+<!-- Wrap for menu -->
+<div class="menu-wrap">
+    <div class="menu-wrap-top"> </div>
+    <div class="menu-wrap-bottom"></div>
+</div>
+
+<!-- Breadcrumbs -->
+<div class="container-fluid breadcrumb-outer">
+<div class="container breadcrumb-inner">
+   <ol class="breadcrumb">
+    <li><a href="#">Главная</a></li>
+    <li><a href="#">Запчасти Б/У</a></li>
+    <li><a href="#">Chevrolet </a></li>
+    <li class="active">Модели</li>        
+  </ol>
+</div> 
+</div>
+
+<div class="container select-model">
+  <div class="row select-model-caption">
+    <div class="col-md-1 col-sm-2 col-xs-12"><img src="img/car_logo_chevrolet.png"></div>
+    <div class="col-md-11 col-sm-10 col-xs-12"><h1>Выберите модель автомобиля</h1></div>
+  </div>
+  
+  <div class="container select-model-inner">
+    <div class="container wheel">
+      <h4>Левый руль</h4>
+      <div class="row">
+        <div class="col-md-4 sol-sm-4 col-xs-12 model-list-item">
+          <img src="img/chevrolet-1.png">
+          <a class="underline-not" href="catalog-start.html">Aveo (T200) 2003-2008</a>
+        </div> 
+        <div class="col-md-4 sol-sm-4 col-xs-12 model-list-item">
+          <img src="img/chevrolet-2.png">
+          <a class="underline-not" href="catalog-start.html">Lumina APV/Trans Sport 1990-1995</a>
+        </div> 
+        <div class="col-md-4 sol-sm-4 col-xs-12 model-list-item">
+          <img src="img/chevrolet-3.png">
+          <a class="underline-not" href="catalog-start.html">Spark 2005-2011</a>
+        </div> 
+        <div class="col-md-4 sol-sm-4 col-xs-12 model-list-item">
+          <img src="img/chevrolet-4.png">
+          <a class="underline-not" href="catalog-start.html">Aveo (T200) 2003-2008</a>
+        </div>      
+      </div>
+    </div>  
+    <div class="container wheel wheel-right">
+      <h4>Правый руль</h4>
+      <div class="row">
+        <div class="col-md-4 sol-sm-6 col-xs-12 model-list-item">
+          <img src="img/chevrolet-1.png">
+          <a class="underline-not" href="catalog-start.html">Aveo (T200) 2003-2008</a>
+        </div> 
+        <div class="col-md-4 sol-sm-6 col-xs-12 model-list-item">
+          <img src="img/chevrolet-2.png">
+          <a class="underline-not" href="catalog-start.html">Lumina APV/Trans Sport 1990-1995</a>
+        </div> 
+        <div class="col-md-4 sol-sm-6 col-xs-12 model-list-item">
+          <img src="img/chevrolet-3.png">
+          <a class="underline-not" href="catalog-start.html">Spark 2005-2011</a>
+        </div> 
+        <div class="col-md-4 sol-sm-6 col-xs-12 model-list-item">
+          <img src="img/chevrolet-4.png">
+          <a class="underline-not" href="catalog-start.html">Aveo (T200) 2003-2008</a>
+        </div>      
+      </div>
+    </div>    
+  </div>
+</div>
+
+<!-- New arrivals -->
+<div class="container-fluid new-arrivals-wrap">
+  <div class="container new-arrivals">
+    <h1>Новые поступления товаров</h1>
+     <div class="row good-list-card">
+     <!-- card large -->      
+      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 hidden-xs card">        
+        <img class="card-img-top" src="img/bamper.png" alt="">
+        <span class="label label-default badger-top-right label-stock-10">Б/У 10%</span>         
+        <div class="card-block">
+          <h4 class="card-title"><a class="underline" href="card.html">Бампер задний для Chevrolet Aveo T300 (2011--)</a></h4>
+          <p class="card-text">206215</p>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <p class="card-price">4 300 <span>руб.</span></p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <button class="btn button-grey in-basket">В корзину</button>
+            </div>            
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 hidden-xs card">        
+        <img class="card-img-top" src="img/bamper.png" alt="">
+        <div class="label-stock-50-wrap-left">
+          <img src="img/danger.png"><span class="label label-default badger-top-right label-stock-50">Б/У 50%</span>
+        </div>                 
+        <div class="card-block">
+          <h4 class="card-title"><a class="underline" href="card.html">Бампер задний для Chevrolet Aveo T300 (2011--)</a></h4>
+          <p class="card-text">206215</p>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <p class="card-price">4 300 <span>руб.</span></p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <button class="btn button-grey in-basket">В корзину</button>
+            </div>            
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 hidden-xs card">        
+        <img class="card-img-top" src="img/spare.png" alt="">
+        <span class="label label-default badger-top-right label-new">Новый</span>        
+        <div class="card-block">
+          <h4 class="card-title"><a class="underline" href="card.html">Chevrolet Aveo (T250)Бампер задний</a></h4>
+          <p class="card-text">4484775</p>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <p class="card-price">4 700 <span>руб.</span></p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <button class="btn button-grey in-basket">В корзину</button>
+            </div>            
+          </div>
+        </div>
+      </div>      
+      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 hidden-xs card">        
+        <img class="card-img-top" src="img/bamper.png" alt="">
+        <span class="label label-default badger-top-right label-stock-10">Б/У 10%</span>         
+        <div class="card-block">
+          <h4 class="card-title"><a class="underline" href="card.html">Бампер задний для Chevrolet Aveo T300 (2011--)</a></h4>
+          <p class="card-text">206215</p>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <p class="card-price">4 300 <span>руб.</span></p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <button class="btn button-grey in-basket">В корзину</button>
+            </div>            
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 hidden-xs card">        
+        <img class="card-img-top" src="img/bamper.png" alt="">
+        <div class="label-stock-50-wrap-left">
+          <img src="img/danger.png"><span class="label label-default badger-top-right label-stock-50">Б/У 50%</span>
+        </div>                 
+        <div class="card-block">
+          <h4 class="card-title"><a class="underline" href="card.html">Бампер задний для Chevrolet Aveo T300 (2011--)</a></h4>
+          <p class="card-text">206215</p>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <p class="card-price">4 300 <span>руб.</span></p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <button class="btn button-grey in-basket">В корзину</button>
+            </div>            
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 hidden-xs card">        
+        <img class="card-img-top" src="img/bamper.png" alt="">
+        <span class="label label-default badger-top-right label-stock-10">Б/У 10%</span>         
+        <div class="card-block">
+          <h4 class="card-title"><a class="underline" href="card.html">Бампер задний для Chevrolet Aveo T300 (2011--)</a></h4>
+          <p class="card-text">206215</p>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <p class="card-price">4 300 <span>руб.</span></p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <button class="btn button-grey in-basket">В корзину</button>
+            </div>            
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 hidden-xs card">        
+        <img class="card-img-top" src="img/bamper.png" alt="">
+        <div class="label-stock-50-wrap-left">
+          <img src="img/danger.png"><span class="label label-default badger-top-right label-stock-50">Б/У 50%</span>
+        </div>                 
+        <div class="card-block">
+          <h4 class="card-title"><a class="underline" href="card.html">Бампер задний для Chevrolet Aveo T300 (2011--)</a></h4>
+          <p class="card-text">206215</p>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <p class="card-price">4 300 <span>руб.</span></p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <button class="btn button-grey in-basket">В корзину</button>
+            </div>            
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 hidden-xs card">        
+        <img class="card-img-top" src="img/spare.png" alt="">
+        <span class="label label-default badger-top-right label-new">Новый</span>        
+        <div class="card-block">
+          <h4 class="card-title"><a class="underline" href="card.html">Chevrolet Aveo (T250)Бампер задний</a></h4>
+          <p class="card-text">4484775</p>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <p class="card-price">4 700 <span>руб.</span></p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <button class="btn button-grey in-basket">В корзину</button>
+            </div>            
+          </div>
+        </div>
+      </div>      
+      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 hidden-xs card">        
+        <img class="card-img-top" src="img/bamper.png" alt="">
+        <span class="label label-default badger-top-right label-stock-10">Б/У 10%</span>         
+        <div class="card-block">
+          <h4 class="card-title"><a class="underline" href="card.html">Бампер задний для Chevrolet Aveo T300 (2011--)</a></h4>
+          <p class="card-text">206215</p>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <p class="card-price">4 300 <span>руб.</span></p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <button class="btn button-grey in-basket">В корзину</button>
+            </div>            
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 hidden-xs card">        
+        <img class="card-img-top" src="img/bamper.png" alt="">
+        <div class="label-stock-50-wrap-left">
+          <img src="img/danger.png"><span class="label label-default badger-top-right label-stock-50">Б/У 50%</span>
+        </div>                 
+        <div class="card-block">
+          <h4 class="card-title"><a class="underline" href="card.html">Бампер задний для Chevrolet Aveo T300 (2011--)</a></h4>
+          <p class="card-text">206215</p>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <p class="card-price">4 300 <span>руб.</span></p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              <button class="btn button-grey in-basket">В корзину</button>
+            </div>            
+          </div>
+        </div>
+      </div>  
+      <!-- card mobile -->
+     <div class="col-xs-12 hidden-sm hidden-md hidden-lg card-mobile">
+        <div class="col-xs-4">
+          <img class="card-img-top" src="img/spare.png" alt="">
+          <span class="label label-default badger-top-right label-new">Новый</span>   
+        </div> 
+        <div class="col-xs-8 card-title-wrap">
+          <h4 class="card-title"><a class="underline" href="card.html">Chevrolet Aveo (T250)Бампер задний</a></h4>
+        </div> 
+        <div class="row card-block"> 
+          <div class="col-xs-12">
+            <p class="card-text">4484775</p>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <p class="card-price">4 700 <span>руб.</span></p>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 in-basket-wrap">
+            <button class="btn button-grey in-basket">В корзину</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 hidden-sm hidden-md hidden-lg card-mobile">
+        <div class="col-xs-4">
+          <img class="card-img-top" src="img/spare.png" alt="">
+          <span class="label label-default badger-top-right label-stock-10">Б/У 10%</span>   
+        </div> 
+        <div class="col-xs-8 card-title-wrap">
+          <h4 class="card-title"><a class="underline" href="card.html">Chevrolet Aveo (T250)Бампер задний</a></h4>
+        </div> 
+        <div class="row card-block"> 
+          <div class="col-xs-12">
+            <p class="card-text">4484775</p>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <p class="card-price">4 700 <span>руб.</span></p>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 in-basket-wrap">
+            <button class="btn button-grey in-basket">В корзину</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 hidden-sm hidden-md hidden-lg card-mobile">        
+        <div class="col-xs-4">
+          <img class="card-img-top" src="img/bamper.png" alt="">
+          <div class="label-stock-50-wrap-left">
+            <img class="danger" src="img/danger.png"><span class="label label-default badger-top-right label-stock-50">Б/У 50%</span>
+          </div>    
+        </div> 
+        <div class="col-xs-8">
+          <h4 class="card-title"><a class="underline" href="card.html">Chevrolet Aveo (T250)Бампер задний</a></h4>
+        </div> 
+        <div class="row card-block"> 
+          <div class="col-xs-12">
+            <p class="card-text">4484775</p>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <p class="card-price">4 700 <span>руб.</span></p>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <button class="btn button-grey in-basket">В корзину</button>
+          </div>
+        </div>
+      </div>
+     
+    </div>  
+  </div>
+</div>
+
+<!-- Pagination -->
+<div class="text-center">
+  <ul class="pagination">
+    <li class="page-item disabled">
+      <a class="page-link prev" href="#" aria-label="Previous">
+        <span aria-hidden="true"><img src="img/arrow-left-icon.png"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item active">
+      <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">...</a></li>
+    <li class="page-item"><a class="page-link" href="#">10</a></li>
+    <li class="page-item">
+      <a class="page-link next" href="#" aria-label="Next">
+        <span aria-hidden="true"><img src="img/arrow-right-icon.png"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- Strip -->
+<div class="container strip"></div>
+
+<!-- About -->
+<div class="container main-about">
+    <h1>Авторазбор, контрактные запчасти в Омске</h1>
+    <div class="row main-about-inner">
+        <div class="col-xs-4 main-about-item">
+            <p>Во-первых, занимаясь авторазборкой мы можем предложить нашим клиентам широкий выбор деталей к любым автомобилям, в том числе к нераспространенным моделям, а также грузовикам;</p>
+        </div>
+        <div class="col-xs-4 main-about-item mobile-hide">
+            <p>Во-вторых, все детали, представленные в нашем каталоге, высокого качества и оригинальные. При этом не обязательно, что это будут детали с б/у автомобиля, который имеет большой пробег. Довольно часто разборке подлежат также новые или аварийные авто.</p>
+        </div>
+        <div class="col-xs-4 main-about-item mobile-hide">
+            <p>В-третьих, стоимость наших автозапчастей на порядок ниже, чем на новые запчасти. Авторазбор в Омске от нашей компании – это также доставка запчастей в любой регион России транспортными компаниями.</p>
+        </div>        
+    </div>
+    <div class="row about-more">
+        <a class="underline-not" href="#">Подробнее о компании</a>
+    </div>    
+</div>
+
+<!-- Map -->
+<div class="container-fluid main-map">
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=KHZsj3_06kDNVM0a7Z9Q3e2L5371mo1Y&width=100%&height=398&lang=ru_RU&sourceType=constructor&scroll=true"></script>
+</div>
+
+<footer>
+    <div class="container-fluid main-footer-top-wrap">
+        <div class="container main-footer-top">
+            <a href="index.html"><img src="img/logo-invert.png" alt="#"></a>
+            <ul class="main-footer-menu">
+                <li class="spare-stock"><a href="stock.html">запчасти б/у</a></li>
+                <li class="spare-new"><a href="new.html">новые запчасти</a></li>
+                <li class="spare-request"><a href="request-details.html">запрос запчастей</a></li>
+                <li class="payment"><a href="payment-delivery.html">оплата и доставка</a></li>
+                <li class="contact"><a href="contacts.html">контакты</a></li>          
+            </ul>    
+        </div>
+    </div>
+    <div class="container-fluid main-footer-middle-wrap">
+        <div class="container main-footer-middle">
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-12 main-footer-middle-contact">
+                <p>г. Омск, ул. Пранова, 7. <a class="underline-not" href="contacts.html">Как проехать?</a></p>
+                <p>+7(3812)921-001,   +7 965 989 88 99</p><br>
+                <p><span>Официальный партнёр <a class="underline-not" href="#">Евро Авто</a></span></p>
+            </div>
+            <div class="col-md-4 hidden-xs hidden-sm mobile-version">
+                <a href="#"><img src="img/mobile-version.png" alt="#"></a> 
+            </div>    
+            <div class="col-md-2 col-sm-3 col-xs-6 we-accept">
+                <p>Мы принимаем</p>
+                <img src="img/visa-icon.png" alt="#">
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-6 our-partner">
+                <p>Наш партнер</p>
+                <img src="img/alfa.png" alt="#">
+            </div>
+        </div>    
+    </div>
+    </div>
+    <div class="container copyright">
+        <div class="row">
+            <div class="col-md-6 col-sm-4 col-xs-12">
+                <p>© 2016 Евроразбор – Авторазбор европейских автомобилей</p>    
+            </div>
+            <div class="col-md-3 col-sm-3 hidden-xs agree">
+                 <a href="user-agree.html">Пользовательское соглашение</a>
+            </div>
+            <div class="col-md-3 col-sm-3 hidden-xs confident">
+                <a href="guaranty.html">Положение о конфиденциальности</a>
+            </div>
+            <div class="col-sm-2 col-xs-12 hidden-md hidden-lg full-version">
+                <a href="#">Полная версия сайта</a>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!-- Modal Sign In-->
+<div id="signIn" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content modal-sign-in">
+      <div class="modal-header modal-sign-in-header">
+        <button type="button" class="close" data-dismiss="modal"><img src="img/close-modal.png" alt="#"></button>
+        <h4 class="modal-title">Вход в личный кабинет</h4>
+      </div>
+      <div class="modal-body modal-sign-in-body">
+      <form role="form">
+          <div class="form-group">
+             <label id="phone">&nbsp;Телефон  или Email</label>
+             <input for="phone" type="text" placeholder="3 серия E90 2005 г"> 
+          </div>
+          <div class="recall-password">
+             <a href="#">Напомнить пароль</a> 
+          </div> 
+          <div class="">
+             <input type="password" placeholder="&nbsp;Пароль">     
+          </div> 
+          <div class="remember-me">
+             <input id="check1" type="checkbox" name="check" value="check1">
+             <label for="check1"><span></span>Запомнить меня</label>            
+          </div>  
+          <div class="form-group">
+             <button type="submit" class="btn button-green">Войти</button>
+          </div>
+      </form> 
+        <div class="enter">
+            <div>
+                <p>Первый раз?</p>
+            </div>
+            <div>
+                <a href="#signUp">Зарегистрируйтесь</a>
+            </div>            
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Sign Up-->
+<div id="signUp" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content modal-sign-up">
+      <div class="modal-header modal-sign-up-header">
+        <button type="button" class="close" data-dismiss="modal"><img src="img/close-modal.png" alt="#"></button>
+        <h4 class="modal-title">Регистрация</h4>
+      </div>
+      <div class="modal-body modal-sign-up-body">
+      <form role="form">
+          <div class="form-group">
+              <label id="name">*Имя</label>
+              <input for="name" type="text" placeholder="Михаил Иванович">  
+          </div>
+          <div class="form-group">
+              <label id="phone">*Номер телефона</label>
+              <input for="phone" type="text" placeholder="+7 (***) ***-**-**">  
+          </div>
+          <div class="form-group">
+              <label id="email">*E-mail</label>
+              <input for="email" type="text" placeholder="***@email.ru">  
+          </div>
+          <div class="form-group">
+               <label for="country">*Страна</label>
+          </div>
+          <div class="form-group">
+              <select id="country">
+              <option>
+                  <div class="main-request-demont-item-option">
+                      <p>Россия</p>
+                  </div>
+              </option>
+              <option>Казахстан</option>
+          </select>
+          </div>
+          <div class="form-group">
+               <label for="region">*Регион</label>
+               <select id="region">
+                  <option>
+                      <div class="main-request-demont-item-option">
+                          <p>Свердловская область</p>
+                      </div>
+                  </option>
+                  <option>Тюменьская область</option>
+               </select>
+          </div>
+          <div class="form-group">
+              <label for="city">*Город</label>
+              <select id="city">
+                  <option>
+                      <div class="main-request-demont-item-option">
+                          <p>Екатеринбург</p>
+                      </div>
+                  </option>
+                  <option>Тюмень</option>
+              </select>
+          </div>
+            <div class="address-store">
+              <p class="can-take">Товар вы можете забрать:</p>
+              <p class="storage"><img src="img/store.png" alt="#">&nbsp;Склад «Деловые линии»</p>
+              <a href="#">г. Алматы,  ул. Ленина, 7</a>
+              <p class="phone">+7(3812)900-022, +7(3812)800-030</p>
+            </div>
+           <p>* - поля обязательные к заполнению</p>
+           <div class="row modal-sign-up-buttons">
+             <div class="col-xs-12 col-sm-6 col-md-6 col-ld-6">
+               <img src="img/i-not-robot.png" alt="#">
+             </div>
+             <div class="col-xs-12 col-sm-6 col-md-6 col-ld-6">
+               <button class="btn button-green">Войти</button>
+             </div>
+           </div>
+      </form>
+        </div>
+        <div class="row enter">
+            <div >
+                <p>Вы уже зарегистрированы?</p>
+            </div>
+            <div >
+                <a href="#signIn">Войдите</a>
+            </div>            
+        </div>      
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Modal Recall -->
+<div id="recall" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+   <!-- Modal content-->
+    <div class="modal-content modal-recall">
+      <div class="modal-header modal-recall-header">
+        <button type="button" class="close" data-dismiss="modal"><img src="img/close-modal.png" alt="#"></button>
+        <h4 class="modal-title">Оставьте номер телефона</h4>
+      </div>
+      <div class="modal-body modal-recall-body">
+        <form role="form">
+            <div class="form-group">
+                <label id="phone">*Номер телефона</label>
+                <input for="phone" type="text" placeholder="+7 (***) ***-**-**"> 
+            </div>
+            <button type="submit" class="btn button-green">Отправить</button>
+        </form>
+      </div>      
+    </div>
+  </div>
+</div>
+
+<!-- Modal City select -->
+<div id="selectCity" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content modal-select-city">
+      <div class="modal-header modal-select-city-header">
+        <button type="button" class="close" data-dismiss="modal"><img src="img/close-modal.png" alt="#"></button>
+        <h4 class="modal-title">Ваш город: <span>Тюмень</span> </h4>
+      </div>
+      <div class="modal-body row modal-select-city-body">
+          <form role="form">
+                <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 my-city">
+                    <button type="submit" class="btn button-green">Да это мой город</button>
+                </div>
+          </form>
+          <form role="form" action="#selectCityNext">
+                <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 other-city">
+                    <button src="#selectCityNext" type="submit" class="btn button-grey">Выбрать другой город</button>        
+                </div>      
+          </form>             
+      </div>      
+    </div>
+  </div>
+</div>
+
+<!-- Modal City next next -->
+<div id="selectCityNext" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content modal-select-city-next">
+      <div class="modal-header modal-select-city-next-header">
+        <button type="button" class="close" data-dismiss="modal"><img src="img/close-modal.png" alt="#"></button>
+        <h4 class="modal-title">Выберите свой город или ближайший:</h4>
+      </div>
+      <ul class="nav nav-tabs tabs-city">
+          <li class="active"><a data-toggle="tab" href="#home">Россия</a></li>
+          <li><a data-toggle="tab" href="#menu1">Казахстан</a></li>
+      </ul>
+      <div class="tab-content">
+      <div id="home" class="tab-pane fade in active">
+            <div class="modal-body modal-select-city-next-body">
+            <div class="row city-list">
+              <div class="col-xs-12">
+                  <form class="search-city" role="search">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Введите город">
+                    </div>
+                  </form>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="underline-not" href="#">Сургут</a>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="large-city underline-not" href="#">Екатеринбург</a>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="underline-not" href="#">Челябинск</a>
+              </div>
+               <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="large-city underline-not" href="#">Екатеринбург</a>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="underline-not" href="#">Сургут</a>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="large-city underline-not" href="#">Москва</a>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="underline-not" href="#">Екатеринбург</a>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="underline-not" href="#">Челябинск</a>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="underline-not" href="#">Сургут</a>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="underline-not" href="#">Екатеринбург</a>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="underline-not" href="#">Челябинск</a>
+              </div>
+            </div>      
+            </div>
+      </div>
+      <div id="menu1" class="tab-pane fade in">
+      <div class="modal-body modal-select-city-next-body">
+            <div class="row city-list">
+              <div class="col-xs-12">
+                  <form class="search-city" role="search">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Введите город">
+                    </div>
+                  </form>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="underline-not" href="#">Актобе</a>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="large-city underline-not" href="#">Астана</a>
+              </div>
+              <div class="col-md-4 col-sm-6 col-xs-6 city-item">
+                <a class="underline-not" href="#">Караганда</a>
+              </div>
+            </div>      
+            </div>
+      </div>
+      </div>   
+    </div>
+</div>
+
+</body>
