@@ -930,3 +930,23 @@ transform: translate(-50%,-50%);
 .modal.fade .modal-dialog{
   transition: none;
 }
+
+#back {
+
+  position: fixed;
+  right: 5vw;
+  top: 5vh;
+  z-index: 100;
+
+}
+
+#back a:active {
+
+  color: white;
+}
+
+
+#back a:hover {
+
+  color: red;
+}
