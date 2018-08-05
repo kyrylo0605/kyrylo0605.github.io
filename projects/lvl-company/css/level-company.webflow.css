@@ -72,7 +72,7 @@ p {
 }
 
 .button:hover {
-  background-color: #00b3ec;
+  background-color: #588999;
 }
 
 .button.submit {
@@ -246,7 +246,7 @@ p {
 }
 
 .cute-box:hover {
-  background-color: #00b3ec;
+  background-color: #588999;
 }
 
 .container {
@@ -361,17 +361,17 @@ p {
 .timeline-list_bullet.wb2 {
   padding-right: 18px;
   padding-left: 18px;
-  background-color: #00b3ec;
+  background-color: #588999;
 }
 
 .timeline-list_bullet.wb1 {
-  background-color: #00b3ec;
+  background-color: #588999;
 }
 
 .timeline-list_bullet.wb4 {
   padding-right: 17px;
   padding-left: 17px;
-  background-color: #00b3ec;
+  background-color: #588999;
 }
 
 .timeline-list_bullet._4 {
@@ -424,7 +424,7 @@ p {
 }
 
 .link:hover {
-  color: #00b3ec;
+  color: #588999;
 }
 
 .footer {
@@ -503,7 +503,7 @@ p {
 .success-message {
   margin-right: 15px;
   margin-left: 15px;
-  background-color: #00b3ec;
+  background-color: #588999;
 }
 
 .error-message {
