@@ -1,0 +1,584 @@
+@media (max-width: 1700px) {
+  html {
+    font-size: 90%; }
+  .law__img {
+    width: 350px; }
+  .field-method__number {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+    left: -15px;
+    top: -35px; }
+  .owner-procent__number {
+    font-size: 4.25rem; }
+  .step__content {
+    margin-top: 1rem; }
+  .owner-tables__top {
+    margin-bottom: 15px; }
+  .contacts__men {
+    height: auto;
+    width: 450px;
+    bottom: -4px; }
+  .step__icon {
+    height: 200px;
+    line-height: 200px; }
+  .field-method__item {
+    padding-left: 150px; }
+  .step__title {
+    font-size: 18px; }
+  .step__text {
+    font-size: 16px; }
+  .field-advantages__top {
+    margin-bottom: 20rem; }
+  .map {
+    width: 600px; }
+  .field-advantages {
+    padding: 10rem 0; }
+  h1 {
+    font-size: 4.5rem; }
+  h2 {
+    font-size: 3.25rem; }
+  .owner-advantages__title {
+    margin-bottom: 1rem; }
+  .owner-procent__text {
+    font-size: 1.25rem; }
+  .investor-advantages__header {
+    margin-bottom: 4rem; }
+  .investor-advantages__info {
+    font-size: 22px; }
+  .chart-info {
+    margin-top: 40px; }
+  .chart__view {
+    height: 400px; } }
+
+@media (max-width: 1600px) {
+  html {
+    font-size: 80%; }
+  .chart__numbers__item {
+    font-size: 16px; }
+  .chart__form {
+    margin-top: 3rem; }
+  .chart-info {
+    margin-top: 30px; }
+  .investor-garanty__text {
+    font-size: 1.25rem; }
+  .investor-advantages__header {
+    margin-bottom: 3.5rem; }
+  .investor-advantages__info {
+    font-size: 20px; }
+  .section--investor__header p {
+    font-size: 18px; }
+  .section--main p {
+    font-size: 1.75rem; }
+  .owner-procent__text {
+    font-size: 1rem; }
+  .owner-procent__number {
+    font-size: 3.25rem; }
+  .btn--medium {
+    font-size: 1rem; }
+  .contacts__form .form-control {
+    width: 25rem; }
+  .contacts__men {
+    width: 400px; }
+  .owner-tables__top {
+    margin-bottom: 7rem; }
+  .owner-tables {
+    padding-bottom: 10rem; }
+  .owner-advantages__list {
+    font-size: 16px;
+    margin-top: 3rem; }
+  .field-advantages {
+    padding: 8rem 0; }
+  .field-advantages__top {
+    margin-bottom: 16rem; }
+  .association {
+    bottom: -100px; }
+  .law__img {
+    width: 300px; }
+  .field-method__number {
+    -webkit-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    transform: scale(0.6);
+    left: -40px;
+    top: -59px; }
+  .services__number {
+    width: 120px;
+    height: 120px; }
+  .services__item {
+    padding-left: 175px; }
+  .services__info {
+    height: 130px; }
+  .law__link {
+    margin-top: 175px; }
+  .header .btn {
+    font-size: 12px; }
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem; }
+  h2 {
+    font-size: 3rem; }
+  .field-method__item {
+    padding-left: 108px; }
+  .field-method__text {
+    font-size: 16px;
+    min-height: 130px;
+    padding: 20px; }
+  .field-method__title {
+    font-size: 18px; }
+  .field-method__text p + p {
+    margin: 1.5rem 0; }
+  .section--about__descr {
+    font-size: 1.5rem; }
+  .section--about__list li {
+    font-size: 16px;
+    margin-bottom: 20px; }
+  h3 {
+    font-size: 1.5rem; }
+  .section--product__number {
+    margin-bottom: 20px; }
+  .section--product__number {
+    padding-left: 145px;
+    min-height: 120px;
+    margin-bottom: 20px; }
+  .btn--product {
+    font-size: 1rem; } }
+
+@media (max-width: 1400px) {
+  .nav > li a {
+    padding: 1.5rem 0.5rem; }
+  h3 {
+    font-size: 1.25rem; }
+  .law__img {
+    width: 250px; }
+  .nav > li a {
+    font-size: 12px; }
+  .contacts__men {
+    width: 350px; }
+  .field-header p {
+    font-size: 20px; }
+  .text-descr {
+    font-size: 16px; }
+  .logo__icon {
+    margin-right: 5px; }
+  .owner-header p {
+    font-size: 18px; }
+  .services__info p {
+    font-size: 16px; }
+  .footer .logo__text {
+    display: none; }
+  .contacts__men {
+    height: auto; }
+  .law {
+    text-align: center; }
+  h1 {
+    font-size: 3rem; }
+  h2 {
+    font-size: 2.5rem; }
+  .section--product__wrapp {
+    width: 45rem; }
+  .chart__right {
+    overflow: auto; }
+  .chart__content {
+    width: 700px; }
+  .chart-info .pull-left,
+  .chart-info .pull-right {
+    text-align: center;
+    float: none; }
+  .contacts__info__title {
+    width: 100%;
+    text-align: center; }
+    .contacts__info__title br {
+      display: none; }
+  .contacts__phone {
+    width: 100%;
+    margin-left: 0;
+    text-align: center; }
+  .chart-info__text {
+    width: 100%;
+    margin-bottom: 20px; }
+  .contacts__left {
+    margin-top: 5rem; }
+  .contacts__phone {
+    font-size: 24px;
+    margin-top: 20px; }
+  .contacts {
+    text-align: center; }
+  .contacts__form .form-control {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0; }
+  .contacts__form .btn {
+    width: 100%;
+    margin-top: 20px; }
+  .chart__left {
+    text-align: center; }
+  .law__img {
+    margin-top: 30px; }
+  .logo__text {
+    margin-left: 5px; }
+    .logo__text:before {
+      content: none; }
+  .services__number {
+    left: 15px; }
+  .services__item {
+    padding-left: 135px; }
+    .services__item h3 {
+      font-size: 18px; }
+  .services__metering,
+  .services__value {
+    font-size: 2.5rem; }
+  .services__info {
+    height: 115px; }
+  .services__number {
+    width: 100px;
+    height: 100px; } }
+
+@media (min-width: 1200px) {
+  .container {
+    width: 85%; }
+    .container.container--large {
+      width: 95%; }
+  .visible-md {
+    display: none; }
+  .section,
+  .investor-advantages,
+  .section--investor__top {
+    height: 100vh; }
+  .field-advantages,
+  .owner-tables,
+  .section--investor,
+  .section--multi {
+    height: auto; } }
+
+@media (max-width: 1199px) {
+  .investor-garanty {
+    display: block; }
+    .investor-garanty:after {
+      content: "";
+      display: block;
+      clear: both;
+      height: 0; }
+  .chart-wrapp {
+    padding: 5rem 0; }
+  .contacts-wrapp {
+    padding: 5rem 0; }
+  .investor-advantages {
+    margin-top: 50px; }
+  .nav {
+    position: fixed;
+    width: 260px;
+    left: 15px;
+    z-index: 10;
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.75); }
+    .nav > li {
+      float: none;
+      border: 0; }
+      .nav > li a {
+        -webkit-border-radius: 0 !important;
+        border-radius: 0 !important;
+        font-size: 14px;
+        padding-left: 20px;
+        padding-right: 20px; }
+  .step,
+  .chart--nopad,
+  .owner-countries {
+    padding: 50px 0; }
+  .investor-garanty {
+    padding: 50px 0; }
+  .section--investor__top {
+    padding-top: 12rem; }
+  .field-advantages__top {
+    margin-bottom: 8rem; }
+  .field-method,
+  .field-money {
+    padding: 50px 0; }
+  .contacts__left--single {
+    padding-top: 50px; }
+  .section--main {
+    padding-top: 12rem; }
+  .section--main {
+    padding-bottom: 60px; }
+  .owner-tables {
+    padding-top: 7rem;
+    padding-bottom: 7rem; }
+  .owner-advantages {
+    padding: 5rem 0; }
+  .owner-tables__top {
+    margin-bottom: 7rem; }
+  .owner-countries h2,
+  .owner-tables__bottom h2 {
+    text-align: center;
+    margin-bottom: 20px; }
+    .owner-countries h2 br,
+    .owner-tables__bottom h2 br {
+      display: none; }
+  .contacts {
+    padding-bottom: 50px; }
+  .chart-info {
+    margin-bottom: 1rem; }
+  .hidden-md {
+    display: none; }
+  .investor-garanty__header {
+    width: 100%;
+    padding-top: 0;
+    text-align: center; }
+  .investor-garanty__item {
+    width: 33.3%;
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 30px;
+    text-align: center; }
+  html {
+    font-size: 70%; }
+  .section--about__info {
+    padding-top: 0; }
+  .section--product {
+    padding: 50px 0;
+    padding-bottom: 20px; }
+  .section--about {
+    padding: 50px 0; }
+    .section--about:before {
+      content: none; }
+    .section--about:after {
+      content: none; }
+  .section--product__wrapp {
+    width: 100%; }
+  .law {
+    position: static;
+    margin-top: 30px; }
+  .services__item h3 {
+    font-size: 18px; } }
+
+@media (min-width: 992px) {
+  .visible-sm {
+    display: none; } }
+
+@media (max-width: 991px) {
+  .services__number {
+    top: 0; }
+  .investor-garanty__item {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0; }
+  .investor-advantages {
+    width: 100%; }
+  .owner-tables {
+    padding-top: 4rem;
+    padding-bottom: 4rem; }
+  .owner-tables__left {
+    text-align: center; }
+  .owner-procent {
+    display: inline-block;
+    text-align: center;
+    margin-top: 0; }
+  .investor-advantages__info {
+    width: 100%;
+    background: #fff;
+    height: auto;
+    padding: 20px;
+    font-size: 18px; }
+  .contacts-wrapp,
+  .chart-wrapp {
+    padding: 3rem 0; }
+  .contacts-wrapp .contacts {
+    padding-bottom: 0; }
+  .investor-garanty__text {
+    font-size: 18px; }
+  .investor-advantages__info p {
+    margin-bottom: 25px; }
+  .investor-garanty__icon {
+    height: auto;
+    line-height: 1; }
+  .investor-advantages__header {
+    width: 100%;
+    float: none;
+    text-align: center; }
+  .field-method .col-md-4 {
+    text-align: center; }
+  .field-advantages__top {
+    text-align: center; }
+  .field-advantages__top h2,
+  .field-money h2 {
+    text-align: center; }
+    .field-advantages__top h2 br,
+    .field-money h2 br {
+      display: none; }
+  .field-advantages__list {
+    text-align: left; }
+  .field-advantages {
+    padding: 5rem 0; }
+  .hidden-sm {
+    display: none; }
+  .field-method__right {
+    padding-left: 0;
+    margin-top: 40px; }
+  .law-header {
+    text-align: center;
+    width: 100%; }
+  .field-header {
+    text-align: center; }
+  .field-advantages__top {
+    margin-bottom: 3rem; }
+  .mytable > tbody > tr > th {
+    padding: 5px; }
+  .services__block {
+    margin-bottom: 20px; }
+  .investor-garanty {
+    padding: 5rem 0; }
+  .chart__right {
+    padding-left: 0;
+    margin-top: 50px; }
+  .owner-tables__top {
+    margin-bottom: 5rem; }
+  .step__icon {
+    height: 200px;
+    line-height: 200px; }
+  .owner-tables__left {
+    padding-right: 0; }
+    .owner-tables__left h2 {
+      text-align: center; }
+      .owner-tables__left h2 br {
+        display: none; }
+  .owner-tables__right {
+    padding-left: 0;
+    margin-top: 30px; }
+  .field-procent {
+    text-align: center; } }
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 30px; }
+  .chart-wrapp .table-block,
+  .chart-wrapp .block-vertical {
+    display: block; }
+  .contacts-wrapp {
+    padding-top: 0; }
+  .field-advantages__list {
+    font-size: 16px;
+    margin-top: 20px; }
+  .field-advantages {
+    padding: 3rem 0; }
+  .step__content {
+    display: block; }
+  .title-descr {
+    margin: 15px 0;
+    font-size: 16px; }
+  .step__item {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px; }
+  .step {
+    text-align: center; }
+  .step__icon:after {
+    content: none; }
+  .field-advantages__block {
+    margin-bottom: 2rem; }
+  .owner-header {
+    width: 100%; }
+  .owner-advantages li {
+    width: 100%; }
+  .owner-advantages li:before {
+    content: none; }
+  .step__icon {
+    height: auto;
+    line-height: 1;
+    margin-bottom: 0; }
+  .text-descr {
+    display: block;
+    margin-left: 0;
+    margin-top: 20px; }
+  .services {
+    margin-top: 3rem; }
+  .section--investor__header {
+    width: 100%;
+    text-align: center; }
+  .owner-advantages {
+    padding-bottom: 3rem; }
+  .field-method h2 {
+    margin-bottom: 2rem; }
+  .section--main {
+    padding-top: 13rem; }
+  .investor-advantages__info {
+    width: 100%;
+    background: #fff;
+    height: auto;
+    padding: 15px;
+    font-size: 18px; }
+    .investor-advantages__info p {
+      margin-bottom: 25px; }
+  .hidden-xs {
+    display: none; }
+  .investor-advantages {
+    float: none;
+    width: 100%;
+    margin-top: 50px; }
+  .field-method__number {
+    position: static;
+    margin: auto; }
+  .field-method__item {
+    padding-left: 0;
+    margin-top: -40px; }
+  .field-method__text {
+    margin-top: -65px; }
+  h2 {
+    font-size: 26px; }
+  .section--about__descr {
+    font-size: 20px;
+    margin: 30px 0; }
+  .section--about__list li {
+    width: 100%; }
+  .section--product {
+    padding: 6rem 0; }
+  .section--product__header {
+    text-align: center; }
+    .section--product__header .pull-left {
+      width: 100%; } }
+
+@media (max-width: 480px) {
+  .hidden-exs {
+    display: none; }
+  .contacts__form .btn {
+    padding-left: 0;
+    padding-right: 0; }
+  h1 br,
+  h2 br,
+  h3 br {
+    display: none; }
+  .mytable > tbody > tr > th {
+    font-size: 10px; }
+  h1 {
+    font-size: 26px; }
+  h2 {
+    font-size: 22px; }
+  h3 {
+    font-size: 20px; }
+  h4 {
+    font-size: 18px; }
+  .services__item {
+    padding: 15px;
+    text-align: center; }
+  .services__number {
+    position: static;
+    margin: auto; }
+  .services__info {
+    height: auto;
+    margin-top: 20px; }
+  .section--product__number {
+    padding-left: 0; }
+  .section--product__content {
+    padding: 15px;
+    text-align: center; }
+  .services__number--product {
+    margin-bottom: 20px; }
+  .section--product__btn {
+    position: static;
+    padding-top: 20px;
+    clear: both; }
+  .section--main p {
+    font-size: 18px; }
+  .section--about__info {
+    padding-top: 1rem; }
+  .investor-garanty__text {
+    font-size: 16px; } }
