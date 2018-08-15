@@ -1,0 +1,105 @@
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+@media only screen and (max-width : 1024px) {
+header .price {
+  position: initial;
+}
+}
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+.blocks_4 {
+  -webkit-background-position: 25% 0;
+  -moz-background-position: 25% 0;
+  -ms-background-position: 25% 0;
+  -o-background-position: 25% 0;
+  background-position: 25% 0;}
+.blocks_4 .lists {
+	left: 0;
+	width: 100%;
+	background-image: none;
+	background-color: rgba(255,255,255,.8);
+}
+.under_header,
+.blocks_1,
+.blocks_2,
+.blocks_3,
+.blocks_4,
+.comment,
+#order {
+  padding: 0;
+}
+.under_header .orders {
+  margin-top: 30px;
+}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+  header .arrow {
+    top: 170px;
+    left: 60%; }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+.left , .right{
+	float: none;
+}
+
+h2 {
+  font-size: 30px;
+}
+      .blocks_4 .lists ul .list_1 {
+        margin-left: 0px; }
+      .blocks_4 .lists ul .list_2 {
+        margin-left: 0px; }
+      .blocks_4 .lists ul .list_3 {
+        margin-left: 0px; }
+      .blocks_4 .lists ul .list_4 {
+        margin-left: 0px; }
+      .blocks_4 .lists ul .list_5 {
+        margin-left: 0px; }
+
+  #order .timer_box .timer {
+  	display: block;
+  	text-align: center;
+  	margin: 30px auto; 
+  }
+}
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+
+}
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+ /* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
