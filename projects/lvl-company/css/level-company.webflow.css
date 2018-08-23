@@ -428,17 +428,17 @@ p {
 }
 
 .footer {
-  background-color: #000;
+  background-color: #aab23e;
 }
 
 .footer_text {
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 23.1px;
 }
 
 .footer-link {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 23.1px;
 }
 
