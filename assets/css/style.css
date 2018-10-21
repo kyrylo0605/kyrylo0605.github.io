@@ -104,7 +104,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-style: italic;
 	letter-spacing: 5px;
 	margin: 5px 0 5px;
-	color: #222;
+	color: white;
 }
 
 h2 {
@@ -478,7 +478,7 @@ textarea.form-control {
 
 #skills {
 
-background-image: url(../images/preloader1.png);
+background-image: url(../images/cheese.jpg);
 	background-color: #222;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
@@ -490,7 +490,6 @@ background-image: url(../images/preloader1.png);
 		 -o-background-size: cover;
 			background-size: cover;
 	padding: 0;
-
 }
 
 .chart {
@@ -875,7 +874,7 @@ background-image: url(../images/preloader1.png);
 
 .grid figure figcaption {
 	padding: 2em;
-	color: #fff;
+	color: white;
 	text-transform: uppercase;
 	font-size: 1.25em;
 	-webkit-backface-visibility: hidden;
