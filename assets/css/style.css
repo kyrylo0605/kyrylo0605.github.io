@@ -862,6 +862,7 @@ background-image: url(../images/cheese.jpg);
 	background: #3085a3;
 	text-align: center;
 	cursor: pointer;
+    border-radius: 50px;
 }
 
 .grid figure img {
@@ -1181,6 +1182,7 @@ span.github a:hover {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+    border-radius: 20px;
 }
 
 .kiwi {
@@ -1242,3 +1244,5 @@ body {
 	width: 60px;
 
 }
+    
+    
