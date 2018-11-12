@@ -743,7 +743,7 @@ background-image: url(../images/cheese.jpg);
 	top: 0;
 	z-index: 9999;
 }
-
+/*
 #status {
 	background-image: url(../images/preloader.gif);
 	background-position: center;
@@ -754,6 +754,11 @@ background-image: url(../images/cheese.jpg);
 	position: absolute;
 	top: 50%;
 	width: 200px;
+}
+*/
+
+.ball-grid-pulse > div {
+  background-color: orange;
 }
 
 /* ---------------------------------------------- /*
