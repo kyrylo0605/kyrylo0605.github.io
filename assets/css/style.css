@@ -867,7 +867,7 @@ background-image: url(../images/cheese.jpg);
 	background: #3085a3;
 	text-align: center;
 	cursor: pointer;
-    border-radius: 50px;
+    border-radius: 30px;
 }
 
 .grid figure img {
