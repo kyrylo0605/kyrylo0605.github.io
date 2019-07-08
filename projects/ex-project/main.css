@@ -1,0 +1,530 @@
+/**
+ * Fluid background, fixed content
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+
+
+
+
+header, section, footer {
+	padding: 1em calc(50% - 550px);
+
+}
+
+p {
+
+	margin-bottom: 2em;
+}
+
+#overl {
+
+	height: auto;
+	background:lightyellow;
+}
+
+#overl svg {
+
+	position: relative;
+	float: right;
+}
+
+#overl svg#Layer_2 {
+
+	position: relative;
+	float: left;
+}
+.wrapper1{
+	background-image: url(assets/images/stone-texture-1920.jpg) !important;
+	background-size: contain;
+	background-repeat: repeat;
+	position:relative;
+	height: 600px;
+}
+
+.wrapper1 img {
+
+	background: rgba(255,255,224,.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+
+}
+
+header img {
+
+	border-radius: 50%;
+
+}
+
+header {
+
+	background: #95927d;
+	color: white;
+
+	display: grid;
+	grid-gap: 5%;
+	grid-template-columns: repeat(4, [col] auto );
+	grid-template-rows: repeat(1, [row] auto );
+	height: 10em;
+    position: relative
+
+}
+
+header div {
+
+	background-color: maroon;
+	border-radius: 2vw;
+}
+
+
+.k {
+
+	grid-column: 1;
+	grid-row: 1;
+
+
+}
+
+.l {
+
+	grid-column: 2;
+	grid-row: 1;
+	margin-right: auto;
+	margin-left: auto;
+
+
+}
+
+.m {
+
+	grid-column: 3;
+	grid-row: 1;
+	margin-right: auto;
+	margin-left: auto;
+
+
+}
+
+.n {
+
+	grid-column: 4;
+	grid-row: 1;
+	margin-right: auto;
+	margin-left: auto;
+
+}
+
+@media screen and (max-width: 1100px) {
+
+
+	header {
+
+	display: grid;
+	grid-gap: 5%;
+	grid-template-columns: repeat(2, [col] auto ) ;
+	grid-template-rows: repeat(2, [row] auto );
+	height: auto;
+	}
+
+	img {
+
+
+		position: relative;
+		justify-content: center !important;
+
+	}
+
+
+	.k {
+
+	grid-gap: 50px;
+	grid-column: 1;
+	grid-row: 1;
+	margin-right: auto;
+	margin-left: auto;
+
+
+}
+
+.l {
+
+	grid-column: 2;
+	grid-row: 1;
+	grid-gap: 50px;
+	margin-right: auto;
+	margin-left: auto;
+
+
+}
+
+.m {
+
+	grid-column: 1;
+	grid-row: 2;
+	grid-gap: 50px;
+	margin-right: auto;
+	margin-left: auto;
+
+
+}
+
+.n {
+
+	grid-column: 2;
+	grid-row: 2;
+	grid-gap: 50px;
+	margin-right: auto;
+	margin-left: auto;
+
+
+	}
+
+}
+
+@media screen and (max-width: 600px) {
+
+
+	header {
+
+	display: grid;
+	grid-gap: 5%;
+	grid-template-columns: repeat(1, [col] auto ) ;
+	grid-template-rows: repeat(4, [row] auto );
+	height: auto;
+
+	}
+
+
+
+	.k {
+
+	grid-gap: 50px;
+	grid-column: 1;
+	grid-row: 1;
+	margin-right: auto;
+	margin-left: auto;
+
+}
+
+.l {
+
+	grid-column: 1;
+	grid-row: 2;
+	grid-gap: 50px;
+	margin-right: auto;
+	margin-left: auto;
+
+
+}
+
+.m {
+
+	grid-column: 1;
+	grid-row: 3;
+	grid-gap: 50px;
+	margin-right: auto;
+	margin-left: auto;
+
+
+}
+
+.n {
+
+	grid-column: 1;
+	grid-row: 4;
+	grid-gap: 50px;
+	margin-right: auto;
+	margin-left: auto;
+
+	}
+
+}
+
+
+
+header > img {
+
+	position: relative;
+	border-radius:50% !important;
+
+}
+
+
+section {
+
+	background: inherit; ;
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+
+section + section {
+
+	background: moccasin;
+	padding-left: 2em;
+	padding-right: 2em;
+	border-top-left-radius:20em 10em;
+	border-top-right-radius: 20em 10em;
+	border-bottom-right-radius:20em 10em;
+	border-bottom-left-radius:20em 10em;
+
+}
+
+
+
+#diffcontainer {
+
+	background-image: url(assets/images/stone-texture-1920.jpg) !important;
+	background-size: contain;
+	background-repeat: repeat;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	/*background: #cc99cc;*/
+	padding: 1em calc(50% - 750px);
+	padding-left: 2em;
+	padding-right: 2em;
+	border-top-left-radius:20em 10em;
+	border-top-right-radius: 20em 10em;
+	border-bottom-right-radius:20em 10em;
+	border-bottom-left-radius:20em 10em;
+	color: #fff;
+
+}
+
+#images {
+
+	background: #FFA07A;
+
+}
+
+body {
+	margin: 0;
+	font: 100%/1.2 sans-serif;
+	font-family: 'Dancing Script', cursive;
+	font-size: 2em;
+	background: salmon;
+
+}
+
+header > div {
+
+
+	padding: .5em;
+	color: white;
+}
+
+
+
+h1 {
+	text-align: center;
+    padding-left: .5em;
+	padding-right: .5em;
+}
+
+
+p {
+	text-align: left;
+	font-size: 1.2em;
+	padding-left: .5em;
+	padding-right: .5em;
+}
+
+svg {
+
+	position: relative;
+	float: left;
+	height: 20vw;
+	width: 20vw;
+	z-index: 100;
+	padding: 1em;
+}
+
+
+
+/* block with slant line */
+
+.hero {
+    background: #0A7A99;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    margin-top: -1px;
+    margin-bottom: 200px;
+    padding-top: 80px;
+}
+
+  .hero:after {
+    background: inherit;
+    bottom: -140px;
+    content: '';
+    display: block;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transform: skewY(4deg);
+    transform-origin: 100%;
+    z-index: -1;
+  }
+
+h1 {
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  text-align: center;
+}
+
+.hero h1 {
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Fix/hack for 1080p+ displays */
+@media screen and (min-width: 1921px) {
+    .hero {
+
+      padding-bottom: 5px;
+      margin-bottom: 240px !important;
+    }
+
+    .hero:after {
+      bottom: -220px !important;
+  }
+}
+
+#images {
+
+	background: salmon;
+}
+
+
+.container {
+			background-image: url(assets/images/stone-texture-1920.jpg);
+			background-size: contain;
+			color: white;
+          	display: -ms-grid;
+          	display:     grid;
+          	-ms-grid-columns: 50px 50px 50px;
+              grid-columns: 50px 50px 50px;
+          	-ms-grid-rows: 50px 50px;
+              grid-rows: 50px 50px;
+        }
+
+        .container .item1 {
+          -ms-grid-column: 1;
+              grid-column: 1;
+          -ms-grid-row: 1;
+              grid-row: 1;
+        }
+
+        .container .item2 {
+          -ms-grid-column: 2;
+              grid-column: 2;
+          -ms-grid-row: 1;
+              grid-row: 1;
+        }
+
+        .container .item3 {
+          -ms-grid-column: 1;
+              grid-column: 1;
+          -ms-grid-row: 2;
+              grid-row: 2;
+        }
+
+        .container .item4 {
+          -ms-grid-column: 2;
+              grid-column: 2;
+          -ms-grid-row: 2;
+              grid-row: 2;
+        }
+
+div .container {
+
+	padding: 1em calc(50% - 950px);
+}
+
+
+.wrapper {
+		position: relative;
+		background: inherit !important;
+		margin: 2vw;
+		display: grid;
+    	grid-gap: 20px;
+		grid-template-columns: repeat(5, [col] 18% ) ;
+		grid-template-rows: repeat(3, [row] auto );
+		background-color: #fff;
+		color: #444;
+
+	}
+
+	.box {
+		background-color: #444;
+		color: #fff;
+		border-radius: 20px;
+		padding: 20px;
+		font-size: 90%;
+		z-index:10;
+
+	}
+
+	.a {
+		grid-column: col / span  2;
+		grid-row: row ;
+	}
+	.b {
+		grid-column: col 3 / span  3 ;
+		grid-row: row ;
+		background-color: rgba(49,121,207,.5);
+		color: #000000;
+		margin: 2vw;
+		padding:5vw !important;
+		font-size: inherit;
+	}
+	.c {
+		grid-column: col ;
+		grid-row: row 2 ;
+	}
+	.d {
+		grid-column: col 2 / span  3 ;
+		grid-row: row 2 ;
+	}
+
+	.e {
+		grid-column: col / span  5;
+		grid-row: row 3;
+	}
+
+	.f {
+		grid-column: col 3 / span 3;
+		grid-row: row 2  ;
+		background-color: rgba(49,121,207, 0.5);
+		z-index: 20;
+	}
+
+ul {
+
+	list-style-type: circle;
+
+}
+
+
+
+footer {
+
+	background: sandybrown !important;
+	background-image: url(assets/images/stone-texture-1920.jpg);
+	color: white;
+	padding-left: 2em;
+	padding-right: 2em;
+	margin-bottom: auto;
+}
