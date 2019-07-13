@@ -17,6 +17,31 @@ p {
 	margin-bottom: 2em;
 }
 
+
+header {
+
+	height: 80px;
+	background:olive;
+}
+
+#house-color{
+
+	background:khaki;
+
+}
+
+#house-color img{
+
+	float: right;
+
+}
+
+#hi {
+
+	position: relative;
+	z-index: 20;
+}
+
 #overl {
 
 	height: auto;
@@ -54,15 +79,15 @@ p {
 
 }
 
-header img {
+#lilwayne img {
 
 	border-radius: 50%;
 
 }
 
-header {
+#lilwayne {
 
-	background: #95927d;
+	background: olive;
 	color: white;
 
 	display: grid;
@@ -74,9 +99,9 @@ header {
 
 }
 
-header div {
+#lilwayne div {
 
-	background-color: maroon;
+	background-color: bisque;
 	border-radius: 2vw;
 }
 
@@ -85,7 +110,8 @@ header div {
 
 	grid-column: 1;
 	grid-row: 1;
-
+	margin-right: auto;
+	margin-left: auto;
 
 }
 
@@ -121,7 +147,7 @@ header div {
 @media screen and (max-width: 1100px) {
 
 
-	header {
+	#lilwayne {
 
 	display: grid;
 	grid-gap: 5%;
@@ -188,7 +214,7 @@ header div {
 @media screen and (max-width: 600px) {
 
 
-	header {
+	#lilwayne {
 
 	display: grid;
 	grid-gap: 5%;
@@ -246,7 +272,7 @@ header div {
 
 
 
-header > img {
+#lilwayne > img {
 
 	position: relative;
 	border-radius:50% !important;
@@ -311,7 +337,7 @@ body {
 
 }
 
-header > div {
+#lilwayne > div {
 
 
 	padding: .5em;
