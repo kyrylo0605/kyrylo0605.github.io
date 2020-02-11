@@ -102,9 +102,11 @@ a,
 h1, h2, h3, h4, h5, h6 {
 	font: 700 50px/1.2 Adventure, Montserrat, Roboto, sans-serif;
 	font-style: italic;
+	font-weight: 800;
 	letter-spacing: 5px;
 	margin: 5px 0 5px;
-	color: white;
+	color: maroon;
+
 }
 
 h2 {
@@ -114,9 +116,11 @@ h2 {
 
 h3 {
 
-	font-size: 20px;
+	font-size: 27px;
 	letter-spacing: 1px;
 	margin: 0 0 45px;
+	background: rgba(255,255,255,.6);
+	border-radius: 2vh;
 }
 
 h4 {
@@ -490,6 +494,7 @@ background-image: url(../images/cristina-gottardi-mono-50-unsplash.jpg);
 		 -o-background-size: cover;
 			background-size: cover;
 	padding: 0;
+
 }
 
 .chart {
@@ -1250,24 +1255,21 @@ body {
   padding: 20px;
 }
 
-.btn.btn-link.btn #efset {
+.btn.btn-link.btn {
 
 	background: rgba(255,255,255,.1);
 	
 
 }
 
-#efset img {
+ span#efset {
 
-	width: 80px;
-
-
+	background: rgba(0,0,0,.5);
 }
     
+.btn.btn-link.btn a:hover {
 
-    #efset a:hover {
-
-    		background: rgba(255,255,255,.9);
 
 }
+
     
