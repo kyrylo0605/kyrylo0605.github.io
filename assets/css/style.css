@@ -23,7 +23,7 @@
 
 body {
 	font: 300 14px/1.8 Adventure, Montserrat, Roboto, sans-serif;
-	color: #666;
+	color: #DAA06D;
 	overflow-x: hidden;
 }
 
@@ -1183,6 +1183,13 @@ color: rgba(0,0,0,.6);
 padding-right: 20px;
 }
 
+span.facebook a {
+
+text-decoration: none;
+color: rgba(0,0,0,.6);
+padding-right: 20px;
+}
+
 span.github a {
 
 text-decoration: none;
@@ -1192,6 +1199,10 @@ padding-right: 20px;
 
 span.linkedin a:hover {
 	color: #0e76a8;
+}
+
+span.facebook a:hover {
+	color: #0d8af0;
 }
 span.github a:hover {
 	color: rgb(0,0,0);
